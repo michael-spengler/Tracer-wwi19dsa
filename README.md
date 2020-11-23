@@ -15,4 +15,4 @@ Kunde betritt Supermarkt → scannt QR-Code → einzigartiger zufälliger Wert w
 1. Fall kein Corona nach 14 Tagen → Daten werden gelöscht
 2. Fall es gibt Corona → einzigartiger zufälliger Wert wird veröffentlicht → App prüft (täglich, stündlich, ...) ob ein von ihm erstellter Wert veröffentlicht wurde. 
 
-[Idea Board](https://www.notion.so/f75ccf3cb28f4bdab2c50ad35035d255)
+
