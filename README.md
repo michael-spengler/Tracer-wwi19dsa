@@ -1,7 +1,3 @@
-# Tracer
-Tracer - Private Virus Tracing
-
-
 # Tracer - Private Virus Tracing
 
 - für Restaurants + Supermärkte u.ä.
