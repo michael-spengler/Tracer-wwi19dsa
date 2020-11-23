@@ -11,4 +11,5 @@ Kunde betritt Supermarkt → scannt QR-Code → einzigartiger zufälliger Wert w
 
 
 ## Technik:
-...
+- postgreSQL
+- Deno (Backend)
