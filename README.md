@@ -9,7 +9,7 @@ Kunde betritt Supermarkt → scannt QR-Code → einzigartiger zufälliger Wert w
 1. Fall kein Corona nach 14 Tagen → Daten werden gelöscht
 2. Fall es gibt Corona → einzigartiger zufälliger Wert wird veröffentlicht → App prüft (täglich, stündlich, ...) ob ein von ihm erstellter Wert veröffentlicht wurde. 
 ___
-# [WORK IN PROGRESS] Tracer - Private Virus Tracking :uk:
+# [WORK IN PROGRESS] Tracer - Private Virus Tracing :uk:
 
 - for restaurants, bars, cinemas, supermarkets or the like
 - track visits with QR-codes or NFC-chips
