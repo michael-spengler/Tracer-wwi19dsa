@@ -1,3 +1,5 @@
+(english version below)
+
 # [WORK IN PROGRESS] Tracer - Private Virus Tracing :de:
 
 - für Restaurants, Bars, Kinos und Supermärkte o.ä.
@@ -8,7 +10,11 @@
 Kunde betritt Supermarkt → scannt QR-Code → einzigartiger zufälliger Wert wird erzeugt → wird zusammen mit Zeit und Ort an Server (DB) übermittelt → Kunde kauft normal ein.
 1. Fall kein Corona nach 14 Tagen → Daten werden gelöscht
 2. Fall es gibt Corona → einzigartiger zufälliger Wert wird veröffentlicht → App prüft (täglich, stündlich, ...) ob ein von ihm erstellter Wert veröffentlicht wurde. 
+
+
 ___
+
+
 # [WORK IN PROGRESS] Tracer - Private Virus Tracing :uk:
 
 - for restaurants, bars, cinemas, supermarkets or the like
