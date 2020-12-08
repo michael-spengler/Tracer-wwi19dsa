@@ -2,8 +2,8 @@ import { cuid } from 'https://deno.land/x/cuid/index.js';
 import { Persistence } from "https://deno.land/x/persistence@1.1.0/persistence.ts"
 
 interface ILocationAndId {
-    location: string
-    id: string
+    location: string;
+    id: any;
 }
 
 const projectPathForData = `${Deno.cwd()}/data/locations.json`
