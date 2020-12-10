@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <h2>Send QR-Code Scan</h2>
+    </body>
+
+    <script>
+        function newScan(locID, tracerID) {
+        //attributes
+            this.locID = locID;
+            this.tracerID = tracerID;
+            this.currentTime = new Date();
+            this.currentTime = this.currentTime.toLocaleTimeString();
+
+        //functions
+            this.success = function() {
+            console.log('User with id ' + this.tracerID + ' visited ' + this.locID + ' at ' + this.currentTime + '.');
+            };
+            this.data = function() {
+            return {
+                locID:this.locID,
+                tracerID:this.tracerID,
+                currentTime:this.currentTime
+                };
+            };
+        };
+
+        let scan1 = new newScan("DHBW Mannheim", 21394124); //generate new scan
+        scan1.success(); //this should be returned to client
+        console.log(scan1.data()); //this should be sent to server
+
+    </script>
+</html>
