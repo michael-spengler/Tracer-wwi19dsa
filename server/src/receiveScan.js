@@ -1,31 +1,29 @@
 /*------------------Client-Side------------------*/
 /* Input: 
-    - set UUID to null
     - get and set Loc_ID from QR-Code
     - get and set timestamp of current time
     
     -send JSON File
     -If no response (e.g. because of no internet connection):
         - save json to /databases/LocalBuffer.json
+        - 
     -Else:
-        - send json and receive UUID
+        - send json from LocalBuffer.json and store received response (cuid) in LocalDatabase.json
 */
 
 function newScan(locID, tracerID) {
 //attributes
 this.locID = locID;
-this.tracerID = tracerID;
 this.currentTime = new Date();
 this.currentTime = this.currentTime.toLocaleTimeString();
 
 //functions
 this.success = function() {
-console.log('User with id ' + this.tracerID + ' visited ' + this.locID + ' at ' + this.currentTime + '.');
+console.log('User visited ' + this.locID + ' at ' + this.currentTime + '.');
 };
 this.data = function() {
 return {
     locID : this.locID,
-    tracerID : this.tracerID,
     currentTime : this.currentTime,
     };
 };
@@ -39,7 +37,7 @@ function sendData() {
 
 
 /* 
-    - Catch the sent Output
+    - Catch the response
     - Store it in the LocalDatabse.json (every client has own list)
-    - if storing was successful, delete local buffer (else retry)
+    - if storing was successful, delete local buffer (else retry later)
 */
