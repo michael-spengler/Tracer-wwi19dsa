@@ -1,6 +1,7 @@
 /*------------------Set-Up Server------------------*/
 import { opine, serveStatic } from "https://deno.land/x/opine@0.25.0/mod.ts";
 import { writeJson, writeJsonSync } from 'https://deno.land/x/jsonfile/mod.ts';
+import { cuid } from 'https://deno.land/x/cuid/index.js';
 
 let counter = 0;
 
@@ -21,9 +22,9 @@ app.get('/Tracer/:data', function (req, res) {
     const jsonData = JSON.parse(req.params.data);
     //const tracerID:string = req.params.tracerID;
     //const currentTime:string = req.params.currentTime;
-    storeData(jsonData)
-    console.log(jsonData)
-    res.json(jsonData)
+    const globalJsonData = storeData(jsonData);
+    console.log(globalJsonData);
+    res.json(globalJsonData.tracerID);
     res.setStatus(201)
 });
 
@@ -41,6 +42,13 @@ app.listen(3000, function () {
 */
 
 function storeData(data:any){
-    writeJsonSync('./server/src/databases/GlobalDatabase.json', data, { append: true });
-    //generate uuid etc.
+    const tracerID:any = cuid();
+    const globalJsonData = {
+        locID : data.locID,
+        tracerID : tracerID,
+        currentTime : data.currentTime
+    };
+    writeJsonSync('./server/src/databases/GlobalDatabase.json', globalJsonData, { append: true });
+    
+    return globalJsonData 
 }
