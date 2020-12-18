@@ -11,6 +11,10 @@
         - send json from LocalBuffer.json and store received response (cuid) in LocalDatabase.json
 */
 
+var myKeys = [];
+localStorage.setItem('myKeys', myKeys);
+
+
 function newScan(locID, tracerID) {
 //attributes
 this.locID = locID;
@@ -28,16 +32,26 @@ return {
     };
 };
 };
+function appendToStorage(name, data){
+    var old = localStorage.getItem(name);
+    if(old === null) old = "";
+    localStorage.setItem(name, old + data);
+};
 
 function sendData() {
   let scan1 = new newScan("DHBW Mannheim", 21394124); //generate new scan
-  //location.href = `/Tracer/${encodeURIComponent(scan1.data().locID)}/${encodeURIComponent(scan1.data().tracerID)}/${encodeURIComponent(scan1.data().currentTime)}`;
-  location.href = `/Tracer/${JSON.stringify(scan1.data())}`;
-  };
+
+  fetch(`/Tracer/${JSON.stringify(scan1.data())}`).then(
+    results => results.json()
+    ).then(function(data) {
+        myKeys.push(data)
+        console.log(myKeys)
+    })
+    };
 
 
 /* 
-    - Catch the response
+    - Catch the response via get request
     - Store it in the LocalDatabse.json (every client has own list)
     - if storing was successful, delete local buffer (else retry later)
 */
