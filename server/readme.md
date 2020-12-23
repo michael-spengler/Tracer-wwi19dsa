@@ -17,13 +17,12 @@ Dependencies
 
 
 - [x] set locID & timestamp
-- [ ] store locID & timestamp in ./databases/LocalBuffer.json
+- [x] store locID & timestamp in ~~./databases/LocalBuffer.json~~ indexedDB database
 - [x] send locID & timestamp via url (get)
 - [x] generate cuid
 - [x] store locID, cuid & timestamp in ./databases/GlobalDatabase.json
 - [x] return cuid to client
-- [ ] receive and store cuid in ./databases/LocalDatabase.json and clear ./databases/LocalBuffer.json
-
+- [ ] store data in indexedDB database first and clear entry after response from server (offline functionality)
 
 <img src="./ressources/TracerDB_demo.gif" width="750"/>
 
