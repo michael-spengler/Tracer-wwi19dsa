@@ -33,7 +33,7 @@ app.get('/Tracer/:data', function (req, res) {
     const globalJsonData = storeData(jsonData);
     console.log(globalJsonData);
     res.setStatus(201)
-    res.json(globalJsonData.key);
+    res.json({"key": globalJsonData.key, "time": globalJsonData.data.time});
 });
 
 app.post('/user', function (ctx){
@@ -54,7 +54,7 @@ function storeData(data:any){
         data : {
         locID : data.locID,
         tracerID : tracerID,
-        currentTime : data.currentTime
+        time : data.currentTime
     },   key : tracerID};
     const GlobalDatabase:any = readJsonSync("./server/src/databases/GlobalDatabase.json");
     GlobalDatabase.push(globalJsonData)

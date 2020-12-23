@@ -22,3 +22,8 @@ Dependencies
 * ~~return cuid to client~~
 * receive and store cuid in ./databases/LocalDatabase.json and clear ./databases/LocalBuffer.json
 
+
+<img src="./ressources/TracerDB_demo.gif" width="500"/>
+
+
+____

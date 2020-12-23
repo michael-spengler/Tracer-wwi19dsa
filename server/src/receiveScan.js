@@ -40,17 +40,21 @@ function appendToStorage(name, data){
 
 function sendData() {
   let scan1 = new newScan("DHBW Mannheim", 21394124); //generate new scan
+  let db = new Localbase('TracerDB')
 
   fetch(`/Tracer/${JSON.stringify(scan1.data())}`).then(
     results => results.json()
     ).then(function(data) {
         myKeys.push(data)
-        console.log(myKeys)
+        console.log(data)
+        db.collection("TracerID").add({
+            id : data.key,
+            time : data.time
+            }, data.key)
     })
     };
 
-
-/* 
+/* IndexedDB section 
     - Catch the response via get request
     - Store it in the LocalDatabse.json (every client has own list)
     - if storing was successful, delete local buffer (else retry later)
