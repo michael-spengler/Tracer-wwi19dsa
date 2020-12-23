@@ -14,13 +14,15 @@ Dependencies
 1_Log_New_Scan
 ------
 (server-side code is complete, some client-side code is yet to be implemented)
-* ~~set locID & timestamp~~
-* store locID & timestamp in ./databases/LocalBuffer.json
-* ~~send locID & timestamp via url (get)~~
-* ~~generate cuid~~
-* ~~store locID, cuid & timestamp in ./databases/GlobalDatabase.json~~
-* ~~return cuid to client~~
-* receive and store cuid in ./databases/LocalDatabase.json and clear ./databases/LocalBuffer.json
+
+
+- [x] set locID & timestamp
+- [ ] store locID & timestamp in ./databases/LocalBuffer.json
+- [x] send locID & timestamp via url (get)
+- [x] generate cuid
+- [x] store locID, cuid & timestamp in ./databases/GlobalDatabase.json
+- [x] return cuid to client
+- [ ] receive and store cuid in ./databases/LocalDatabase.json and clear ./databases/LocalBuffer.json
 
 
 <img src="./ressources/TracerDB_demo.gif" width="750"/>
