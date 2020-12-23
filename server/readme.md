@@ -23,7 +23,7 @@ Dependencies
 * receive and store cuid in ./databases/LocalDatabase.json and clear ./databases/LocalBuffer.json
 
 
-<img src="./ressources/TracerDB_demo.gif" width="500"/>
+<img src="./ressources/TracerDB_demo.gif" width="750"/>
 
 
 ____
