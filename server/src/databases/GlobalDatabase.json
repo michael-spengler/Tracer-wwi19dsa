@@ -1526,5 +1526,302 @@
       "time": "18:24:53"
     },
     "key": "ckj1otdgp000jcd9so18la20c"
+  },
+  {
+    "data": {
+      "locID": "DHBW Mannheim",
+      "tracerID": "ckj1r2emn0000c59srn4lbl4h",
+      "time": "19:27:54"
+    },
+    "key": "ckj1r2emn0000c59srn4lbl4h"
+  },
+  {
+    "data": {
+      "locID": "DHBW Mannheim",
+      "tracerID": "ckj1r2rwo0001c59slswbyrc4",
+      "time": "19:28:11"
+    },
+    "key": "ckj1r2rwo0001c59slswbyrc4"
+  },
+  {
+    "data": {
+      "locID": "DHBW Mannheim",
+      "tracerID": "ckj1r2xql0002c59slgfjsw5f",
+      "time": "19:28:19"
+    },
+    "key": "ckj1r2xql0002c59slgfjsw5f"
+  },
+  {
+    "data": {
+      "locID": "DHBW Mannheim",
+      "tracerID": "ckj1r2ywl0003c59s1mwjr3j3",
+      "time": "19:28:20"
+    },
+    "key": "ckj1r2ywl0003c59s1mwjr3j3"
+  },
+  {
+    "data": {
+      "locID": "DHBW Mannheim",
+      "tracerID": "ckj1r2zfl0004c59sns5u6ld6",
+      "time": "19:28:21"
+    },
+    "key": "ckj1r2zfl0004c59sns5u6ld6"
+  },
+  {
+    "data": {
+      "locID": "DHBW Mannheim",
+      "tracerID": "ckj1rdozn0005c59szx1qfqht",
+      "time": "19:36:41"
+    },
+    "key": "ckj1rdozn0005c59szx1qfqht"
+  },
+  {
+    "data": {
+      "locID": "DHBW Mannheim",
+      "tracerID": "ckj1rebu20006c59sxtutxnex",
+      "time": "19:37:10"
+    },
+    "key": "ckj1rebu20006c59sxtutxnex"
+  },
+  {
+    "data": {
+      "locID": "DHBW Mannheim",
+      "tracerID": "ckj1rpiim0007c59sdnkxmtkn",
+      "time": "19:45:52"
+    },
+    "key": "ckj1rpiim0007c59sdnkxmtkn"
+  },
+  {
+    "data": {
+      "locID": "DHBW Mannheim",
+      "tracerID": "ckj1rpkpd0008c59scx16vw6s",
+      "time": "19:45:55"
+    },
+    "key": "ckj1rpkpd0008c59scx16vw6s"
+  },
+  {
+    "data": {
+      "locID": "DHBW Mannheim",
+      "tracerID": "ckj1rpktu0009c59sgj9hrtso",
+      "time": "19:45:55"
+    },
+    "key": "ckj1rpktu0009c59sgj9hrtso"
+  },
+  {
+    "data": {
+      "locID": "DHBW Mannheim",
+      "tracerID": "ckj1rzv97000ac59sll5kyftp",
+      "time": "19:53:55"
+    },
+    "key": "ckj1rzv97000ac59sll5kyftp"
+  },
+  {
+    "data": {
+      "locID": "DHBW Mannheim",
+      "tracerID": "ckj1t4zm1000bc59sic71ujue"
+    },
+    "key": "ckj1t4zm1000bc59sic71ujue"
+  },
+  {
+    "data": {
+      "locID": "DHBW Mannheim",
+      "tracerID": "ckj1t4zm4000cc59s9twluopb"
+    },
+    "key": "ckj1t4zm4000cc59s9twluopb"
+  },
+  {
+    "data": {
+      "locID": "DHBW Mannheim",
+      "tracerID": "ckj1t4zm7000dc59shhx982s1"
+    },
+    "key": "ckj1t4zm7000dc59shhx982s1"
+  },
+  {
+    "data": {
+      "locID": "DHBW-Mannheim",
+      "tracerID": "ckj1t4zm9000ec59sq4p1wq6b"
+    },
+    "key": "ckj1t4zm9000ec59sq4p1wq6b"
+  },
+  {
+    "data": {
+      "locID": "Mannheim HBF",
+      "tracerID": "ckj1t4zmb000fc59si0b2r8uj"
+    },
+    "key": "ckj1t4zmb000fc59si0b2r8uj"
+  },
+  {
+    "data": {
+      "locID": "Tante Emma Laden",
+      "tracerID": "ckj1t4zmf000gc59s8wkqn0zq"
+    },
+    "key": "ckj1t4zmf000gc59s8wkqn0zq"
+  },
+  {
+    "data": {
+      "locID": "DHBW Mannheim",
+      "tracerID": "ckj1t4zmh000hc59s9aygdwlz"
+    },
+    "key": "ckj1t4zmh000hc59s9aygdwlz"
+  },
+  {
+    "data": {
+      "locID": "Berlin",
+      "tracerID": "ckj1tr5vg000ic59shyyplk61",
+      "time": "20:43:08"
+    },
+    "key": "ckj1tr5vg000ic59shyyplk61"
+  },
+  {
+    "data": {
+      "locID": "Brussels",
+      "tracerID": "ckj1tr5vk000jc59stci2hhcr",
+      "time": "20:41:13"
+    },
+    "key": "ckj1tr5vk000jc59stci2hhcr"
+  },
+  {
+    "data": {
+      "locID": "Munich",
+      "tracerID": "ckj1tr5vm000kc59syffo2edv",
+      "time": "20:42:21"
+    },
+    "key": "ckj1tr5vm000kc59syffo2edv"
+  },
+  {
+    "data": {
+      "locID": "Mannheim",
+      "tracerID": "ckj1tsgb8000lc59sjxn3dyen",
+      "time": "20:44:08"
+    },
+    "key": "ckj1tsgb8000lc59sjxn3dyen"
+  },
+  {
+    "data": {
+      "locID": "Mannheim",
+      "tracerID": "ckj1tsunh000mc59sqnr7jsgx",
+      "time": "20:44:27"
+    },
+    "key": "ckj1tsunh000mc59sqnr7jsgx"
+  },
+  {
+    "data": {
+      "locID": "Grimminger",
+      "tracerID": "ckj1tuczy000nc59sbw7m3qr7",
+      "time": "20:45:37"
+    },
+    "key": "ckj1tuczy000nc59sbw7m3qr7"
+  },
+  {
+    "data": {
+      "locID": "Backwerk",
+      "tracerID": "ckj1tvsqo000oc59szd8chnm8",
+      "time": "20:46:44"
+    },
+    "key": "ckj1tvsqo000oc59szd8chnm8"
+  },
+  {
+    "data": {
+      "locID": "Starbucks",
+      "tracerID": "ckj1tydb0000pc59smc4qcm0z",
+      "time": "20:48:44"
+    },
+    "key": "ckj1tydb0000pc59smc4qcm0z"
+  },
+  {
+    "data": {
+      "locID": "Mcfit",
+      "tracerID": "ckj1tzarb000qc59sa44zmn7m",
+      "time": "20:49:28"
+    },
+    "key": "ckj1tzarb000qc59sa44zmn7m"
+  },
+  {
+    "data": {
+      "locID": "John Reed",
+      "tracerID": "ckj1u5a5q000rc59s05f41frb",
+      "time": "20:49:45"
+    },
+    "key": "ckj1u5a5q000rc59s05f41frb"
+  },
+  {
+    "data": {
+      "locID": "Meydan",
+      "tracerID": "ckj1u5a5u000sc59srk9bozj6",
+      "time": "20:50:09"
+    },
+    "key": "ckj1u5a5u000sc59srk9bozj6"
+  },
+  {
+    "data": {
+      "locID": "Rossmann",
+      "tracerID": "ckj1u5a5v000tc59szsn7k8ug",
+      "time": "20:50:19"
+    },
+    "key": "ckj1u5a5v000tc59szsn7k8ug"
+  },
+  {
+    "data": {
+      "locID": "Cologne",
+      "tracerID": "ckj1ufhyw000uc59sxeybdh8j",
+      "time": "21:00:44"
+    },
+    "key": "ckj1ufhyw000uc59sxeybdh8j"
+  },
+  {
+    "data": {
+      "locID": "Eindhoven",
+      "tracerID": "ckj1ufhyy000vc59szwqnw85k",
+      "time": "21:01:11"
+    },
+    "key": "ckj1ufhyy000vc59szwqnw85k"
+  },
+  {
+    "data": {
+      "locID": "Istanbul",
+      "tracerID": "ckj1ufhz1000wc59sz1xcz8oo",
+      "time": "21:00:49"
+    },
+    "key": "ckj1ufhz1000wc59sz1xcz8oo"
+  },
+  {
+    "data": {
+      "locID": "New York",
+      "tracerID": "ckj1ufhz6000xc59swjizklcz",
+      "time": "20:59:25"
+    },
+    "key": "ckj1ufhz6000xc59swjizklcz"
+  },
+  {
+    "data": {
+      "locID": "Marseille",
+      "tracerID": "ckj1ufhz8000yc59sxi20q69q",
+      "time": "21:00:30"
+    },
+    "key": "ckj1ufhz8000yc59sxi20q69q"
+  },
+  {
+    "data": {
+      "locID": "Paris",
+      "tracerID": "ckj1ufhz9000zc59s70943frz",
+      "time": "21:01:07"
+    },
+    "key": "ckj1ufhz9000zc59s70943frz"
+  },
+  {
+    "data": {
+      "locID": "Shenzhen",
+      "tracerID": "ckj1ufhzc0010c59sx9wymh1p",
+      "time": "21:00:58"
+    },
+    "key": "ckj1ufhzc0010c59sx9wymh1p"
+  },
+  {
+    "data": {
+      "locID": "Zurich",
+      "tracerID": "ckj1ufhzd0011c59stm7carjv",
+      "time": "21:01:05"
+    },
+    "key": "ckj1ufhzd0011c59stm7carjv"
   }
 ]

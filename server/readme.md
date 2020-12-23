@@ -17,12 +17,12 @@ Dependencies
 
 
 - [x] set locID & timestamp
-- [x] store locID & timestamp in ~~./databases/LocalBuffer.json~~ indexedDB database
+- [x] store locID & timestamp in ~~./databases/LocalBuffer.json~~ [indexedDB](https://github.com/dannyconnell/localbase#set-a-collection-overwrite-including-keys) database
 - [x] send locID & timestamp via url (get)
 - [x] generate cuid
 - [x] store locID, cuid & timestamp in ./databases/GlobalDatabase.json
 - [x] return cuid to client
-- [ ] store data in indexedDB database first and clear entry after response from server (offline functionality)
+- [x] store data in indexedDB database first and clear entry after response from server (offline functionality)
 
 <img src="./ressources/TracerDB_demo.gif" width="750"/>
 
