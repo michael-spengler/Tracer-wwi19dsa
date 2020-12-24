@@ -3,11 +3,12 @@
 let db = new Localbase("TracerDB"); //creates local Database
 
 //newScan creates a new scan instance with given locID(from QR-Code; @Frontend)
+
 function newScan(locID) {
   //attributes
   this.locID = locID;
-  this.currentTime = new Date();
-  this.currentTime = this.currentTime.toLocaleTimeString();
+  this.currentTime = new Date().toISOString().slice(0, 19).replace('T', ' ');
+  //this.currentTime = this.currentTime.toLocaleTimeString();
 
   //functions
   this.success = function () {
