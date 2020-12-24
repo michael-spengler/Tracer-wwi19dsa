@@ -10,14 +10,14 @@ Dependencies
 1. Opine
 2. Jsonfile
 3. cuid
+4. [Localbase](https://github.com/dannyconnell/localbase)
+5. Jquery
 
 1_Log_New_Scan
 ------
-(server-side code is complete, some client-side code is yet to be implemented)
-
 
 - [x] set locID & timestamp
-- [x] store locID & timestamp in ~~./databases/LocalBuffer.json~~ [indexedDB](https://github.com/dannyconnell/localbase#set-a-collection-overwrite-including-keys) database
+- [x] store locID & timestamp in ~~./databases/LocalBuffer.json~~ [indexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) database
 - [x] send locID & timestamp via url (get)
 - [x] generate cuid
 - [x] store locID, cuid & timestamp in ./databases/GlobalDatabase.json
