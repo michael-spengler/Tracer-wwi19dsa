@@ -24,7 +24,6 @@
 - [Technik](#Technik)
   - [Frontend](#Frontend)
   - [Backend](#Backend)
-  ![Flowchart](https://raw.githubusercontent.com/BennerLukas/Tracer/main/server/ressources/flowcharts/1_Log_New_Scan.png)
   - [Datenbank](#Datenbank)
 
 <br>
@@ -40,5 +39,5 @@
 ## Frontend
 
 ## Backend
-
+![Flowchart](https://raw.githubusercontent.com/BennerLukas/Tracer/main/server/ressources/flowcharts/1_Log_New_Scan.png)
 ## Datenbank
