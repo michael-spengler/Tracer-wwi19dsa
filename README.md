@@ -1,4 +1,4 @@
-![Logo](business\data\Icon\Tracer_icon_vertical.svg)
+![Logo](https://github.com/BennerLukas/Tracer/tree/main/business/data/Icon/Tracer_icon_vertical.svg)
 
 
 # Dokumentation des Projektes "Tracer"
@@ -17,14 +17,14 @@
 - [Lukas Benner](https://github.com/BennerLukas)
 
 ## Inhaltsverzeichnis
+
 - [Einführung](#Einführung)
 - [Idee](#Idee)
 - [Business](#Business)
 - [Technik](#Technik)
-    - [Frontend](#Frontend)
-    - [Backend](#Backend)
-    - [Datenbank](#Datenbank)
-
+  - [Frontend](#Frontend)
+  - [Backend](#Backend)
+  - [Datenbank](#Datenbank)
 
 <br>
 
