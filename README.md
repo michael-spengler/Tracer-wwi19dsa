@@ -1,4 +1,4 @@
-![Logo](https://github.com/BennerLukas/Tracer/tree/main/business/data/Icon/Tracer_icon_vertical.svg)
+![Logo](https://raw.githubusercontent.com/BennerLukas/Tracer/5c2a9aca34dce7fbeb0db8acc52927b57f071b0d/business/data/Icon/Tracer_icon_vertical.svg)
 
 
 # Dokumentation des Projektes "Tracer"
