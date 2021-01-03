@@ -1,29 +1,43 @@
-# [WORK IN PROGRESS]
-(english version below)
+![Logo](business\data\Icon\Tracer_icon_vertical.svg)
 
 
-## Tracer - Private Virus Tracing :de:
+# Dokumentation des Projektes "Tracer"
 
-- für Restaurants, Bars, Kinos und Supermärkte o.ä.
-- mithilfe von QR-Code oder NFC-Chip
-- Privat / Datenschutz → nur mithilfe von nicht identifizierbaren eindeutigen Hash-Werten
+## Überblick
+- 
+- 
+- 
 
-### Funktionsweise:
-Kunde betritt Supermarkt → scannt QR-Code → einzigartiger zufälliger Wert wird erzeugt → wird zusammen mit Zeit und Ort an Server (DB) übermittelt → Kunde kauft normal ein.
-1. Fall kein Corona nach 14 Tagen → Daten werden gelöscht
-2. Fall es gibt Corona → einzigartiger zufälliger Wert wird veröffentlicht → App prüft (täglich, stündlich, ...) ob ein von ihm erstellter Wert veröffentlicht wurde. 
+## Gruppenmitglieder
+- [Marie Krieger](https://github.com/mk101101)
+- [Ayman Madhour](https://github.com/Madhour)
+- [Lukas Bach](https://github.com/lukasbach00)
+- [Jorgo Paschaloglou](https://github.com/JorgoPascha)
+- [Nico Heller](https://github.com/Pr0lin-cyber)
+- [Lukas Benner](https://github.com/BennerLukas)
+
+## Inhaltsverzeichnis
+- [Einführung](#Einführung)
+- [Idee](#Idee)
+- [Business](#Business)
+- [Technik](#Technik)
+    - [Frontend](#Frontend)
+    - [Backend](#Backend)
+    - [Datenbank](#Datenbank)
 
 
-___
+<br>
 
+# Einführung
 
-## Tracer - Private Virus Tracing :uk:
+# Idee
 
-- for restaurants, bars, cinemas, supermarkets or the like
-- track visits with QR-codes or NFC-chips
-- privacy/ data protection ensured by non-identifiable unique hash-values
+# Business
 
-### Function:
-Customer visits supermarket → scans QR-code → a unique hash-value (uid) is generated → uid is stored along with time and place on server/DB → customer proceeds as usual. 
-1. No Covid cases after 14 days → Data is deleted
-2. A Covid case is reported → unique hash-values (uid) are published → App periodically (e.g. hourly, daily, etc.) checks if published uids match with the generated uids in the app
+# Technik
+
+## Frontend
+
+## Backend
+
+## Datenbank
