@@ -2,7 +2,11 @@
     <head>
 
         <title>TracerSandbox</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/localbase/dist/localbase.min.js"></script>
         <script type="text/javascript" src="./receiveScan.js"></script>
+
+
         <link rel="icon" href="data:;base64,iVBORwOKGO=" />
 
     </head>
@@ -11,8 +15,13 @@
         
         <h2>Send QR-Code Scan</h2>
         <div id="TracerTest">
-            <button onclick='sendData()'>Send Data</button>
+            <input value="locID" id="locID">
+            <button onclick='storeScan(document.getElementById("locID").value)'>Send Data</button>
+            <button onclick='clearBuffer()'>clearBuffer</button>
         </div>
 
     </body>
+    <script>
+        //let db = new Localbase('TracerDB')
+    </script>
 </html>

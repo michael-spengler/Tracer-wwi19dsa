@@ -1,57 +1,79 @@
 /*------------------Client-Side------------------*/
-/* Input: 
-    - get and set Loc_ID from QR-Code
-    - get and set timestamp of current time
+
+let db = new Localbase("TracerDB"); //creates local Database
+
+//newScan creates a new scan instance with given locID(from QR-Code; @Frontend)
+
+function newScan(locID) {
+  //attributes
+  this.locID = locID;
+  this.currentTime = new Date().toISOString().slice(0, 19).replace('T', ' ');
+  //this.currentTime = this.currentTime.toLocaleTimeString();
+
+  //functions
+  this.success = function () {
+    console.log("User visited " + this.locID + " at " + this.currentTime + ".");
+  };
+  this.data = function () {
+    return {
+      locID: this.locID,
+      currentTime: this.currentTime,
+    };
+  };
+}
+
+function storeScan(locID){
+    let scan = new newScan(locID);
     
-    -send JSON File
-    -If no response (e.g. because of no internet connection):
-        - save json to /databases/LocalBuffer.json
-        - 
-    -Else:
-        - send json from LocalBuffer.json and store received response (cuid) in LocalDatabase.json
-*/
+    db.collection("Buffer").add(
+        {
+          locID: scan.data().locID,
+          currentTime: scan.data().currentTime,
+        }, scan.data().locID)
+        .then(response => {
+            clearBuffer()
+          })
+        .catch(error => {
+        console.log('There was an error.')
+        })
+}
 
-var myKeys = [];
-localStorage.setItem('myKeys', myKeys);
+function clearBuffer() {
+            console.log("Send to server...")
+            db.collection('Buffer').get().then(buffer => {
+                if (buffer.length == 0) {
+                    console.log("Up to date.")
+                } else {
+                    $.each(buffer, function(i,val){
+                        sendData(val, val.locID)
+                        console.log("sending: ",val)
+                    })
+                }   
+              })
+}
 
-
-function newScan(locID, tracerID) {
-//attributes
-this.locID = locID;
-this.currentTime = new Date();
-this.currentTime = this.currentTime.toLocaleTimeString();
-
-//functions
-this.success = function() {
-console.log('User visited ' + this.locID + ' at ' + this.currentTime + '.');
-};
-this.data = function() {
-return {
-    locID : this.locID,
-    currentTime : this.currentTime,
-    };
-};
-};
-function appendToStorage(name, data){
-    var old = localStorage.getItem(name);
-    if(old === null) old = "";
-    localStorage.setItem(name, old + data);
-};
-
-function sendData() {
-  let scan1 = new newScan("DHBW Mannheim", 21394124); //generate new scan
-
-  fetch(`/Tracer/${JSON.stringify(scan1.data())}`).then(
-    results => results.json()
-    ).then(function(data) {
-        myKeys.push(data)
-        console.log(myKeys)
-    })
-    };
-
-
-/* 
-    - Catch the response via get request
-    - Store it in the LocalDatabse.json (every client has own list)
-    - if storing was successful, delete local buffer (else retry later)
-*/
+function sendData(scanData, key) {
+    
+    fetch(`/Tracer/${JSON.stringify(scanData)}`).then((response) => {
+        if (response.ok) {
+          console.log("Data was successfully added to server.")
+          db.collection("Buffer").doc(key).delete()
+          return response.json();
+        } else {
+          throw new Error('Something went wrong, try again later.');
+        }
+      })
+      .then((data) => {
+        db.collection("TracerID")
+          .add(
+            {
+              id: data.key,
+              time: data.time,
+            },
+            data.key
+          );
+      })
+      .catch((error) => {
+        console.log(error)
+      });
+}
