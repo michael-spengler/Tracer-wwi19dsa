@@ -1,4 +1,4 @@
-![Logo](https://raw.githubusercontent.com/BennerLukas/Tracer/5c2a9aca34dce7fbeb0db8acc52927b57f071b0d/business/data/Icon/Tracer_icon_vertical.svg)
+![Logo](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/business/data/Icon/Tracer_icon_vertical.png?raw=true)
 
 # Dokumentation des Projektes "Tracer"
 
