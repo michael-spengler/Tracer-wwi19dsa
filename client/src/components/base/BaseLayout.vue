@@ -14,6 +14,9 @@
       </ion-toolbar>
     </ion-header>
     <ion-content>
+      <ion-button expand="block">Tracer Code Scannen</ion-button>
+      <ion-button expand="block">Fall Melden</ion-button>
+      <ion-button expand="block">Tracer Event erstellen</ion-button>
       <slot />
     </ion-content>
   </ion-page>
