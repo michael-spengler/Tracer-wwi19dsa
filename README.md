@@ -67,6 +67,7 @@ Für das Frontend wird [Vue.js](https://vuejs.org/) verwendet.
 ## Frontend
 
 ## Backend
+Für das Backend wird [Deno](https://deno.land/) verwendet.
 Im Folgenden werden die einzelnen Prozesse des Backends aufgeführt und erläutert. Diese sind elementar um die Anonymität der Nutzer zu gewährleisten.
 
 ### Hinzufügen eines neuen Eintrags
