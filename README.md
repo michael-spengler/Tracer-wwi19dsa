@@ -2,14 +2,14 @@
 
 # Dokumentation des Projektes "Tracer"
 
-## Überblick
-<p align="center">
+<!-- ## Überblick -->
+<!-- <p align="center">
  <img src="https://raw.githubusercontent.com/8bithemant/8bithemant/master/svg/dev/languages/html.svg" alt="Twitter" style="vertical-align:top; margin:4px">
  <img src="https://raw.githubusercontent.com/8bithemant/8bithemant/master/svg/dev/languages/js.svg" alt="Twitter" style="vertical-align:top; margin:4px">
  <img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png">
  <img src="https://raw.githubusercontent.com/8bithemant/8bithemant/master/svg/dev/services/npm.svg" alt="Twitter" style="vertical-align:top; margin:4px">
  <img src="https://raw.githubusercontent.com/8bithemant/8bithemant/master/svg/dev/tools/visualstudio_code.svg" alt="Twitter" style="vertical-align:top; margin:4px">
-</p>
+</p> -->
 
 ## Gruppenmitglieder
 - [Marie Krieger](https://github.com/mk101101)
@@ -67,6 +67,7 @@ Für das Frontend wird [Vue.js](https://vuejs.org/) verwendet.
 ## Frontend
 
 ## Backend
+Für das Backend wird [Deno](https://deno.land/) verwendet.
 Im Folgenden werden die einzelnen Prozesse des Backends aufgeführt und erläutert. Diese sind elementar um die Anonymität der Nutzer zu gewährleisten.
 
 ### Hinzufügen eines neuen Eintrags
