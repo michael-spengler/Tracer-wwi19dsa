@@ -1,6 +1,6 @@
 {
-  "appId": "com.academind.vuememories",
-  "appName": "Vue Memories",
+  "appId": "io.ionic.starter",
+  "appName": "tracer",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "dist",
