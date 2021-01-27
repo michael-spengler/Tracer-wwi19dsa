@@ -1935,5 +1935,221 @@
       "time": "2020-12-24 22:24:12"
     },
     "key": "ckj3ey59u000554nh0qnkyi9s"
+  },
+  {
+    "data": {
+      "locID": "Aldi Mannheim",
+      "tracerID": "ckj7i2sqc00002c9so4d1dj4m",
+      "time": "2020-12-27 19:02:53"
+    },
+    "key": "ckj7i2sqc00002c9so4d1dj4m"
+  },
+  {
+    "data": {
+      "locID": "Aldi Mannheim",
+      "tracerID": "ckj7iatw200012c9swlbf4hjq",
+      "time": "2020-12-27 19:09:07"
+    },
+    "key": "ckj7iatw200012c9swlbf4hjq"
+  },
+  {
+    "data": {
+      "locID": "Aldi Mannheim",
+      "tracerID": "ckj7ibh6h00022c9s1b93o64m",
+      "time": "2020-12-27 19:09:38"
+    },
+    "key": "ckj7ibh6h00022c9s1b93o64m"
+  },
+  {
+    "data": {
+      "locID": "Nobu Frankfurt",
+      "tracerID": "ckj8mz6tx00001knhdkl4b1in",
+      "time": "2020-12-28 14:07:49"
+    },
+    "key": "ckj8mz6tx00001knhdkl4b1in"
+  },
+  {
+    "data": {
+      "locID": "Aldi Mannheim",
+      "tracerID": "ckj8xxbqt0000lnnhpwwb80bx",
+      "time": "2020-12-28 19:14:17"
+    },
+    "key": "ckj8xxbqt0000lnnhpwwb80bx"
+  },
+  {
+    "data": {
+      "locID": "Aldi Mannheim",
+      "tracerID": "ckj8xxdr50001lnnhvmyruaxz",
+      "time": "2020-12-28 19:14:20"
+    },
+    "key": "ckj8xxdr50001lnnhvmyruaxz"
+  },
+  {
+    "data": {
+      "locID": "Aldi Mannheim",
+      "tracerID": "ckj8xxerz0002lnnhgp773erl",
+      "time": "2020-12-28 19:14:21"
+    },
+    "key": "ckj8xxerz0002lnnhgp773erl"
+  },
+  {
+    "data": {
+      "locID": "Mannheim HBF",
+      "tracerID": "ckj8y5ans00000cnhjbe8vzup",
+      "time": "2020-12-28 19:20:29"
+    },
+    "key": "ckj8y5ans00000cnhjbe8vzup"
+  },
+  {
+    "data": {
+      "locID": "Mannheim HBF",
+      "tracerID": "ckj8y8guo000037nhq09stucw",
+      "time": "2020-12-28 19:22:57"
+    },
+    "key": "ckj8y8guo000037nhq09stucw"
+  },
+  {
+    "data": {
+      "locID": "Mannheim HBF",
+      "tracerID": "ckj8yf2p000007unhd5h1n7t9",
+      "time": "2020-12-28 19:28:05"
+    },
+    "key": "ckj8yf2p000007unhd5h1n7t9"
+  },
+  {
+    "data": {
+      "locID": "Mannheim HBF",
+      "tracerID": "ckj8ykjab0000annhxf4chy34",
+      "time": "2020-12-28 19:32:20"
+    },
+    "key": "ckj8ykjab0000annhxf4chy34"
+  },
+  {
+    "data": {
+      "locID": "Mannheim HBF",
+      "tracerID": "ckj8yl5z60001annh1m9i5obg",
+      "time": "2020-12-28 19:32:50"
+    },
+    "key": "ckj8yl5z60001annh1m9i5obg"
+  },
+  {
+    "data": {
+      "locID": "Mannheim HBF",
+      "tracerID": "ckj8yl7eh0002annh2zvn8x8d",
+      "time": "2020-12-28 19:32:52"
+    },
+    "key": "ckj8yl7eh0002annh2zvn8x8d"
+  },
+  {
+    "data": {
+      "locID": "Mannheim Yormas",
+      "tracerID": "ckj8ylccm0003annh9643kkkt",
+      "time": "2020-12-28 19:32:58"
+    },
+    "key": "ckj8ylccm0003annh9643kkkt"
+  },
+  {
+    "data": {
+      "locID": "Mannheim Rossmann",
+      "tracerID": "ckj8ylhkg0004annhckp3pdp6",
+      "time": "2020-12-28 19:33:05"
+    },
+    "key": "ckj8ylhkg0004annhckp3pdp6"
+  },
+  {
+    "data": {
+      "locID": "Mannheim HBF",
+      "tracerID": "ckj8yoi190005annh3j8vaavu",
+      "time": "2020-12-28 19:35:25"
+    },
+    "key": "ckj8yoi190005annh3j8vaavu"
+  },
+  {
+    "data": {
+      "locID": "Mannheim HBF",
+      "tracerID": "ckj8yoj2d0006annheyioupj3",
+      "time": "2020-12-28 19:35:27"
+    },
+    "key": "ckj8yoj2d0006annheyioupj3"
+  },
+  {
+    "data": {
+      "locID": "Mannheim Lenoks Burger",
+      "tracerID": "ckj8yp3710007annhzv8salpr",
+      "time": "2020-12-28 19:35:53"
+    },
+    "key": "ckj8yp3710007annhzv8salpr"
+  },
+  {
+    "data": {
+      "locID": "Mannheim Lenoks Burger",
+      "tracerID": "ckj8yqpap0008annh1vxa5csr",
+      "time": "2020-12-28 19:37:08"
+    },
+    "key": "ckj8yqpap0008annh1vxa5csr"
+  },
+  {
+    "data": {
+      "locID": "Kaiserslautern",
+      "tracerID": "ckjr91qzx0000v4nhllvxg0ox",
+      "time": "2021-01-10 14:45:31"
+    },
+    "key": "ckjr91qzx0000v4nhllvxg0ox"
+  },
+  {
+    "data": {
+      "locID": "Kaiserslautern",
+      "tracerID": "ckjr920pc0001v4nhklvq23he",
+      "time": "2021-01-10 14:45:43"
+    },
+    "key": "ckjr920pc0001v4nhklvq23he"
+  },
+  {
+    "data": {
+      "locID": "Kaiserslautern",
+      "tracerID": "ckjr9213i0002v4nhcyy29ko9",
+      "time": "2021-01-10 14:45:44"
+    },
+    "key": "ckjr9213i0002v4nhcyy29ko9"
+  },
+  {
+    "data": {
+      "locID": "Kaiserslautern",
+      "tracerID": "ckjr9219s0003v4nhrpbopu3c",
+      "time": "2021-01-10 14:45:44"
+    },
+    "key": "ckjr9219s0003v4nhrpbopu3c"
+  },
+  {
+    "data": {
+      "locID": "Guldental",
+      "tracerID": "ckjr94xjm0004v4nh0o0xbm7s",
+      "time": "2021-01-10 14:47:59"
+    },
+    "key": "ckjr94xjm0004v4nh0o0xbm7s"
+  },
+  {
+    "data": {
+      "locID": "Guldental2",
+      "tracerID": "ckjr9a6s30005v4nhbnjrrphe",
+      "time": "2021-01-10 14:52:04"
+    },
+    "key": "ckjr9a6s30005v4nhbnjrrphe"
+  },
+  {
+    "data": {
+      "locID": "Guldental3",
+      "tracerID": "ckjr9bm5l00005rnhwklm4m7e",
+      "time": "2021-01-10 14:52:56"
+    },
+    "key": "ckjr9bm5l00005rnhwklm4m7e"
+  },
+  {
+    "data": {
+      "locID": "Frankfurt am Main",
+      "tracerID": "ckjx45nba00004wvzin0glt2i",
+      "time": "2021-01-14 17:15:12"
+    },
+    "key": "ckjx45nba00004wvzin0glt2i"
   }
 ]

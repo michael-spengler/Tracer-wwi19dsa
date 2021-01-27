@@ -8,6 +8,9 @@ function newScan(locID) {
   //attributes
   this.locID = locID;
   this.currentTime = new Date().toISOString().slice(0, 19).replace('T', ' ');
+  this.status = false;
+  this.risk = 0;
+  //this.avgTime = 1 min;
   //this.currentTime = this.currentTime.toLocaleTimeString();
 
   //functions
@@ -18,6 +21,8 @@ function newScan(locID) {
     return {
       locID: this.locID,
       currentTime: this.currentTime,
+      risk: this.risk,
+      status: this.status
     };
   };
 }
@@ -29,6 +34,8 @@ function storeScan(locID){
         {
           locID: scan.data().locID,
           currentTime: scan.data().currentTime,
+          status: scan.data().status,
+          risk: scan.data().risk
         }, scan.data().locID)
         .then(response => {
             clearBuffer()
@@ -76,4 +83,24 @@ function sendData(scanData, key) {
       .catch((error) => {
         console.log(error)
       });
+}
+
+function reportCase(){
+    console.log("Reporting Case... ")
+    var idList = [];
+    db.collection('TracerID').get().then(TracerID => {
+        $.each(TracerID, function(i, val){
+          idList.push(val.id)
+        })
+        return idList
+      }).then(idList =>
+        fetch(`/Report/${JSON.stringify({"id":idList})}`).then((response) => {
+          if (response.ok) {
+            console.log("Case was successfully reported.")
+            return response.json();
+          } else {
+            throw new Error('Something went wrong, try again later.');
+          }
+        })
+      )
 }
