@@ -2,17 +2,17 @@
   <ion-page>
     <ion-tabs>
       <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="tab1" href="/tabs/tab1">
+        <ion-tab-button tab="Homescreen" href="/tabs/tab1">
           <ion-icon :icon="triangle" />
           <ion-label>Homescreen</ion-label>
         </ion-tab-button>
           
-        <ion-tab-button tab="tab2" href="/tabs/tab2">
+        <ion-tab-button tab="scan" href="/tabs/tab2">
           <ion-icon :icon="ellipse" />
           <ion-label>Scan</ion-label>
         </ion-tab-button>
         
-        <ion-tab-button tab="tab3" href="/tabs/tab3">
+        <ion-tab-button tab="Settings" href="/tabs/tab3">
           <ion-icon :icon="square" />
           <ion-label>Settings</ion-label>
         </ion-tab-button>
