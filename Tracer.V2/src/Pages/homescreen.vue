@@ -1,12 +1,13 @@
 <template>
-<div>
-
-</div>
+  <div>
+  <button>hallo</button>
+  </div>
 </template>
 
 <script>
 export default {
-name: "homescreen"
+name: "homescreen",
+
 }
 </script>
 

@@ -1,12 +1,11 @@
 <template>
-  <div>
-    hallo
-  </div>
+<button class="buttonstyle1"></button>
+
 </template>
 
 <script>
 export default {
-name: "create_event"
+  name: "button_basicstyle"
 }
 </script>
 
