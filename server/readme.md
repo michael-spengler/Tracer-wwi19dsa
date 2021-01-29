@@ -28,5 +28,24 @@ Dependencies
 
 <img src="./ressources/TracerDB_demo.gif" width="750"/>
 
+Report Case 
+------
+1. Button to report (no verification) 
+2. Send list of IDs (From local DB) to backend
+3. [WIP] In Backend, set status = positive for all IDs
+4. Set a status variable in client side to true
+    - Instead of status variable, maybe just key in object?
+    - Create a timeOfStatus variable with the timestamp of the date of test -> continuously test if it is younger than 14 days
+5. As long as variable is true, write status = positive in new scans
+    - Check after each visit if variable is < (today - 14 days)
+    - If no: Alert(you shouldn‘t go outside!)
+6. Delete old entries from localbase in client
 
-____
+Risk status
+1. After setting status = positive, set for all visits within timerange +- 2 in the same location the risk to 1
+
+Check risk
+1. Pass all IDs from localDB
+2. Select user.risk where user.id = [ID1, ..., IDn]
+3. 0 = low risk, else 1 (n) possible encounter.
+
