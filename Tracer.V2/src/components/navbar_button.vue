@@ -1,12 +1,14 @@
 <template>
-<button class="buttonbasic" v-on:click="onclick">
-  <slot></slot>
-</button>
+  <div>
+  <button class="navbar" v-on:click="onclick">
+    <slot></slot>
+  </button>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "button_basicstyle",
+name: "navbar_button",
   props: {
     onclick: {
       type: Function,
@@ -17,13 +19,14 @@ export default {
 </script>
 
 <style scoped>
-.buttonbasic{
-  background: #2c3e50;
+.navbar{
+  background: #99d7f0;
   border: none;
-  color: white;
-  cursor: pointer;
-  padding: 10px 50px;
+  color: gray;
+  padding:15px;
   transition: background .2s ease-in-out;
-  margin: 25px 100px;
+  margin: 10px 100px;
+  float: bottom;
+
 }
 </style>

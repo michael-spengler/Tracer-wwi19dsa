@@ -1,14 +1,16 @@
 <template>
   <div>
-  <button_basicstyle>Hallo</button_basicstyle>
+  <navigation_bar></navigation_bar>
   </div>
 </template>
 
 <script>
-import button_basicstyle from "@/components/button_basicstyle";
+
+import navigation_bar from "@/components/navigation_bar";
+
 export default {
 name: "homescreen",
-  components: {button_basicstyle},
+  components: {navigation_bar},
 }
 </script>
 

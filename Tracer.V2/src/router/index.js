@@ -15,7 +15,7 @@ const routes = [
     component: homescreen,
   },
   {
-    path: '/Settings',
+    path: '/settings',
     component: settings
   },
   {
