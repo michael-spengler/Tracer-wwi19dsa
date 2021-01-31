@@ -22,11 +22,12 @@ name: "navbar_button",
 .navbar{
   background: #99d7f0;
   border: none;
-  color: gray;
+  color: #676767;
   padding:15px;
   transition: background .2s ease-in-out;
   margin: 10px 100px;
   float: bottom;
+  font-family: Roboto;
 
 }
 </style>
