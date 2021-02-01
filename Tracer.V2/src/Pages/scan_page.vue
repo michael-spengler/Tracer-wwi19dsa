@@ -3,11 +3,8 @@
 </template>
 
 <script>
-
-
 export default {
   name: "Scan",
-
 }
 </script>
 

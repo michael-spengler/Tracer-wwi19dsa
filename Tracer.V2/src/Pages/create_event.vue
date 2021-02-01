@@ -5,7 +5,9 @@
       Freunde hinzufügen
      </button_basicstyle>
    </div>
-  </div>
+
+   </div>
+
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="navi">
     <navbar_button :onclick="startroute">Homescreen</navbar_button>
     <navbar_button :onclick="scanroute">Scan</navbar_button>
     <navbar_button :onclick="eventroute">Create Event</navbar_button>
