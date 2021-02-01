@@ -26,8 +26,8 @@ name: "navbar_button",
   padding:15px;
   transition: background .2s ease-in-out;
   margin: 10px 100px;
-  float: bottom;
   font-family: Roboto;
+  float: bottom;
 
 }
 </style>
