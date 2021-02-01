@@ -1,14 +1,14 @@
 <template>
   <div>
-  <button class="navbar" v-on:click="onclick">
-    <slot></slot>
-  </button>
+    <button class="navbar" v-on:click="onclick">
+      <slot></slot>
+    </button>
   </div>
 </template>
 
 <script>
 export default {
-name: "navbar_button",
+  name: "navbar_button",
   props: {
     onclick: {
       type: Function,
@@ -19,11 +19,11 @@ name: "navbar_button",
 </script>
 
 <style scoped>
-.navbar{
+.navbar {
   background: #99d7f0;
   border: none;
   color: #676767;
-  padding:15px;
+  padding: 15px;
   transition: background .2s ease-in-out;
   margin: 10px 100px;
   font-family: Roboto;

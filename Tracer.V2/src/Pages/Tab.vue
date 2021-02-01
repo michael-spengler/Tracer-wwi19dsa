@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class='tab' v-show='isActive'>
     <slot></slot>
   </div>
@@ -20,6 +20,6 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style scoped>
 
 </style>

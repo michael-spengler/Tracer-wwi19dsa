@@ -1,12 +1,21 @@
 <template>
   <div>
     <div class="logo">
-      <img src="@/assets/Tracer_icon_vertical.svg" width="200" height="200" alt="error picture not available"/>
+      <img src="@/assets/Tracer_icon_vertical.svg"
+           width="200" height="200" alt="error picture not available"/>
     </div>
-    <div><navigation_bar></navigation_bar></div>
-    <div><setting_button :onclick="to_settings">Settings</setting_button></div>
-    <div><button_basicstyle :onclick="to_tracerEvent">Tracer Event erstellen</button_basicstyle></div>
-    <div><button_basicstyle :onclick="to_reportcase">Fall melden</button_basicstyle></div>
+    <div>
+      <navigation_bar></navigation_bar>
+    </div>
+    <div>
+      <setting_button :onclick="to_settings">Settings</setting_button>
+    </div>
+    <div>
+      <button_basicstyle :onclick="to_tracerEvent">Tracer Event erstellen</button_basicstyle>
+    </div>
+    <div>
+      <button_basicstyle :onclick="to_reportcase">Fall melden</button_basicstyle>
+    </div>
   </div>
 </template>
 
@@ -33,13 +42,11 @@ export default {
 }
 
 
-
-
 </script>
 
-<style scoped lang="css">
+<style scoped>
 
-.logo{
+.logo {
   float: left;
 }
 </style>

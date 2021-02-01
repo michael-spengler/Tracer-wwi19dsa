@@ -1,4 +1,4 @@
-<template lang="html">
+<template >
   <div :class='{"tabs__light": mode === "light", "tabs__dark": mode === "dark"}'>
     <ul class='tabs__header'>
       <li v-for='(tab, index) in tabs'
@@ -45,7 +45,7 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style>
 
 ul.tabs__header {
   display: block;

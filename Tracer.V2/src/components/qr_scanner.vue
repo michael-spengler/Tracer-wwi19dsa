@@ -6,10 +6,10 @@
     <h1 v-if="error">{{ error }}</h1>
 
     <div v-if="payload">
-      <h1>Der Code wurde erfolgreich gescannt.</h1>
       <div>Payload: <pre>{{ payload }}</pre></div>
-      <p><router-link to="/">Go Back</router-link></p>
+      <p><router-link to="/scan_success">scan_success</router-link></p>
     </div>
+
   </div>
 </template>
 
@@ -46,7 +46,7 @@ export default {
           this.error = "ERROR: Stream API is not supported in this browser"
         }
       }
-    }
+    },
   }
 }
 </script>

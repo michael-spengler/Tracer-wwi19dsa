@@ -34,6 +34,10 @@ const routes = [
     path: '/create_event',
     component: create_event
   },
+  {
+    path: '/scan_success',
+    component: scan_success,
+  },
 
 ]
 
