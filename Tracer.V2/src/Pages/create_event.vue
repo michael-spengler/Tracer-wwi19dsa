@@ -1,12 +1,7 @@
 <template>
   <div>Tracer Event erstellen
     <div>
-      <button_basicstyle class="buttonbasic" v-on:click="onclick">
-        Freunde hinzufügen
-      </button_basicstyle>
       <button_basicstyle :onclick="to_generate">Qr-Code erzeugen</button_basicstyle>
-    </div>
-    <div>
     </div>
 
   </div>
@@ -22,7 +17,8 @@ export default {
   methods:{
     to_generate(){
       this.$router.push({path:'/qr_generator'})
-    }
+    },
+
   },
 }
 </script>
