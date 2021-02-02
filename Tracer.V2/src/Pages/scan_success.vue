@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div><img src="@/src/assets/scan_erfolgreich.png" alt="error"/></div>
+    <div><img src="@/assets/scan_erfolgreich.png" alt="error"/></div>
     <div><button_basicstyle :onclick="go_home"></button_basicstyle>
     <slot></slot>
     </div>
