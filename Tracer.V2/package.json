@@ -14,7 +14,8 @@
     "vue": "^2.6.11",
     "vue-qrcode-reader": "^2.3.16",
     "vue-router": "^3.5.1",
-    "vuejs-datepicker": "^1.6.2"
+    "vuejs-datepicker": "^1.6.2",
+    "vuetify": "^2.4.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -23,8 +24,12 @@
     "@vue/cli-plugin-router": "^4.5.11",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
+    "deepmerge": "^4.2.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "sass": "^1.32.6",
+    "sass-loader": "^10.1.1",
+    "vue-cli-plugin-vuetify": "^2.1.0",
     "vue-template-compiler": "^2.6.11",
     "workbox-webpack-plugin": "^6.1.0"
   },

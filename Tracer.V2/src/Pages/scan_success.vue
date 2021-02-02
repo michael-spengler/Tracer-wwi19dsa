@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div><img src="@/assets/scan_erfolgreich.png.png" width="1000" height="1000" alt="error"/></div>
-    <div><button_basicstyle :onclick="go_home">Back to home</button_basicstyle>
+    <div><img src="@/assets/scan_erfolgreich.png" alt="error"/></div>
+    <div><button_basicstyle :onclick="go_home"></button_basicstyle>
     <slot></slot>
     </div>
   </div>
