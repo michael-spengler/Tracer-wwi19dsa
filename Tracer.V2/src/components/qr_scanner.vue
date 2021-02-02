@@ -7,7 +7,7 @@
 
     <div v-if="payload">
       <div>Payload: <pre>{{ payload }}</pre></div>
-      <p><router-link to="/scan_success">scan_success</router-link></p>
+      <p><router-link to="/scan_done">Back to Home</router-link></p>
     </div>
 
   </div>

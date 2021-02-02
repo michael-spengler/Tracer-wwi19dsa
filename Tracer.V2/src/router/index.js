@@ -6,6 +6,7 @@ import report_case from "@/Pages/report_case";
 import app_information from "@/Pages/app_information";
 import create_event from "@/Pages/create_event";
 import qr_scanner from "@/components/qr_scanner";
+import scan_success from "@/Pages/scan_success";
 
 Vue.use(VueRouter)
 
@@ -35,7 +36,7 @@ const routes = [
     component: create_event
   },
   {
-    path: '/scan_success',
+    path: '/scan_done',
     component: scan_success,
   },
 
