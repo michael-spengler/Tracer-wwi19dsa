@@ -23,7 +23,7 @@ name: "setting_button",
   background: gray;
   border: none;
   margin: 10px 100px;
-  float: bottom;
+  float: right;
   font-family: Roboto;
   padding: 10px 50px;
   color: white;
