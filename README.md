@@ -62,6 +62,7 @@ Für weitere Informationen rund um das Businessmodell und die Idee dahinter sieh
 - [Pitchdeck](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/business/Tracer-PitchDeck.pdf)
 - [Businessplan](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/business/Tracer-Businessplan.pdf)
 - [Business Model Canvas](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/business/Tracer-BusinessModelCanvas.pdf)
+- [Value Proposition Canvas](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/business/Tracer-ValuePropositionCanvas.pdf)
 
 <br>
 <br>
