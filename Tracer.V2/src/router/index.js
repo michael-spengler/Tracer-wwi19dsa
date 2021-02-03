@@ -44,7 +44,6 @@ const routes = [
     path: '/qr_generator',
     component: qr_generator,
   },
-
 ]
 
 const router = new VueRouter({

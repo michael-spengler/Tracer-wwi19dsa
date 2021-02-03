@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@mdi/font": "^5.9.55",
+    "@syncfusion/ej2-vue-inputs": "^18.4.41",
     "core-js": "^3.6.5",
     "qrcode.vue": "^1.7.0",
     "register-service-worker": "^1.7.1",

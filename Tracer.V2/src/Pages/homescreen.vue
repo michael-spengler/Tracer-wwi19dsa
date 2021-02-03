@@ -27,39 +27,7 @@
     <div class="text-center">
       <button_basicstyle :onclick="to_reportcase">Fall melden</button_basicstyle>
     </div>
-    <v-card>
-      <v-tabs
-          v-model="tab"
-          background-color="white"
-          icons-and-text
-          centered
-      >
-        <v-tabs-slider></v-tabs-slider>
-
-        <v-tab :onclick="startroute">
-          Home
-          <v-icon>mdi-home</v-icon>
-        </v-tab>
-
-        <v-tab :onclick="scanroute">
-          Scan
-          <v-icon>mdi-camera</v-icon>
-        </v-tab>
-
-        <v-tab :onclick="eventroute">
-          Event
-          <v-icon>mdi-plus</v-icon>
-        </v-tab>
-      </v-tabs>
-      <v-tabs-items v-model="tab">
-        <v-tab-item
-            v-for="i in 3"
-            :key="i"
-            :value="'tab-' + i"
-        >
-        </v-tab-item>
-      </v-tabs-items>
-    </v-card>
+    <tab_bar></tab_bar>
   </div>
 </template>
 
@@ -68,10 +36,11 @@
 import navigation_bar from "@/components/navigation_bar";
 import setting_button from "@/components/setting_button";
 import button_basicstyle from "@/components/button_basicstyle";
+import tab_bar from "@/components/tab_bar";
 
 export default {
   name: "homescreen",
-  components: {button_basicstyle, setting_button, navigation_bar},
+  components: {tab_bar, button_basicstyle, setting_button, navigation_bar},
   methods: {
     to_settings() {
       this.$router.push({path: "/settings"})
