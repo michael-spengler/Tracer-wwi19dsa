@@ -111,7 +111,6 @@ export default {
   margin-right: auto;
   width: 40%;
 }
-.headline{
-  text-align: center;
-}
+
+
 </style>
