@@ -25,5 +25,6 @@ export default {
   padding: 10px 50px;
   transition: background .2s ease-in-out;
   margin: 25px 100px;
+  float: bottom;
 }
 </style>

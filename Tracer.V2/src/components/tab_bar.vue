@@ -1,5 +1,10 @@
 <template>
-  <v-bottom-navigation v-model="value">
+  <v-bottom-navigation
+      v-model="value"
+      class = "tab_bar"
+      grow
+
+  >
     <v-btn v-on:click="startroute" value="home">
       <span>Home</span>
 
@@ -40,5 +45,8 @@ export default {
 </script>
 
 <style scoped>
-
+.tab_bar{
+  float: bottom;
+  position: fixed;
+}
 </style>

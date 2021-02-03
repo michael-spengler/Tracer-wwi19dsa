@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="logo">
-      <img src="@/assets/Tracer_icon_final.png"
-           width="80" height="80" alt="error picture not available"/>
-    </div>
-      <v-btn
+    <div class="top">
+        <img class="logo" src="@/assets/Tracer_icon_final.png"
+             width="70" height="70" alt="error picture not available"/>
+        <v-btn
+          small
           top
           right
           fixed
@@ -13,14 +13,14 @@
           v-on:click="to_settings">
         <v-icon dark>
           mdi-settings
-        </v-icon>
-      </v-btn>
-
-    <div class="text-center">
-      <button_basicstyle :onclick="to_tracerEvent">Tracer Event erstellen</button_basicstyle>
+       </v-icon>
+    </v-btn>
     </div>
     <div class="text-center">
-      <button_basicstyle :onclick="to_reportcase">Fall melden</button_basicstyle>
+      <button_basicstyle :onclick="to_tracerEvent">Create Tracer Event</button_basicstyle>
+    </div>
+    <div class="text-center">
+      <button_basicstyle :onclick="to_reportcase">Call a case</button_basicstyle>
     </div>
     <tab_bar></tab_bar>
   </div>
@@ -67,5 +67,16 @@ export default {
 </script>
 
 <style scoped>
-
+.logo{
+  position: fixed;
+  float: left;
+}
+.top{
+  float: top;
+  position: fixed;
+}
+.text-center{
+  float: bottom;
+  position: fixed;
+}
 </style>
