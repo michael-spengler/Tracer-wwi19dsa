@@ -18,13 +18,15 @@ export default {
 
 <style scoped>
 .buttonbasic{
-  background: #2c3e50;
-  border: none;
+  background-color: #2c3e50;
   color: white;
   cursor: pointer;
   padding: 10px 50px;
   transition: background .2s ease-in-out;
   margin: 25px 100px;
   float: bottom;
+  border-radius: 8px;
+  font-family: Roboto;
+  font-size: 20px;
 }
 </style>

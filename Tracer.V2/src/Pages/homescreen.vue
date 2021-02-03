@@ -16,10 +16,37 @@
        </v-icon>
     </v-btn>
     </div>
-    <div class="text-center">
+
+    <div class="card">
+      <v-card>
+            <v-col cols="12">
+              <v-card
+                  color="#287A42"
+                  dark
+              >
+                <v-card-title class="align-content-center">
+                  Risikobewertung
+                </v-card-title>
+
+                <v-card-subtitle>Status:                            Super Toggo gesund<br>
+                                 last scan:                          XX.XX.XXXX<br>
+                                 last check:                         XX.XX.XXXX
+                </v-card-subtitle>
+              </v-card>
+            </v-col>
+
+            <v-col
+                v-for="(item, i) in items"
+                :key="i"
+                cols="12"
+            >
+            </v-col>
+      </v-card>
+    </div>
+    <div class="homescreen_button">
       <button_basicstyle :onclick="to_tracerEvent">Create Tracer Event</button_basicstyle>
     </div>
-    <div class="text-center">
+    <div class="homescreen_button">
       <button_basicstyle :onclick="to_reportcase">Call a case</button_basicstyle>
     </div>
     <tab_bar></tab_bar>
@@ -75,8 +102,16 @@ export default {
   float: top;
   position: fixed;
 }
-.text-center{
+.homescreen_button{
   float: bottom;
-  position: fixed;
+}
+.card{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+.headline{
+  text-align: center;
 }
 </style>
