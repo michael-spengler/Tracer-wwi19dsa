@@ -9,8 +9,10 @@
           right
           fixed
           fab
+          small
           color="white"
-          :onclick="to_settings">
+          :onclick="to_settings"
+          class="settings">
         <v-icon dark>
           mdi-settings
         </v-icon>
@@ -71,5 +73,7 @@ export default {
 </script>
 
 <style scoped>
-
+.settings{
+  padding: 20px 20px;
+}
 </style>
