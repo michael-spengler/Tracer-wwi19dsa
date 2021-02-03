@@ -10,17 +10,12 @@
           fixed
           fab
           color="white"
-          :onclick="to_settings">
+          v-on:click="to_settings">
         <v-icon dark>
           mdi-settings
         </v-icon>
       </v-btn>
-    <div>
-      <navigation_bar></navigation_bar>
-    </div>
-    <div>
-      <setting_button :onclick="to_settings">Settings</setting_button>
-    </div>
+
     <div class="text-center">
       <button_basicstyle :onclick="to_tracerEvent">Tracer Event erstellen</button_basicstyle>
     </div>
@@ -33,18 +28,16 @@
 
 <script>
 
-import navigation_bar from "@/components/navigation_bar";
-import setting_button from "@/components/setting_button";
+
+
 import button_basicstyle from "@/components/button_basicstyle";
 import tab_bar from "@/components/tab_bar";
 
 export default {
   name: "homescreen",
-  components: {tab_bar, button_basicstyle, setting_button, navigation_bar},
+  components: {tab_bar, button_basicstyle,},
   methods: {
-    to_settings() {
-      this.$router.push({path: "/settings"})
-    },
+
     to_tracerEvent() {
       this.$router.push({path: "/create_event"})
     },
@@ -59,7 +52,10 @@ export default {
     },
     eventroute(){
       this.$router.push({path: '/create_event'})
-    }
+    },
+    to_settings(){
+      this.$router.push({path: '/settings'});
+    },
   },
   data () {
     return {

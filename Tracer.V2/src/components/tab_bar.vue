@@ -1,18 +1,18 @@
 <template>
   <v-bottom-navigation v-model="value">
-    <v-btn value="home">
+    <v-btn v-on:click="startroute" value="home">
       <span>Home</span>
 
       <v-icon>mdi-home</v-icon>
     </v-btn>
 
-    <v-btn value="scan">
+    <v-btn v-on:click="scanroute" value="scan">
       <span>Scan</span>
 
       <v-icon>mdi-camera</v-icon>
     </v-btn>
 
-    <v-btn value="event">
+    <v-btn v-on:click="eventroute" value="event">
       <span>Event</span>
 
       <v-icon>mdi-plus</v-icon>
