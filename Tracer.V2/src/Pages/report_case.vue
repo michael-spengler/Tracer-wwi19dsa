@@ -10,7 +10,7 @@
           Falls Sie positiv auf Covid-19 getestet <br>
           wurden, laden Sie hier Ihren Testbericht <br>
           samt Unterschrift des Hausarztes hoch.
-        </b-card-text>
+        </b-card-text>+
       </b-card> <br>
       <button_basicstyle class="buttonbasic"  v-on:click="onclick">
         PDF Dokument oder JPG hochladen
@@ -21,7 +21,7 @@
 </template>
 <script>
 import button_basicstyle from "@/components/button_basicstyle";
-
+0
 export default {
   name: "Fall melden",
   components: {button_basicstyle},
