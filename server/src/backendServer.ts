@@ -49,7 +49,7 @@ app.use(serveStatic(`${Deno.cwd()}/server/src/`))
 const pathToFile = `${Deno.cwd()}/server/src/client.html`
 
 app.get('/', function (req, res) {
-
+    updateRisk()
     counter = counter + 1 
     console.log(`The Webpage has been called ${counter} times.`)
     res.sendFile(pathToFile)
@@ -72,6 +72,16 @@ app.get('/Report/:case', function (req, res) {
     res.setStatus(201)
     res.json({"status": "success"});
 });
+
+//Check risk of sent ids
+    app.get('/RiskCheck/:ids', async function (req, res) {
+    const reqData = JSON.parse(req.params.ids);
+    //console.log(reqData.id)
+    const riskStatus = await checkRisk(reqData.id)
+    res.setStatus(201)
+    res.json({"status": "success", "risk": riskStatus});
+});
+
 
 //deploy
 app.listen(3000, function () {
@@ -109,17 +119,48 @@ function storeData(data:any){
     return globalJsonData 
 }
 
-function setStatus(data:Array<string>){
-    let dataVal: string = data[0];
-    console.log("this is the data: ",dataVal)
-    let result = client.query(`update users set status = 1 where TracerID = "${dataVal}"`);
-    console.log(result);
-/*
+async function setStatus(data:Array<string>){
+    for (let index = 0; index < data.length; index++) {
+        console.log("this is the data: ",data)
+        let result = await client.execute(`update users set status = 1 where TracerID = "${data[index]}"`);    
+        console.log(result);
+    };
+    updateRisk()
 
-this currently changes one item in the list. Try if one can loop for every item in data and remove every item manually
-
-*/
+/* Comment: This does the job but might lead to performance problems as SQL Statement is called for every single occurrence 
+look into ...where TracerID in ? for batch*/
 }
+
+async function checkRisk(data:Array<string>){
+    //get risk for users where id = *provided id*
+    let riskStatus: number = 0
+    const risk = await client.query(`select risk from users where TracerID in ?`, [data]);
+    //console.log(risk)
+
+    //var riskStatus: number = await risk.length
+    risk.forEach(function (value:any){
+        riskStatus = riskStatus + Number(value.risk)
+    });
+
+    console.log(riskStatus)
+    return riskStatus
+}
+
+
+async function updateRisk(){
+//alle orte wo status = 1
+//ueberall wo ort identisch ist mit davor setze risk = 1
+const riskLocations = await client.query(`select LocID,timestamp from users where status = 1`);
+
+for (let index = 0; index < riskLocations.length; index++) {
+    //console.log("this is the data: ",riskLocations[index].timestamp.toISOString().slice(0, 19).replace('T', ' '))
+    let result = await client.execute(`update users set risk = 1 where LocID = "${riskLocations[index].LocID}" 
+    and timestamp > "${riskLocations[index].timestamp.toISOString().slice(0, 19).replace('T', ' ')}" - INTERVAL 2 HOUR 
+    and timestamp < "${riskLocations[index].timestamp.toISOString().slice(0, 19).replace('T', ' ')}" + INTERVAL 2 HOUR`);    
+    //console.log(result);
+};
+}
+
 
 
 /*
