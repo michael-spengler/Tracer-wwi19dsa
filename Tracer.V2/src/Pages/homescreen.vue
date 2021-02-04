@@ -85,10 +85,21 @@ export default {
       this.$router.push({path: '/scanpage'});
     },
     eventroute() {
-      this.$router.push({path: '/create_event'})
+      //this.$router.push({path: '/create_event'})
     },
     to_settings() {
       this.$router.push({path: '/settings'});
+      //Experimental: data can be sent to backend via fetch
+      fetch('http://localhost:3000/Tracer/{"locID":"SentFromVueJS","currentTime":"2021-02-04 18:42:36","status":false,"risk":0}').then((response) => {
+        if (response.ok) {
+          console.log("Data was successfully added to server.")
+          db.collection("Buffer").doc(key).delete()
+          return response.json();
+        } else {
+          throw new Error('Something went wrong, try again later.');
+        }
+      })
+      //this.$router.push({path: 'http://localhost:3000/Tracer/{"locID":"SentFromVueJS","currentTime":"2021-02-04 18:42:36","status":false,"risk":0}'})
     },
     onRefresh: function () {
       return new Promise(function (resolve) {
