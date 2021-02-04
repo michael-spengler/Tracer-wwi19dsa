@@ -4,9 +4,10 @@ let db = new Localbase("TracerDB"); //creates local Database
 
 async function checkVariables(){
 let variables = await db.collection("Variables").doc("1").get().then(value => {return(value)})
+console.log(variables)
 let currentTime = new Date();
 var d = 24 * 60 * 60 * 1000;
-console.log((currentTime-variables.timeOfReport)/d)
+//console.log((currentTime-variables.timeOfReport)/d)
 if (variables == null) {
   db.collection("Variables").add(
     {
@@ -20,7 +21,7 @@ if (Math.floor((currentTime-variables.timeOfReport)/d)>14){
     status: false,
     timeOfReport: null,
   })
-  console.log("Status set back to false!")
+  console.log("Status = false")
 }
 
 }
@@ -86,7 +87,7 @@ function clearBuffer() {
 
 function sendData(scanData, key) {
     
-    fetch(`/Tracer/${JSON.stringify(scanData)}`).then((response) => {
+    fetch(`http://localhost:3000/Tracer/${JSON.stringify(scanData)}`).then((response) => {
         if (response.ok) {
           console.log("Data was successfully added to server.")
           db.collection("Buffer").doc(key).delete()
@@ -128,7 +129,7 @@ async function reportCase(){
         })
         return idList
       }).then(idList =>
-        fetch(`/Report/${JSON.stringify({"id":idList})}`).then((response) => {
+        fetch(`http://localhost:3000/Report/${JSON.stringify({"id":idList})}`).then((response) => {
           if (response.ok) {
             console.log("Case was successfully reported.")
             return response.json();
@@ -156,7 +157,7 @@ async function checkRisk(){
       })
       return idList
     }).then(idList =>
-      fetch(`/RiskCheck/${JSON.stringify({"id":idList})}`).then((response) => {
+      fetch(`http://localhost:3000/RiskCheck/${JSON.stringify({"id":idList})}`).then((response) => {
         if (response.ok) {
           return response.json();
         } else {

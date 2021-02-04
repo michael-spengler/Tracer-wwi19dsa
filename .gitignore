@@ -140,3 +140,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 business/Tracer.docx
+server/src/databases/GlobalDatabase.json

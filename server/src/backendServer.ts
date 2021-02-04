@@ -47,6 +47,7 @@ const app = opine();
 app.use(serveStatic(`${Deno.cwd()}/server/src/`))
 
 const pathToFile = `${Deno.cwd()}/server/src/client.html`
+//const pathToFile = `${Deno.cwd()}/Tracer.V2/src/router/index.js`
 
 app.get('/', function (req, res) {
     updateRisk()
