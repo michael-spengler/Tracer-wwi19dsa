@@ -35,6 +35,8 @@ await client.execute(`
         TracerID varchar(100) NOT NULL,
         timestamp timestamp NOT NULL,
         LocID varchar(100) NOT NULL,
+        status BOOL NOT NULL,
+        risk varchar(100) NOT NULL,
         PRIMARY KEY (TracerID)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 `);
@@ -47,7 +49,7 @@ app.use(serveStatic(`${Deno.cwd()}/server/src/`))
 const pathToFile = `${Deno.cwd()}/server/src/client.html`
 
 app.get('/', function (req, res) {
-
+    updateRisk()
     counter = counter + 1 
     console.log(`The Webpage has been called ${counter} times.`)
     res.sendFile(pathToFile)
@@ -62,9 +64,24 @@ app.get('/Tracer/:data', function (req, res) {
     res.json({"key": globalJsonData.key, "time": globalJsonData.data.time});
 });
 
-app.post('/user', function (ctx){
-    
+//receive list of ids
+app.get('/Report/:case', function (req, res) {
+    const reqData = JSON.parse(req.params.case);
+    console.log(reqData.id)
+    setStatus(reqData.id)
+    res.setStatus(201)
+    res.json({"status": "success"});
 });
+
+//Check risk of sent ids
+    app.get('/RiskCheck/:ids', async function (req, res) {
+    const reqData = JSON.parse(req.params.ids);
+    //console.log(reqData.id)
+    const riskStatus = await checkRisk(reqData.id)
+    res.setStatus(201)
+    res.json({"status": "success", "risk": riskStatus});
+});
+
 
 //deploy
 app.listen(3000, function () {
@@ -72,14 +89,17 @@ app.listen(3000, function () {
 });
 
 //Database connection
-function storeDataDB(tracerID:string, time:string, locID:string){
-    let result = client.execute(`INSERT INTO users(TracerID, timestamp, LocID) values(?,?,?)`, [
+function storeDataDB(tracerID:string, time:string, locID:string, status:boolean, risk:Int16Array){
+    let result = client.execute(`INSERT INTO users(TracerID, timestamp, LocID, status, risk) values(?,?,?,?,?)`, [
         tracerID,
         time,
-        locID]);
+        locID,
+        status,
+        risk]);
       console.log(result);
 };
 
+//store data in mysql
 function storeData(data:any){
     const tracerID:any = cuid();
     const globalJsonData = {
@@ -88,8 +108,9 @@ function storeData(data:any){
         tracerID : tracerID,
         time : data.currentTime
     },   key : tracerID};
+    console.log(data.status)
     //add to database - deactivate the following line if no mySQL DB is up
-    storeDataDB(tracerID, data.currentTime, data.locID)
+    storeDataDB(tracerID, data.currentTime, data.locID, data.status, data.risk)
 
     //backup to .json file
     const GlobalDatabase:any = readJsonSync("./server/src/databases/GlobalDatabase.json");
@@ -98,6 +119,52 @@ function storeData(data:any){
     return globalJsonData 
 }
 
+async function setStatus(data:Array<string>){
+    for (let index = 0; index < data.length; index++) {
+        console.log("this is the data: ",data)
+        let result = await client.execute(`update users set status = 1 where TracerID = "${data[index]}"`);    
+        console.log(result);
+    };
+    updateRisk()
+
+/* Comment: This does the job but might lead to performance problems as SQL Statement is called for every single occurrence 
+look into ...where TracerID in ? for batch*/
+}
+
+async function checkRisk(data:Array<string>){
+    //get risk for users where id = *provided id*
+    let riskStatus: number = 0
+    const risk = await client.query(`select risk from users where TracerID in ?`, [data]);
+    //console.log(risk)
+
+    //var riskStatus: number = await risk.length
+    risk.forEach(function (value:any){
+        riskStatus = riskStatus + Number(value.risk)
+    });
+
+    console.log(riskStatus)
+    return riskStatus
+}
+
+
+async function updateRisk(){
+//alle orte wo status = 1
+//ueberall wo ort identisch ist mit davor setze risk = 1
+const riskLocations = await client.query(`select LocID,timestamp from users where status = 1`);
+
+for (let index = 0; index < riskLocations.length; index++) {
+    //console.log("this is the data: ",riskLocations[index].timestamp.toISOString().slice(0, 19).replace('T', ' '))
+    let result = await client.execute(`update users set risk = 1 where LocID = "${riskLocations[index].LocID}" 
+    and timestamp > "${riskLocations[index].timestamp.toISOString().slice(0, 19).replace('T', ' ')}" - INTERVAL 2 HOUR 
+    and timestamp < "${riskLocations[index].timestamp.toISOString().slice(0, 19).replace('T', ' ')}" + INTERVAL 2 HOUR`);    
+    //console.log(result);
+};
+}
 
 
 
+/*
+
+Remove all entries older than 14 Days -> Select * from users where timestamp > current_timestamp() - INTERVAL 14 DAY; 
+
+*/
