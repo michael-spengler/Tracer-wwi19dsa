@@ -5,7 +5,7 @@ import settings from "@/Pages/settings";
 import report_case from "@/Pages/report_case";
 import app_information from "@/Pages/app_information";
 import create_event from "@/Pages/create_event";
-import qr_scanner from "@/components/qr_scanner";
+import qr_scanner from "@/Pages/qr_scanner";
 import scan_success from "@/Pages/scan_success";
 import qr_generator from "@/components/qr_generator";
 

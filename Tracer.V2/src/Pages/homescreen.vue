@@ -21,8 +21,10 @@
       <v-card>
         <v-col cols="12">
           <v-card
+
               color="#287A42"
               dark
+              v-if="risk"
           >
             <v-card-title class="align-content-center">
               Risikobewertung
@@ -33,6 +35,7 @@
               last check: XX.XX.XXXX
             </v-card-subtitle>
           </v-card>
+
         </v-col>
 
         <v-col
@@ -93,6 +96,19 @@ export default {
         }, 1000);
       });
     },
+
+    /*risk(){
+      var alert;
+      alert = 0
+      if(alert == 1){
+        document.getElementById("risk").style.color = '#bc1200'
+      }
+      else{
+        document.getElementById("risk").style.color = '#287A42'
+      }
+    },*/
+
+
     data() {
       return {
         tab: null,
