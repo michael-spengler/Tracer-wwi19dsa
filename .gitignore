@@ -16,7 +16,7 @@ __pycache__/
 .DS_Store
 
 # vscode
-.vscode
+#.vscode
 
 # Distribution / packaging
 .Python

@@ -3,6 +3,7 @@
     <div>
       <button_basicstyle :onclick="to_generate">Qr-Code erzeugen</button_basicstyle>
     </div>
+    <div><tab_bar></tab_bar></div>
   </div>
 </template>
 

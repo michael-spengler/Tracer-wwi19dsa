@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="top">
-        <img class="logo" src="@/assets/Tracer_icon_final.png"
-             width="70" height="70" alt="error picture not available"/>
-        <v-btn
+      <img class="logo" src="@/assets/Tracer_icon_final.png"
+           width="70" height="70" alt="error picture not available"/>
+      <v-btn
           small
           top
           right
@@ -13,34 +13,38 @@
           v-on:click="to_settings">
         <v-icon dark>
           mdi-settings
-       </v-icon>
-    </v-btn>
+        </v-icon>
+      </v-btn>
     </div>
 
     <div class="card">
       <v-card>
-            <v-col cols="12">
-              <v-card
-                  color="#287A42"
-                  dark
-              >
-                <v-card-title class="align-content-center">
-                  Risikobewertung
-                </v-card-title>
+        <v-col cols="12">
+          <v-card
 
-                <v-card-subtitle>Status:                            Super Toggo gesund<br>
-                                 last scan:                          XX.XX.XXXX<br>
-                                 last check:                         XX.XX.XXXX
-                </v-card-subtitle>
-              </v-card>
-            </v-col>
+              color="#287A42"
+              dark
+              id="risk"
+              v-if="risk_calculation"
+          >
+            <v-card-title class="align-content-center">
+              Risikobewertung
+            </v-card-title>
 
-            <v-col
-                v-for="(item, i) in items"
-                :key="i"
-                cols="12"
-            >
-            </v-col>
+            <v-card-subtitle>Status: Super Toggo gesund<br>
+              last scan: XX.XX.XXXX<br>
+              last check: XX.XX.XXXX
+            </v-card-subtitle>
+          </v-card>
+
+        </v-col>
+
+        <v-col
+            v-for="(item, i) in items"
+            :key="i"
+            cols="12"
+        >
+        </v-col>
       </v-card>
     </div>
     <div class="homescreen_button">
@@ -50,19 +54,22 @@
       <button_basicstyle :onclick="to_reportcase">Call a case</button_basicstyle>
     </div>
     <tab_bar></tab_bar>
+    <div>
+      <vue-pull-refresh :on-refresh="onRefresh"></vue-pull-refresh>
+    </div>
   </div>
 </template>
 
 <script>
 
 
-
 import button_basicstyle from "@/components/button_basicstyle";
 import tab_bar from "@/components/tab_bar";
+import VuePullRefresh from 'vue-pull-refresh';
 
 export default {
   name: "homescreen",
-  components: {tab_bar, button_basicstyle,},
+  components: {tab_bar, button_basicstyle, VuePullRefresh,},
   methods: {
 
     to_tracerEvent() {
@@ -71,47 +78,69 @@ export default {
     to_reportcase() {
       this.$router.push({path: "/report_case"})
     },
-    startroute(){
+    startroute() {
       this.$router.push({path: '/'});
     },
-    scanroute(){
+    scanroute() {
       this.$router.push({path: '/scanpage'});
     },
-    eventroute(){
+    eventroute() {
       this.$router.push({path: '/create_event'})
     },
-    to_settings(){
+    to_settings() {
       this.$router.push({path: '/settings'});
     },
-  },
-  data () {
-    return {
-      tab: null,
-    }
-  },
+    onRefresh: function () {
+      return new Promise(function (resolve) {
+        setTimeout(function () {
+          resolve();
+        }, 1000);
+      });
+    },
+
+    /*risk_calculation(){
+      var alert;
+      alert = 0
+      if(alert == 1){
+        document.getElementById("risk").style.color = '#bc1200'
+      }
+      else{
+        document.getElementById("risk").style.color = '#287A42'
+      }
+    },*/
+
+
+    data() {
+      return {
+        tab: null,
+      }
+    },
+  }
 }
 
 </script>
 
 <style scoped>
-.logo{
+.logo {
   position: fixed;
   float: left;
 }
-.top{
+
+.top {
   float: top;
   position: fixed;
 }
-.homescreen_button{
+
+.homescreen_button {
   float: bottom;
 }
-.card{
+
+.card {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 40%;
 }
-.headline{
-  text-align: center;
-}
+
+
 </style>

@@ -1935,5 +1935,637 @@
       "time": "2020-12-24 22:24:12"
     },
     "key": "ckj3ey59u000554nh0qnkyi9s"
+  },
+  {
+    "data": {
+      "locID": "Aldi Mannheim",
+      "tracerID": "ckj7i2sqc00002c9so4d1dj4m",
+      "time": "2020-12-27 19:02:53"
+    },
+    "key": "ckj7i2sqc00002c9so4d1dj4m"
+  },
+  {
+    "data": {
+      "locID": "Aldi Mannheim",
+      "tracerID": "ckj7iatw200012c9swlbf4hjq",
+      "time": "2020-12-27 19:09:07"
+    },
+    "key": "ckj7iatw200012c9swlbf4hjq"
+  },
+  {
+    "data": {
+      "locID": "Aldi Mannheim",
+      "tracerID": "ckj7ibh6h00022c9s1b93o64m",
+      "time": "2020-12-27 19:09:38"
+    },
+    "key": "ckj7ibh6h00022c9s1b93o64m"
+  },
+  {
+    "data": {
+      "locID": "Nobu Frankfurt",
+      "tracerID": "ckj8mz6tx00001knhdkl4b1in",
+      "time": "2020-12-28 14:07:49"
+    },
+    "key": "ckj8mz6tx00001knhdkl4b1in"
+  },
+  {
+    "data": {
+      "locID": "Aldi Mannheim",
+      "tracerID": "ckj8xxbqt0000lnnhpwwb80bx",
+      "time": "2020-12-28 19:14:17"
+    },
+    "key": "ckj8xxbqt0000lnnhpwwb80bx"
+  },
+  {
+    "data": {
+      "locID": "Aldi Mannheim",
+      "tracerID": "ckj8xxdr50001lnnhvmyruaxz",
+      "time": "2020-12-28 19:14:20"
+    },
+    "key": "ckj8xxdr50001lnnhvmyruaxz"
+  },
+  {
+    "data": {
+      "locID": "Aldi Mannheim",
+      "tracerID": "ckj8xxerz0002lnnhgp773erl",
+      "time": "2020-12-28 19:14:21"
+    },
+    "key": "ckj8xxerz0002lnnhgp773erl"
+  },
+  {
+    "data": {
+      "locID": "Mannheim HBF",
+      "tracerID": "ckj8y5ans00000cnhjbe8vzup",
+      "time": "2020-12-28 19:20:29"
+    },
+    "key": "ckj8y5ans00000cnhjbe8vzup"
+  },
+  {
+    "data": {
+      "locID": "Mannheim HBF",
+      "tracerID": "ckj8y8guo000037nhq09stucw",
+      "time": "2020-12-28 19:22:57"
+    },
+    "key": "ckj8y8guo000037nhq09stucw"
+  },
+  {
+    "data": {
+      "locID": "Mannheim HBF",
+      "tracerID": "ckj8yf2p000007unhd5h1n7t9",
+      "time": "2020-12-28 19:28:05"
+    },
+    "key": "ckj8yf2p000007unhd5h1n7t9"
+  },
+  {
+    "data": {
+      "locID": "Mannheim HBF",
+      "tracerID": "ckj8ykjab0000annhxf4chy34",
+      "time": "2020-12-28 19:32:20"
+    },
+    "key": "ckj8ykjab0000annhxf4chy34"
+  },
+  {
+    "data": {
+      "locID": "Mannheim HBF",
+      "tracerID": "ckj8yl5z60001annh1m9i5obg",
+      "time": "2020-12-28 19:32:50"
+    },
+    "key": "ckj8yl5z60001annh1m9i5obg"
+  },
+  {
+    "data": {
+      "locID": "Mannheim HBF",
+      "tracerID": "ckj8yl7eh0002annh2zvn8x8d",
+      "time": "2020-12-28 19:32:52"
+    },
+    "key": "ckj8yl7eh0002annh2zvn8x8d"
+  },
+  {
+    "data": {
+      "locID": "Mannheim Yormas",
+      "tracerID": "ckj8ylccm0003annh9643kkkt",
+      "time": "2020-12-28 19:32:58"
+    },
+    "key": "ckj8ylccm0003annh9643kkkt"
+  },
+  {
+    "data": {
+      "locID": "Mannheim Rossmann",
+      "tracerID": "ckj8ylhkg0004annhckp3pdp6",
+      "time": "2020-12-28 19:33:05"
+    },
+    "key": "ckj8ylhkg0004annhckp3pdp6"
+  },
+  {
+    "data": {
+      "locID": "Mannheim HBF",
+      "tracerID": "ckj8yoi190005annh3j8vaavu",
+      "time": "2020-12-28 19:35:25"
+    },
+    "key": "ckj8yoi190005annh3j8vaavu"
+  },
+  {
+    "data": {
+      "locID": "Mannheim HBF",
+      "tracerID": "ckj8yoj2d0006annheyioupj3",
+      "time": "2020-12-28 19:35:27"
+    },
+    "key": "ckj8yoj2d0006annheyioupj3"
+  },
+  {
+    "data": {
+      "locID": "Mannheim Lenoks Burger",
+      "tracerID": "ckj8yp3710007annhzv8salpr",
+      "time": "2020-12-28 19:35:53"
+    },
+    "key": "ckj8yp3710007annhzv8salpr"
+  },
+  {
+    "data": {
+      "locID": "Mannheim Lenoks Burger",
+      "tracerID": "ckj8yqpap0008annh1vxa5csr",
+      "time": "2020-12-28 19:37:08"
+    },
+    "key": "ckj8yqpap0008annh1vxa5csr"
+  },
+  {
+    "data": {
+      "locID": "Kaiserslautern",
+      "tracerID": "ckjr91qzx0000v4nhllvxg0ox",
+      "time": "2021-01-10 14:45:31"
+    },
+    "key": "ckjr91qzx0000v4nhllvxg0ox"
+  },
+  {
+    "data": {
+      "locID": "Kaiserslautern",
+      "tracerID": "ckjr920pc0001v4nhklvq23he",
+      "time": "2021-01-10 14:45:43"
+    },
+    "key": "ckjr920pc0001v4nhklvq23he"
+  },
+  {
+    "data": {
+      "locID": "Kaiserslautern",
+      "tracerID": "ckjr9213i0002v4nhcyy29ko9",
+      "time": "2021-01-10 14:45:44"
+    },
+    "key": "ckjr9213i0002v4nhcyy29ko9"
+  },
+  {
+    "data": {
+      "locID": "Kaiserslautern",
+      "tracerID": "ckjr9219s0003v4nhrpbopu3c",
+      "time": "2021-01-10 14:45:44"
+    },
+    "key": "ckjr9219s0003v4nhrpbopu3c"
+  },
+  {
+    "data": {
+      "locID": "Guldental",
+      "tracerID": "ckjr94xjm0004v4nh0o0xbm7s",
+      "time": "2021-01-10 14:47:59"
+    },
+    "key": "ckjr94xjm0004v4nh0o0xbm7s"
+  },
+  {
+    "data": {
+      "locID": "Guldental2",
+      "tracerID": "ckjr9a6s30005v4nhbnjrrphe",
+      "time": "2021-01-10 14:52:04"
+    },
+    "key": "ckjr9a6s30005v4nhbnjrrphe"
+  },
+  {
+    "data": {
+      "locID": "Guldental3",
+      "tracerID": "ckjr9bm5l00005rnhwklm4m7e",
+      "time": "2021-01-10 14:52:56"
+    },
+    "key": "ckjr9bm5l00005rnhwklm4m7e"
+  },
+  {
+    "data": {
+      "locID": "Frankfurt am Main",
+      "tracerID": "ckjx45nba00004wvzin0glt2i",
+      "time": "2021-01-14 17:15:12"
+    },
+    "key": "ckjx45nba00004wvzin0glt2i"
+  },
+  {
+    "data": {
+      "locID": "Maastricht",
+      "tracerID": "ckkfwn8ll0000kipeazqvs3nj",
+      "time": "2021-01-27 20:52:33"
+    },
+    "key": "ckkfwn8ll0000kipeazqvs3nj"
+  },
+  {
+    "data": {
+      "locID": "Kaiserslautern",
+      "tracerID": "ckkfwonqo0001kipef2rx737g",
+      "time": "2021-01-27 20:53:39"
+    },
+    "key": "ckkfwonqo0001kipef2rx737g"
+  },
+  {
+    "data": {
+      "locID": "Test",
+      "tracerID": "ckkie1i2r0000vypez8c13roj",
+      "time": "2021-01-29 14:35:04"
+    },
+    "key": "ckkie1i2r0000vypez8c13roj"
+  },
+  {
+    "data": {
+      "locID": "Elm Street",
+      "tracerID": "ckkooqos20000h9pebmq3hhjh",
+      "time": "2021-02-03 00:21:12"
+    },
+    "key": "ckkooqos20000h9pebmq3hhjh"
+  },
+  {
+    "data": {
+      "locID": "Amsterdam",
+      "tracerID": "ckkoorqqo0001h9peyf9t41te",
+      "time": "2021-02-03 00:22:01"
+    },
+    "key": "ckkoorqqo0001h9peyf9t41te"
+  },
+  {
+    "data": {
+      "locID": "Test 1",
+      "tracerID": "ckkoot0030002h9pevdgoavgv",
+      "time": "2021-02-03 00:23:00"
+    },
+    "key": "ckkoot0030002h9pevdgoavgv"
+  },
+  {
+    "data": {
+      "locID": "Test 2",
+      "tracerID": "ckkop39p50000lppe3nwq2q5w",
+      "time": "2021-02-03 00:30:59"
+    },
+    "key": "ckkop39p50000lppe3nwq2q5w"
+  },
+  {
+    "data": {
+      "locID": "Test 3",
+      "tracerID": "ckkop3b9s0001lppec1alndfc",
+      "time": "2021-02-03 00:31:01"
+    },
+    "key": "ckkop3b9s0001lppec1alndfc"
+  },
+  {
+    "data": {
+      "locID": "Test 4",
+      "tracerID": "ckkop3dd80002lppeugc8qv28",
+      "time": "2021-02-03 00:31:04"
+    },
+    "key": "ckkop3dd80002lppeugc8qv28"
+  },
+  {
+    "data": {
+      "locID": "Test 5",
+      "tracerID": "ckkop3f5x0003lppe65656gx7",
+      "time": "2021-02-03 00:31:06"
+    },
+    "key": "ckkop3f5x0003lppe65656gx7"
+  },
+  {
+    "data": {
+      "locID": "Test 6",
+      "tracerID": "ckkopowx80000pdpe942q8s3p",
+      "time": "2021-02-03 00:47:49"
+    },
+    "key": "ckkopowx80000pdpe942q8s3p"
+  },
+  {
+    "data": {
+      "locID": "locID",
+      "tracerID": "ckkopu7ys0001pdpe2oelscn7",
+      "time": "2021-02-03 00:51:57"
+    },
+    "key": "ckkopu7ys0001pdpe2oelscn7"
+  },
+  {
+    "data": {
+      "locID": "locID",
+      "tracerID": "ckkoq1nnl0002pdpe3drc8ubh",
+      "time": "2021-02-03 00:57:44"
+    },
+    "key": "ckkoq1nnl0002pdpe3drc8ubh"
+  },
+  {
+    "data": {
+      "locID": "locID",
+      "tracerID": "ckkoq68a2000014pejxxbmlba",
+      "time": "2021-02-03 01:01:17"
+    },
+    "key": "ckkoq68a2000014pejxxbmlba"
+  },
+  {
+    "data": {
+      "locID": "Test 7",
+      "tracerID": "ckkoqkkta00002zpeh06ekost",
+      "time": "2021-02-03 01:12:26"
+    },
+    "key": "ckkoqkkta00002zpeh06ekost"
+  },
+  {
+    "data": {
+      "locID": "Test 7",
+      "tracerID": "ckkoqru3o000086pelxkdt41e",
+      "time": "2021-02-03 01:18:05"
+    },
+    "key": "ckkoqru3o000086pelxkdt41e"
+  },
+  {
+    "data": {
+      "locID": "Test 7",
+      "tracerID": "ckkoqstl50000aipejgr74895",
+      "time": "2021-02-03 01:18:51"
+    },
+    "key": "ckkoqstl50000aipejgr74895"
+  },
+  {
+    "data": {
+      "locID": "Test 7",
+      "tracerID": "ckkoqx3ya0000cnpetbp20r0j",
+      "time": "2021-02-03 01:22:11"
+    },
+    "key": "ckkoqx3ya0000cnpetbp20r0j"
+  },
+  {
+    "data": {
+      "locID": "Test 7",
+      "tracerID": "ckkor1jcg0000fcpepf2v6wei",
+      "time": "2021-02-03 01:25:38"
+    },
+    "key": "ckkor1jcg0000fcpepf2v6wei"
+  },
+  {
+    "data": {
+      "locID": "locID",
+      "tracerID": "ckkorlegm0000g1peu7ecfpvm",
+      "time": "2021-02-03 01:41:04"
+    },
+    "key": "ckkorlegm0000g1peu7ecfpvm"
+  },
+  {
+    "data": {
+      "locID": "locID",
+      "tracerID": "ckkosgpxm0000r1peoozxhtp4",
+      "time": "2021-02-03 02:05:26"
+    },
+    "key": "ckkosgpxm0000r1peoozxhtp4"
+  },
+  {
+    "data": {
+      "locID": "Test 7",
+      "tracerID": "ckkosi07f000061pe5xrvj935",
+      "time": "2021-02-03 02:06:26"
+    },
+    "key": "ckkosi07f000061pe5xrvj935"
+  },
+  {
+    "data": {
+      "locID": "Test 7",
+      "tracerID": "ckkosipwy00007gpeqa4jc5pa",
+      "time": "2021-02-03 02:06:59"
+    },
+    "key": "ckkosipwy00007gpeqa4jc5pa"
+  },
+  {
+    "data": {
+      "locID": "locID",
+      "tracerID": "ckkosipx700017gpebcvm8i08",
+      "time": "2021-02-03 02:05:26"
+    },
+    "key": "ckkosipx700017gpebcvm8i08"
+  },
+  {
+    "data": {
+      "locID": "Test 8",
+      "tracerID": "ckkosjulu00007vpeh3yepsjt",
+      "time": "2021-02-03 02:07:52"
+    },
+    "key": "ckkosjulu00007vpeh3yepsjt"
+  },
+  {
+    "data": {
+      "locID": "Test 2",
+      "tracerID": "ckkoskj4y00017vpezrk3iwtg",
+      "time": "2021-02-03 02:08:24"
+    },
+    "key": "ckkoskj4y00017vpezrk3iwtg"
+  },
+  {
+    "data": {
+      "locID": "Test 1",
+      "tracerID": "ckkot8cao00027vpe53ewdey6",
+      "time": "2021-02-03 02:26:54"
+    },
+    "key": "ckkot8cao00027vpe53ewdey6"
+  },
+  {
+    "data": {
+      "locID": "Test 9",
+      "tracerID": "ckkotaxrr00037vpe0kpzjdr9",
+      "time": "2021-02-03 02:28:56"
+    },
+    "key": "ckkotaxrr00037vpe0kpzjdr9"
+  },
+  {
+    "data": {
+      "locID": "Test 9",
+      "tracerID": "ckkouc36y00047vpelyrbw6g9",
+      "time": "2021-02-03 02:57:49"
+    },
+    "key": "ckkouc36y00047vpelyrbw6g9"
+  },
+  {
+    "data": {
+      "locID": "Test 10",
+      "tracerID": "ckkoujhhb00057vpe8z1b9trf",
+      "time": "2021-02-03 03:03:34"
+    },
+    "key": "ckkoujhhb00057vpe8z1b9trf"
+  },
+  {
+    "data": {
+      "locID": "Test 11",
+      "tracerID": "ckkov3xez00008fpepxlf5nds",
+      "time": "2021-02-03 03:19:28"
+    },
+    "key": "ckkov3xez00008fpepxlf5nds"
+  },
+  {
+    "data": {
+      "locID": "Maastricht",
+      "tracerID": "ckkov9tyq0000bmpekts8jn4d",
+      "time": "2021-02-03 03:24:03"
+    },
+    "key": "ckkov9tyq0000bmpekts8jn4d"
+  },
+  {
+    "data": {
+      "locID": "Frankfurt am Main",
+      "tracerID": "ckkovb3tr0001bmpeifu2c43x",
+      "time": "2021-02-03 03:25:03"
+    },
+    "key": "ckkovb3tr0001bmpeifu2c43x"
+  },
+  {
+    "data": {
+      "locID": "Maastricht",
+      "tracerID": "ckkovsdr70000jtpeuqn02hgi",
+      "time": "2021-02-03 03:38:29"
+    },
+    "key": "ckkovsdr70000jtpeuqn02hgi"
+  },
+  {
+    "data": {
+      "locID": "Frankfurt am Main",
+      "tracerID": "ckkovvvt30000mhpebvkwnkde",
+      "time": "2021-02-03 03:41:12"
+    },
+    "key": "ckkovvvt30000mhpebvkwnkde"
+  },
+  {
+    "data": {
+      "locID": "Test 7",
+      "tracerID": "ckkovvzzv0001mhpe6hrf220j",
+      "time": "2021-02-03 03:41:17"
+    },
+    "key": "ckkovvzzv0001mhpe6hrf220j"
+  },
+  {
+    "data": {
+      "locID": "Amsterdam",
+      "tracerID": "ckkovw5ip0002mhpeczreq7ul",
+      "time": "2021-02-03 03:41:25"
+    },
+    "key": "ckkovw5ip0002mhpeczreq7ul"
+  },
+  {
+    "data": {
+      "locID": "locID",
+      "tracerID": "ckkovyj4o0000o3pevjkp3unk",
+      "time": "2021-02-03 03:43:16"
+    },
+    "key": "ckkovyj4o0000o3pevjkp3unk"
+  },
+  {
+    "data": {
+      "locID": "Guldental",
+      "tracerID": "ckkovyoh60001o3peq99v7yuw",
+      "time": "2021-02-03 03:43:22"
+    },
+    "key": "ckkovyoh60001o3peq99v7yuw"
+  },
+  {
+    "data": {
+      "locID": "Kaiserslautern",
+      "tracerID": "ckkovytlg0002o3peznzrhc4l",
+      "time": "2021-02-03 03:43:29"
+    },
+    "key": "ckkovytlg0002o3peznzrhc4l"
+  },
+  {
+    "data": {
+      "locID": "Mannheim HBF",
+      "tracerID": "ckkovzd0a0003o3pe08owtt74",
+      "time": "2021-02-03 03:43:54"
+    },
+    "key": "ckkovzd0a0003o3pe08owtt74"
+  },
+  {
+    "data": {
+      "locID": "Frankfurt am Main",
+      "tracerID": "ckkovznm50004o3pessbxerrt",
+      "time": "2021-02-03 03:44:08"
+    },
+    "key": "ckkovznm50004o3pessbxerrt"
+  },
+  {
+    "data": {
+      "locID": "Frankfurt am Main",
+      "tracerID": "ckkq7irr800006lpevb24gxjw",
+      "time": "2021-02-04 01:54:42"
+    },
+    "key": "ckkq7irr800006lpevb24gxjw"
+  },
+  {
+    "data": {
+      "locID": "Frankfurt am Main",
+      "tracerID": "ckkq7jf0e00016lpellzbvtjb",
+      "time": "2021-02-04 01:55:12"
+    },
+    "key": "ckkq7jf0e00016lpellzbvtjb"
+  },
+  {
+    "data": {
+      "locID": "Mannheim Rossmann",
+      "tracerID": "ckkq7yx1h0000f8pelsy6d42v",
+      "time": "2021-02-04 02:07:15"
+    },
+    "key": "ckkq7yx1h0000f8pelsy6d42v"
+  },
+  {
+    "data": {
+      "locID": "Mannheim Rossmann",
+      "tracerID": "ckkq9y37i0000m8pegrv343yv",
+      "time": "2021-02-04 03:02:36"
+    },
+    "key": "ckkq9y37i0000m8pegrv343yv"
+  },
+  {
+    "data": {
+      "locID": "Wörth am Rhein",
+      "tracerID": "ckkqa2rjf0001m8peh4gv8t9y",
+      "time": "2021-02-04 03:06:14"
+    },
+    "key": "ckkqa2rjf0001m8peh4gv8t9y"
+  },
+  {
+    "data": {
+      "locID": "Netto",
+      "tracerID": "ckkqa30h00002m8peqzk89lwu",
+      "time": "2021-02-04 03:06:25"
+    },
+    "key": "ckkqa30h00002m8peqzk89lwu"
+  },
+  {
+    "data": {
+      "locID": "Testlocation",
+      "tracerID": "ckkqa4ypg0003m8peyxqq2g74",
+      "time": "2021-02-04 03:07:56"
+    },
+    "key": "ckkqa4ypg0003m8peyxqq2g74"
+  },
+  {
+    "data": {
+      "locID": "LastTest",
+      "tracerID": "ckkqagt5t0000vvpebk6svqvy",
+      "time": "2021-02-04 03:17:09"
+    },
+    "key": "ckkqagt5t0000vvpebk6svqvy"
+  },
+  {
+    "data": {
+      "locID": "Testlocation",
+      "tracerID": "ckkqahm5b0001vvpe1fgsjwap",
+      "time": "2021-02-04 03:17:47"
+    },
+    "key": "ckkqahm5b0001vvpe1fgsjwap"
+  },
+  {
+    "data": {
+      "locID": "Testlocation",
+      "tracerID": "ckkqahmau0002vvpe6fzs28y5",
+      "time": "2021-02-04 03:17:47"
+    },
+    "key": "ckkqahmau0002vvpe6fzs28y5"
   }
 ]
