@@ -24,7 +24,8 @@
 
               color="#287A42"
               dark
-              v-if="risk"
+              id="risk"
+              v-if="risk_calculation"
           >
             <v-card-title class="align-content-center">
               Risikobewertung
@@ -97,7 +98,7 @@ export default {
       });
     },
 
-    /*risk(){
+    /*risk_calculation(){
       var alert;
       alert = 0
       if(alert == 1){
