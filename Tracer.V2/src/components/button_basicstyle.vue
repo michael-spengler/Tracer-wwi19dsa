@@ -18,7 +18,7 @@ export default {
 
 <style scoped>
 .buttonbasic{
-  background-color: #2c3e50;
+  background-color: #99D7F0;
   color: white;
   cursor: pointer;
   padding: 10px 50px;
