@@ -9,6 +9,7 @@
           right
           fixed
           fab
+          plain
           color="white"
           v-on:click="to_settings">
         <v-icon dark>
@@ -19,7 +20,7 @@
 
     <div class="card">
       <v-card>
-        <v-col cols="12">
+        <v-col align-self="center">
           <v-card
 
               color="#287A42"
@@ -48,10 +49,14 @@
       </v-card>
     </div>
     <div class="homescreen_button">
-      <button_basicstyle :onclick="to_tracerEvent">Create Tracer Event</button_basicstyle>
-    </div>
-    <div class="homescreen_button">
-      <button_basicstyle :onclick="to_reportcase">Call a case</button_basicstyle>
+      <v-btn
+             color= "#99D7F0"
+             dark
+             v-on:click="to_reportcase"
+        >
+        Call a case
+      <v-icon>mdi-alert-plus-outline</v-icon>
+      </v-btn>
     </div>
     <tab_bar></tab_bar>
     <div>
@@ -63,13 +68,13 @@
 <script>
 
 
-import button_basicstyle from "@/components/button_basicstyle";
+
 import tab_bar from "@/components/tab_bar";
 import VuePullRefresh from 'vue-pull-refresh';
 
 export default {
   name: "homescreen",
-  components: {tab_bar, button_basicstyle, VuePullRefresh,},
+  components: {tab_bar, VuePullRefresh,},
   methods: {
 
     to_tracerEvent() {
@@ -85,10 +90,21 @@ export default {
       this.$router.push({path: '/scanpage'});
     },
     eventroute() {
-      this.$router.push({path: '/create_event'})
+      //this.$router.push({path: '/create_event'})
     },
     to_settings() {
       this.$router.push({path: '/settings'});
+      //Experimental: data can be sent to backend via fetch
+      /*fetch('http://localhost:3000/Tracer/{"locID":"SentFromVueJS","currentTime":"2021-02-04 18:42:36","status":false,"risk":0}').then((response) => {
+        if (response.ok) {
+          console.log("Data was successfully added to server.")
+          db.collection("Buffer").doc(key).delete()
+          return response.json();
+        } else {
+          throw new Error('Something went wrong, try again later.');
+        }
+      })
+      //this.$router.push({path: 'http://localhost:3000/Tracer/{"locID":"SentFromVueJS","currentTime":"2021-02-04 18:42:36","status":false,"risk":0}'}) */
     },
     onRefresh: function () {
       return new Promise(function (resolve) {

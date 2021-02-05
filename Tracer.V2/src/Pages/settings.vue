@@ -1,12 +1,15 @@
 <template>
   <div>
-    <div><tab_bar></tab_bar></div>
+    <tab_bar></tab_bar>
   </div>
 </template>
 
 <script>
+import tab_bar from "@/components/tab_bar";
+
 export default {
-name: "Settings"
+  components: {tab_bar},
+  name: "Settings"
 }
 </script>
 
