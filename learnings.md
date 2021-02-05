@@ -15,6 +15,7 @@ Für Learnings im Bereich Businessmodell & Konzeption siehe im Bereich Business.
   - gewählt wurde Vue da simple und moderne App gewünscht.
   - Vue UI
   - vuetify
+  - ionic (getestet aber nicht verwendet)
   - Analysieren anderer Projekte und Templates
   - tiefergehendes Verständnis für HTML und CSS
 - Progressive Web App (PWA)

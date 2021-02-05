@@ -90,12 +90,18 @@ Für weitere Informationen rund um das Businessmodell und die Idee dahinter sieh
 Im Laufe des Projekts haben wir einiges lernen können. Wichtige Dinge haben wir in [Learnings](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/learnings.md) festgehalten.
 
 Used Technologies:
-- Vue.js
-- npm
-- Deno
-- Typescript
-- JavaScript
-- MySQL
+
+![Deno](https://img.shields.io/badge/Backend-Deno-blue?style=flat&logo=deno)
+
+![Vue](https://img.shields.io/badge/Frontend-Vue.js-blue?style=flat&logo=Vue.js)
+
+![NPM](https://img.shields.io/badge/Packages-NPM-blue?style=flat&logo=npm)
+
+![TS](https://img.shields.io/badge/Language-TypeScript-blue?style=flat&logo=Typescript)
+
+![JS](https://img.shields.io/badge/Language-JavaScript-blue?style=flat&logo=JavaScript)
+
+![DB](https://img.shields.io/badge/Database-MySQL-blue?style=flat&logo=mysql)
 
 ## Frontend
 
