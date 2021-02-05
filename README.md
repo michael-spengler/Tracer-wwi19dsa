@@ -27,6 +27,13 @@ cd ./Tracer.V2
 npm run serve
 ```
 
+## Technologien
+![Deno](https://img.shields.io/badge/Backend-Deno-blue?style=flat&logo=deno)
+![Vue](https://img.shields.io/badge/Frontend-Vue.js-blue?style=flat&logo=Vue.js)
+![NPM](https://img.shields.io/badge/Packages-NPM-blue?style=flat&logo=npm)
+![TS](https://img.shields.io/badge/Language-TypeScript-blue?style=flat&logo=Typescript)
+![JS](https://img.shields.io/badge/Language-JavaScript-blue?style=flat&logo=JavaScript)
+![DB](https://img.shields.io/badge/Database-MySQL-blue?style=flat&logo=mysql)
 
 ## Gruppenmitglieder
 
@@ -46,10 +53,6 @@ npm run serve
   - [Frontend](#Frontend)
   - [Backend](#Backend)
   - [Datenbank](#Datenbank)
-
-<br>
-<br>
-<br>
 
 # Einführung
 
@@ -88,20 +91,6 @@ Für weitere Informationen rund um das Businessmodell und die Idee dahinter sieh
 # Technik
 
 Im Laufe des Projekts haben wir einiges lernen können. Wichtige Dinge haben wir in [Learnings](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/learnings.md) festgehalten.
-
-Used Technologies:
-
-![Deno](https://img.shields.io/badge/Backend-Deno-blue?style=flat&logo=deno)
-
-![Vue](https://img.shields.io/badge/Frontend-Vue.js-blue?style=flat&logo=Vue.js)
-
-![NPM](https://img.shields.io/badge/Packages-NPM-blue?style=flat&logo=npm)
-
-![TS](https://img.shields.io/badge/Language-TypeScript-blue?style=flat&logo=Typescript)
-
-![JS](https://img.shields.io/badge/Language-JavaScript-blue?style=flat&logo=JavaScript)
-
-![DB](https://img.shields.io/badge/Database-MySQL-blue?style=flat&logo=mysql)
 
 ## Frontend
 
