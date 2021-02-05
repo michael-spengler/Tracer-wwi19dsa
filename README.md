@@ -2,14 +2,31 @@
 
 ![Logo](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/business/data/Icon/Tracer_icon_vertical.png?raw=true)
 
-<!-- ## Überblick -->
-<!-- <p align="center">
+<!-- ## Überblick 
+<p align="center">
  <img src="https://raw.githubusercontent.com/8bithemant/8bithemant/master/svg/dev/languages/html.svg" alt="Twitter" style="vertical-align:top; margin:4px">
  <img src="https://raw.githubusercontent.com/8bithemant/8bithemant/master/svg/dev/languages/js.svg" alt="Twitter" style="vertical-align:top; margin:4px">
  <img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png">
  <img src="https://raw.githubusercontent.com/8bithemant/8bithemant/master/svg/dev/services/npm.svg" alt="Twitter" style="vertical-align:top; margin:4px">
  <img src="https://raw.githubusercontent.com/8bithemant/8bithemant/master/svg/dev/tools/visualstudio_code.svg" alt="Twitter" style="vertical-align:top; margin:4px">
 </p> -->
+<br>
+
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/michael-spengler/tracer-wwi19dsa?include_prereleases)
+[![GitHub issues](https://img.shields.io/github/issues/michael-spengler/Tracer-wwi19dsa)](https://github.com/michael-spengler/Tracer-wwi19dsa/issues)
+[![GitHub license](https://img.shields.io/github/license/michael-spengler/Tracer-wwi19dsa)](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/LICENSE)
+[![GitHub forks](https://img.shields.io/github/forks/michael-spengler/Tracer-wwi19dsa)](https://github.com/michael-spengler/Tracer-wwi19dsa/network)
+[![GitHub stars](https://img.shields.io/github/stars/michael-spengler/Tracer-wwi19dsa)](https://github.com/michael-spengler/Tracer-wwi19dsa/stargazers)
+![GitHub all releases](https://img.shields.io/github/downloads/michael-spengler/Tracer-wwi19dsa/total)
+
+## Benutzung
+
+```bash
+// to start Vue frontend
+cd ./Tracer.V2
+npm run serve
+```
+
 
 ## Gruppenmitglieder
 
@@ -69,6 +86,16 @@ Für weitere Informationen rund um das Businessmodell und die Idee dahinter sieh
 <br>
 
 # Technik
+
+Im Laufe des Projekts haben wir einiges lernen können. Wichtige Dinge haben wir in [Learnings](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/learnings.md) festgehalten.
+
+Used Technologies:
+- Vue.js
+- npm
+- Deno
+- Typescript
+- JavaScript
+- MySQL
 
 ## Frontend
 
