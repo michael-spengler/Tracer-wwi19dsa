@@ -86,7 +86,7 @@ function clearBuffer() {
 }
 
 function sendData(scanData, key) {
-    
+    //console.log(`http://localhost:3000/Tracer/${JSON.stringify(scanData)}`)
     fetch(`http://localhost:3000/Tracer/${JSON.stringify(scanData)}`).then((response) => {
         if (response.ok) {
           console.log("Data was successfully added to server.")

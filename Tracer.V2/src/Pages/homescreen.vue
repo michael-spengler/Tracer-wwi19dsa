@@ -67,7 +67,11 @@
 
 <script>
 
-
+//first install via: npm install localbase --save
+/*import Localbase from 'localbase'
+let db = new Localbase('db')
+console.log(db)
+*/
 
 import tab_bar from "@/components/tab_bar";
 //import VuePullRefresh from 'vue-pull-refresh';
@@ -92,16 +96,8 @@ export default {
     to_settings() {
       this.$router.push({path: '/settings'});
       //Experimental: data can be sent to backend via fetch
-      /*fetch('http://localhost:3000/Tracer/{"locID":"SentFromVueJS","currentTime":"2021-02-04 18:42:36","status":false,"risk":0}').then((response) => {
-        if (response.ok) {
-          console.log("Data was successfully added to server.")
-          db.collection("Buffer").doc(key).delete()
-          return response.json();
-        } else {
-          throw new Error('Something went wrong, try again later.');
-        }
-      })
-      //this.$router.push({path: 'http://localhost:3000/Tracer/{"locID":"SentFromVueJS","currentTime":"2021-02-04 18:42:36","status":false,"risk":0}'}) */
+      //fetch('http://localhost:3000/Tracer/{"locID":"Demo","currentTime":"2021-02-04 18:42:36","status":false,"risk":0}')
+
     },
     /*onRefresh: function () {
       return new Promise(function (resolve) {
