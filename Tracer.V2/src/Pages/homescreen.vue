@@ -25,8 +25,8 @@
 
               color="#287A42"
               dark
-              id="risk"
-              v-if="risk_calculation"
+
+
           >
             <v-card-title class="align-content-center">
               Risikobewertung
@@ -54,7 +54,7 @@
              dark
              v-on:click="to_reportcase"
         >
-        Call a case
+        Report a Case
       <v-icon>mdi-alert-plus-outline</v-icon>
       </v-btn>
     </div>
@@ -70,16 +70,13 @@
 
 
 import tab_bar from "@/components/tab_bar";
-import VuePullRefresh from 'vue-pull-refresh';
+//import VuePullRefresh from 'vue-pull-refresh';
 
 export default {
   name: "homescreen",
-  components: {tab_bar, VuePullRefresh,},
+  components: {tab_bar, /*VuePullRefresh,*/},
   methods: {
 
-    to_tracerEvent() {
-      this.$router.push({path: "/create_event"})
-    },
     to_reportcase() {
       this.$router.push({path: "/report_case"})
     },
@@ -106,13 +103,13 @@ export default {
       })
       //this.$router.push({path: 'http://localhost:3000/Tracer/{"locID":"SentFromVueJS","currentTime":"2021-02-04 18:42:36","status":false,"risk":0}'}) */
     },
-    onRefresh: function () {
+    /*onRefresh: function () {
       return new Promise(function (resolve) {
         setTimeout(function () {
           resolve();
         }, 1000);
       });
-    },
+    },*/
 
     /*risk_calculation(){
       var alert;
