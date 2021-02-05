@@ -67,7 +67,11 @@
 
 <script>
 
-
+//first install via: npm install localbase --save
+/*import Localbase from 'localbase'
+let db = new Localbase('db')
+console.log(db)
+*/
 
 import tab_bar from "@/components/tab_bar";
 //import VuePullRefresh from 'vue-pull-refresh';
