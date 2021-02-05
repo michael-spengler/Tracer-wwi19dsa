@@ -1,17 +1,6 @@
-# Dokumentation des Projektes "Tracer"
-
 ![Logo](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/business/data/Icon/Tracer_icon_vertical.png?raw=true)
 
-<!-- ## Überblick 
-<p align="center">
- <img src="https://raw.githubusercontent.com/8bithemant/8bithemant/master/svg/dev/languages/html.svg" alt="Twitter" style="vertical-align:top; margin:4px">
- <img src="https://raw.githubusercontent.com/8bithemant/8bithemant/master/svg/dev/languages/js.svg" alt="Twitter" style="vertical-align:top; margin:4px">
- <img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png">
- <img src="https://raw.githubusercontent.com/8bithemant/8bithemant/master/svg/dev/services/npm.svg" alt="Twitter" style="vertical-align:top; margin:4px">
- <img src="https://raw.githubusercontent.com/8bithemant/8bithemant/master/svg/dev/tools/visualstudio_code.svg" alt="Twitter" style="vertical-align:top; margin:4px">
-</p> -->
-<br>
-
+<br><br>
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/michael-spengler/tracer-wwi19dsa?include_prereleases)
 [![GitHub issues](https://img.shields.io/github/issues/michael-spengler/Tracer-wwi19dsa)](https://github.com/michael-spengler/Tracer-wwi19dsa/issues)
 [![GitHub license](https://img.shields.io/github/license/michael-spengler/Tracer-wwi19dsa)](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/LICENSE)
@@ -35,14 +24,9 @@ npm run serve
 ![JS](https://img.shields.io/badge/Language-JavaScript-blue?style=flat&logo=JavaScript)
 ![DB](https://img.shields.io/badge/Database-MySQL-blue?style=flat&logo=mysql)
 
-## Gruppenmitglieder
+<br><br>
 
-- [Marie Krieger](https://github.com/mk101101)
-- [Ayman Madhour](https://github.com/Madhour)
-- [Lukas Bach](https://github.com/lukasbach00)
-- [Jorgo Paschaloglou](https://github.com/JorgoPascha)
-- [Nico Heller](https://github.com/Pr0lin-cyber)
-- [Lukas Benner](https://github.com/BennerLukas)
+# Dokumentation des Projektes "Tracer"
 
 ## Inhaltsverzeichnis
 
@@ -55,6 +39,15 @@ npm run serve
   - [Datenbank](#Datenbank)
 
 # Einführung
+
+## Gruppenmitglieder
+
+- [Marie Krieger](https://github.com/mk101101)
+- [Ayman Madhour](https://github.com/Madhour)
+- [Lukas Bach](https://github.com/lukasbach00)
+- [Jorgo Paschaloglou](https://github.com/JorgoPascha)
+- [Nico Heller](https://github.com/Pr0lin-cyber)
+- [Lukas Benner](https://github.com/BennerLukas)
 
 Mit Tracer möchten wir eine Alternative und Erweiterung bisheriger Systeme zur Infektionsketten Verfolgung, darstellen.
 
