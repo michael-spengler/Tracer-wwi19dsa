@@ -83,6 +83,7 @@ import tab_bar from "@/components/tab_bar";
 // import VuePullRefresh from 'vue-pull-refresh';
 import {checkVariables} from '../router/receiveScan.js'
 
+checkVariables()
 
 export default {
   name: "homescreen",
@@ -90,8 +91,7 @@ export default {
   methods: {
 
     to_reportcase() {
-      checkVariables()
-      // this.$router.push({path: "/report_case"})
+      this.$router.push({path: "/report_case"})
     },
     startroute() {
       this.$router.push({path: '/'});
