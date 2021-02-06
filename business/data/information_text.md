@@ -10,9 +10,9 @@ Dadurch können händische Zettel oder Listen abgeschafft werden. Es spart Zeit 
 
 ### Wie funktioniert Tracer?
 
-Jeder Besucher scannt einen QR-Code mit der Tracer-App. Dadurch wird der Ort und der Zeitpunkt des Besuchs einer Datenbank übermittelt. Diese werden zusammen mit einer zufälligen aber eindeutigen Nummer versehen. Diese Nummer wird anschließend auch auf dem Endgerät gespeichert.
+Jeder Besucher scannt einen QR-Code mit der Tracer-App. Dadurch wird der Ort und der Zeitpunkt des Besuchs einer Datenbank übermittelt. Diese werden zusammen mit einer zufälligen aber eindeutigen Nummer versehen. Diese Nummer wird anschließend auch auf Ihrem Endgerät gespeichert.
 
-Wird nun ein positiver Fall gemeldet, können alle auf diesem Endgerät gespeicherten Nummern der Datenbank übergeben werden. Daraus kann der Ort und der Zeitpunkt potentieller Infektionen herausgefunden werden. Alle Nummern, die für den selben Ort zu ungefähr dem selben Zeitraum angelegt worden, werden veröffentlicht. Die Tracer App überprüft ob eine auf dem eigenen Endgerät gespeicherten Nummer betroffen ist. Ist dies der Fall wird der Nutzer in Form einer roten Meldung informiert.
+Meldet nun eine Person einen positiven Fall, können alle auf deren Endgerät gespeicherten Nummern der Datenbank übergeben werden. Daraus kann der Ort und der Zeitpunkt potentieller Infektionen herausgefunden werden. Alle Nummern, die für den selben Ort zu ungefähr dem selben Zeitraum angelegt worden, werden veröffentlicht. Die Tracer App überprüft ob eine auf dem eigenen Endgerät gespeicherten Nummer betroffen ist. Ist dies der Fall wird der Nutzer in Form einer roten Meldung informiert.
 
 Weitere Informationen finden Sie [hier](https://github.com/michael-spengler/Tracer-wwi19dsa)
 
@@ -26,6 +26,10 @@ Nicht mehr benötigte Daten werden ebenfalls gelöscht.
 Tracer schützt jedoch nicht vor komprimierten Internetverbindungen oder ähnlichem.
 
 Weitere Informationen finden Sie [hier](https://github.com/michael-spengler/Tracer-wwi19dsa)
+
+## Wie kann ich eigene QR-Codes erstellen?
+
+Wenn Sie einen eigenes Geschäft haben oder im Rahmen einer Veranstaltung Infektionsketten nachverfolgen wollen können Sie mithilfe der Tracer-App ebenfalls einen eigenen QR-Code erstellen. Dafür müssen Sie nur eine übliche Verweildauer angeben (z.B. Supermarkt 30 Minuten) und anschließend wird auf dem Server eine zufällige eindeutige Nummer erzeugt und für Sie in Form eines QR-Codes bereitgestellt. Anschließend können Sie mit dem Teilen beginnen. Beachten Sie, dass Sie diesen QR-Code sichern müssen. Tracer speichert diesen nicht.
 
 ### Wer steckt hinter Tracer?
 
