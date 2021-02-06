@@ -2,7 +2,7 @@
 
 let db = new Localbase("TracerDB"); //creates local Database
 
-async function checkVariables(){
+export async function checkVariables(){
 let variables = await db.collection("Variables").doc("1").get().then(value => {return(value)})
 console.log(variables)
 let currentTime = new Date();
@@ -28,7 +28,7 @@ if (Math.floor((currentTime-variables.timeOfReport)/d)>14){
 checkVariables()
 
 //newScan creates a new scan instance with given locID(from QR-Code; @Frontend)
- function newScan(locID, status) {
+export function newScan(locID, status) {
 
   //attributes
   this.locID = locID;
@@ -52,7 +52,7 @@ checkVariables()
   };
 }
 
- async function storeScan(locID){
+export async function storeScan(locID){
     let status = await db.collection('Variables').doc('1').get().then(variables => {return(variables.status)});
     let scan = new newScan(locID, status);
     //console.log(scan.data())
@@ -71,7 +71,7 @@ checkVariables()
         })
 }
 
-function clearBuffer() {
+export function clearBuffer() {
             console.log("Send to server...")
             db.collection('Buffer').get().then(buffer => {
                 if (buffer.length == 0) {
@@ -85,7 +85,7 @@ function clearBuffer() {
               })
 }
 
-function sendData(scanData, key) {
+export function sendData(scanData, key) {
     
     fetch(`http://localhost:3000/Tracer/${JSON.stringify(scanData)}`).then((response) => {
         if (response.ok) {
@@ -111,7 +111,7 @@ function sendData(scanData, key) {
       });
 }
 
-async function reportCase(){
+export async function reportCase(){
     console.log("Reporting Case... ")
     var idList = [];
 
@@ -146,7 +146,7 @@ async function reportCase(){
   //len der liste = anzahl pot. risikobegegnungen
 
 
-async function checkRisk(){
+export async function checkRisk(){
   console.log("Checking risk... ")
   var idList = [];
 

@@ -1,9 +1,14 @@
 <template>
   <div>
     <div class="top">
-      <img class="logo" src="@/assets/Tracer_icon_final.png"
+      <div><img class="logo" src="@/assets/Tracer_icon_final.png"
            width="70" height="70" alt="error picture not available"/>
-      <v-btn
+        </div>
+      <div class="header">
+        Tracer
+      </div>
+      <div>
+        <v-btn
           small
           top
           right
@@ -16,17 +21,18 @@
           mdi-settings
         </v-icon>
       </v-btn>
+        </div>
     </div>
-
+<span class="span"></span>
     <div class="card">
-      <v-card>
-        <v-col align-self="center">
           <v-card
-
               color="#287A42"
               dark
-
-
+              height="70%"
+              width="90%"
+              elevation="5"
+              outlined
+              rounded
           >
             <v-card-title class="align-content-center">
               Risikobewertung
@@ -37,27 +43,18 @@
               last check: XX.XX.XXXX
             </v-card-subtitle>
           </v-card>
-
-        </v-col>
-
-        <v-col
-            v-for="(item, i) in items"
-            :key="i"
-            cols="12"
-        >
-        </v-col>
-      </v-card>
     </div>
+    <span class="untercard"></span>
     <div class="homescreen_button">
       <v-btn
              color= "#99D7F0"
              dark
-             v-on:click="to_reportcase"
-        >
-        Report a Case
+             width="85%"
+             v-on:click="to_reportcase">
       <v-icon>mdi-alert-plus-outline</v-icon>
+        Report a Case
       </v-btn>
-    </div>
+      </div>
     <tab_bar></tab_bar>
     <div>
       <vue-pull-refresh :on-refresh="onRefresh"></vue-pull-refresh>
@@ -67,10 +64,9 @@
 
 <script>
 
-
-
 import tab_bar from "@/components/tab_bar";
 //import VuePullRefresh from 'vue-pull-refresh';
+
 
 export default {
   name: "homescreen",
@@ -79,6 +75,7 @@ export default {
 
     to_reportcase() {
       this.$router.push({path: "/report_case"})
+
     },
     startroute() {
       this.$router.push({path: '/'});
@@ -140,8 +137,10 @@ export default {
 }
 
 .top {
+  text-align: left;
   float: top;
   position: fixed;
+  width: 100%;
 }
 
 .homescreen_button {
@@ -150,10 +149,28 @@ export default {
 
 .card {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
+  margin-left: 30px;
+  margin-right: 30px;
+  align-items: center;
 }
+.header{
+  padding: 23px;
+  font-family: Roboto;
+  font-size: 20px;
+  text-align: center;
+  color: #676767;
 
-
+}
+.span{
+  display:block;
+  height:200px;
+  width:100%;
+  background:white;
+}
+.untercard{
+  display:block;
+  height:50px;
+  width:100%;
+  background:white;
+}
 </style>
