@@ -17,6 +17,7 @@ npm run serve
 ```
 
 ## Technologien
+
 ![Deno](https://img.shields.io/badge/Backend-Deno-blue?style=flat&logo=deno)
 ![Vue](https://img.shields.io/badge/Frontend-Vue.js-blue?style=flat&logo=Vue.js)
 ![NPM](https://img.shields.io/badge/Packages-NPM-blue?style=flat&logo=npm)
@@ -37,13 +38,13 @@ npm run serve
   - [Frontend](#Frontend)
   - [Backend](#Backend)
   - [Datenbank](#Datenbank)
-- Projekt
-  - Organisation
-  - Learnings
+- [Projekt](#Projekt)
+  - [Organisation](#Organisation)
+  - [Learnings](#Learnings)
 
-# Einführung
+## Einführung
 
-## Gruppenmitglieder
+### Gruppenmitglieder
 
 - [Marie Krieger](https://github.com/mk101101)
 - [Ayman Madhour](https://github.com/Madhour)
@@ -63,7 +64,7 @@ Wenn ein Kunde/in ein Restaurant betritt (vorausgesetzt es ist erlaubt), müssen
 Die Datenbank hat keinerlei Auskunft über den Nutzer. Indirekt personenbezogene Daten wie der Ort können über verschiedene Techniken ebenfalls anonymisiert werden.
 Unser Projekt ist Open Source und wird von unabhängigen Experten geprüft werden.
 
-# Idee
+## Idee
 
 Ziel der Tracer-App soll es sein dem Einzelhandel und anderen lokalen Geschäften ein geregelter und sicherer Betrieb zu ermöglichen. Unter den derzeit bestehenden Pandemiebedingungen ist dies nicht möglich. Das Nachvollziehen von Infektionsketten ist aufwendig und kompliziert und zudem mangelt es bei vielen Bürgern an der Akzeptanz, da persönliche Daten erhoben werden müssen. Wir möchten mit unserer Technologie Abhilfe schaffen. Mit Tracer können Gewerbetreibende ohne Mehraufwand ihrem Tagesgeschäft, dem Verkaufen nachgehen. Behörden und Gesundheitsämter können zudem über einfache Schnittstellen unseren Nutzern über mögliche Infektionen schnell Bescheid geben. Für den Nutzer birgt unsere App auch einige Vorteile. Neben der einfachen und intuitiven Bedienung benötigen wir keine persönlichen oder Personen-identifizierbare Daten.
 ![Saved Data](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/business/data/Tracer-PitchDeck/Folie7.PNG?raw=true)
@@ -71,7 +72,7 @@ Dies möchten wir durch unabhängige Prüfer überprüfen lassen um so den höch
 Unserer Vision ist es einen Beitrag zur Bekämpfung der Pandemie zu leisten, sodass die Menschen, die Wirtschaft und die gesamte Gesellschaft schnell wieder gesund wird und die Pandemie gemeistert werden kann.
 Auch über die jetzige, durch den Sars-CoV2 Virus ausgelöste, Pandemie hinaus kann unsere App Einsatz finden. Die Technologie ist unabhängig von der Art der Pandemie und wir sehen es daher als wichtiges Tool für zukünftige Notfallpläne an.
 
-# Business
+## Business
 
 Für weitere Informationen rund um das Businessmodell und die Idee dahinter siehe folgende Materialien:
 
@@ -84,33 +85,39 @@ Für weitere Informationen rund um das Businessmodell und die Idee dahinter sieh
 <br>
 <br>
 
-# Technik
+## Technik
 
 Im Laufe des Projekts haben wir einiges lernen können. Wichtige Dinge haben wir in [Learnings](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/learnings.md) festgehalten.
 
-## Frontend
+### Frontend
 
 Für das Frontend wird [Vue.js](https://vuejs.org/) verwendet.
 
-## Backend
+### Backend
 
 Für das Backend wird [Deno](https://deno.land/) verwendet.
 Im Folgenden werden die einzelnen Prozesse des Backends aufgeführt und erläutert. Diese sind elementar um die Anonymität der Nutzer zu gewährleisten.
 
-### Hinzufügen eines neuen Eintrags
+#### Hinzufügen eines neuen Eintrags
 
 ![Flowchart](https://raw.githubusercontent.com/BennerLukas/Tracer/main/server/ressources/flowcharts/1_Log_New_Scan.png)
 
-### Krankheitsfall melden
+#### Krankheitsfall melden
 
 ![Flowchart](https://raw.githubusercontent.com/BennerLukas/Tracer/main/server/ressources/flowcharts/2_Report_Case.png)
 
-### Überprüfen ob Kontakt zu Infizierten bestanden hat
+#### Überprüfen ob Kontakt zu Infizierten bestanden hat
 
 ![Flowchart](https://raw.githubusercontent.com/BennerLukas/Tracer/main/server/ressources/flowcharts/3_Check_Risk.png)
 
-### Neuer Ort bzw. QR-Code generieren
+#### Neuer Ort bzw. QR-Code generieren
 
 ![Flowchart](https://raw.githubusercontent.com/BennerLukas/Tracer/main/server/ressources/flowcharts/4_Create_New_Loc-ID.png)
 
-## Datenbank
+### Datenbank
+
+## Projekt
+
+### Organisation
+
+### Learnings
