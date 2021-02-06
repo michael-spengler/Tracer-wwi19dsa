@@ -37,6 +37,9 @@ npm run serve
   - [Frontend](#Frontend)
   - [Backend](#Backend)
   - [Datenbank](#Datenbank)
+- Projekt
+  - Organisation
+  - Learnings
 
 # Einführung
 
@@ -53,7 +56,7 @@ Mit Tracer möchten wir eine Alternative und Erweiterung bisheriger Systeme zur 
 
 Die aktuelle Pandemie ist jedem bekannt. Die Öffentlichkeit erfährt dadurch einige (notwendige) Einschränkungen. Besonders für die Wirtschaft, im genaueren den Einzelhandel, schadet dies enorm. Wir schaffen mit Tracer dafür Abhilfe. Indem wir Infektionsketten automatisiert und einfach nachverfolgbar machen ohne dabei die Privatsphäre und Datenschutzbeschränkungen verletzen. Tracer kann vollständig anonym verwendet werden.
 
-Wenn ein Kunde/in ein Restaurant betritt (vorausgesetzt es ist erlaubt), müssen seine/ihre Kontaktdaten aufgenommen werden. Tracer setzt genau hier an. Mithilfe der App soll nun ein QR-Code gescannt werden. Dadurch wird auf einer Datenbank ein Eintrag angelegt. In diesem wird der Ort und die Zeit sowie eine anonyme einzigartige ID abgespeichert. Die App speichert sich diese ID ebenfalls ab. Im Falle einer Infektion wird nun über die Datenbank alle betroffenen IDs veröffentlicht. Die App prüft nun, ob eine ihrer IDs betroffen ist und warnt gegebenenfalls den Kunden/in.
+Wenn ein Kunde/in ein Restaurant betritt (vorausgesetzt es ist erlaubt), müssen seine/ihre Kontaktdaten aufgenommen werden. Tracer setzt genau hier an. Mithilfe der App soll nun ein QR-Code gescannt werden. Dadurch wird auf einer Datenbank ein Eintrag angelegt. In diesem wird der Ort und die Zeit sowie eine anonyme einzigartige ID abgespeichert. Die App speichert sich diese ID ebenfalls ab. Im Falle einer Infektion wird nun über die Datenbank alle betroffenen IDs veröffentlicht. Die App prüft nun, ob eine ihrer IDs betroffen ist und warnt gegebenenfalls die Kunden.
 
 ![New Entry](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/business/data/Tracer-PitchDeck/Folie6.PNG?raw=true)
 
@@ -62,7 +65,7 @@ Unser Projekt ist Open Source und wird von unabhängigen Experten geprüft werde
 
 # Idee
 
-Ziel der Tracer-App soll es sein dem Einzelhandel und anderen lokalen Geschäften ein geregelter und sicherer Betrieb zu ermöglichen. Unter den derzeit bestehenden Pandemiebedingungen ist dies nicht möglich. Das Nachvollziehen von Infektionsketten ist aufwendig und kompliziert und zudem scheitetet es bei vielen Bürgern an der Akzeptanz, da persönliche Daten erhoben werden müssen. Wir möchten mit unserer Technologie Abhilfe schaffen. Mit Tracer können Gewerbetreibende ohne Mehraufwand ihrem Tagesgeschäft, dem Verkaufen nachgehen. Behörden und Gesundheitsämter können zudem über einfache Schnittstellen unseren Nutzern über mögliche Infektionen schnell Bescheid geben. Für den Nutzer birgt unsere App auch einige Vorteile. Neben der einfachen und intuitiven Bedienung benötigen wir keine persönlichen oder Personen-identifizierbare Daten.
+Ziel der Tracer-App soll es sein dem Einzelhandel und anderen lokalen Geschäften ein geregelter und sicherer Betrieb zu ermöglichen. Unter den derzeit bestehenden Pandemiebedingungen ist dies nicht möglich. Das Nachvollziehen von Infektionsketten ist aufwendig und kompliziert und zudem mangelt es bei vielen Bürgern an der Akzeptanz, da persönliche Daten erhoben werden müssen. Wir möchten mit unserer Technologie Abhilfe schaffen. Mit Tracer können Gewerbetreibende ohne Mehraufwand ihrem Tagesgeschäft, dem Verkaufen nachgehen. Behörden und Gesundheitsämter können zudem über einfache Schnittstellen unseren Nutzern über mögliche Infektionen schnell Bescheid geben. Für den Nutzer birgt unsere App auch einige Vorteile. Neben der einfachen und intuitiven Bedienung benötigen wir keine persönlichen oder Personen-identifizierbare Daten.
 ![Saved Data](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/business/data/Tracer-PitchDeck/Folie7.PNG?raw=true)
 Dies möchten wir durch unabhängige Prüfer überprüfen lassen um so den höchsten Sicherheits- und Datenschutzstandards entsprechen zu können.
 Unserer Vision ist es einen Beitrag zur Bekämpfung der Pandemie zu leisten, sodass die Menschen, die Wirtschaft und die gesamte Gesellschaft schnell wieder gesund wird und die Pandemie gemeistert werden kann.
