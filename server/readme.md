@@ -1,17 +1,18 @@
 Backend w/ Deno
-====== 
+======
 
-to run the server use: 
+to run the server use:
+
 ```bash
-__deno run --allow-net --allow-read --allow-write --allow-env --unstable ./server/src/backendServer.ts__server runs on __localhost:3000__
+deno run --allow-net --allow-read --allow-write --allow-env --unstable ./server/src/backendServer.ts server runs on localhost:3000
 ```
 
 You need to have a (local) mySQL DB running:
-* __brew services start mysql__
-* __mysql -u root -p__
 
+- __brew services start mysql__
+- __mysql -u root -p__
 
-Dependencies 
+Dependencies
 ------
 
 1. Opine
@@ -33,9 +34,10 @@ Dependencies
 
 <img src="./ressources/TracerDB_demo.gif" width="750"/>
 
-Report Case 
+Report Case
 ------
-1. [x] Button to report (no verification) 
+
+1. [x] Button to report (no verification)
 2. [x] Send list of IDs (From local DB) to backend
 3. [x] In Backend, set status = positive for all IDs
     > difficulties: asynchronous processing of IDs
@@ -50,10 +52,11 @@ Report Case
     > add function on page reload where a sql statement deletes all entries where timestamp > 14 days
 
 Risk status
+
 1. [x] After setting status = positive, set for all visits within timerange +- 2 in the same location the risk to 1
 
 Check risk
+
 1. [x] Pass all IDs from localDB
 2. [x] Select user.risk where user.id = [ID1, ..., IDn]
 3. [x] 0 = low risk, else 1 (n) possible encounter.
-
