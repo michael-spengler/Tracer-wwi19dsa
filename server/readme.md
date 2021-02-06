@@ -1,8 +1,10 @@
 Backend w/ Deno
 ====== 
 
-to run the server use: __deno run --allow-net --allow-read --allow-write --allow-env --unstable ./server/src/backendServer.ts__
-→ server runs on __localhost:3000__
+to run the server use: 
+```bash
+__deno run --allow-net --allow-read --allow-write --allow-env --unstable ./server/src/backendServer.ts__server runs on __localhost:3000__
+```
 
 You need to have a (local) mySQL DB running:
 * __brew services start mysql__
