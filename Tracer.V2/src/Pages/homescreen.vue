@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="top">
-      <div><img class="logo" src="@/assets/Tracer_icon_final.png"
-           width="70" height="70" alt="error picture not available"/>
+      <div><img class="logo" src="@/assets/Tracer_icon_vertical_grey.svg"
+           height="120" alt="error picture not available"/>
         </div>
       <div class="header">
         Tracer
@@ -23,31 +23,35 @@
       </v-btn>
         </div>
     </div>
-<span class="span"></span>
+  <!-- <span class="span"></span> -->
+    <br><br><br><br><br>
     <div class="card">
+      <img src=".\Sustainable Lifestyle.svg" style="height:200px"/>
           <v-card
               color="#287A42"
               dark
-              height="70%"
-              width="90%"
+              height="100%"
+              width="100%"
               elevation="5"
-              outlined
+              outlined=False
               rounded
           >
             <v-card-title class="align-content-center">
+              <br><br><br>
               Risikobewertung
             </v-card-title>
 
-            <v-card-subtitle>Status: Super Toggo gesund<br>
-              last scan: XX.XX.XXXX<br>
+            <v-card-subtitle>Status: Super Toggo gesund<br><br><br>
+              last scan: XX.XX.XXXX<br><br><br>
               last check: XX.XX.XXXX
+              <br><br>
             </v-card-subtitle>
           </v-card>
     </div>
     <span class="untercard"></span>
     <div class="homescreen_button">
       <v-btn
-             color= "#99D7F0"
+             color= "#676767"
              dark
              width="85%"
              v-on:click="to_reportcase">
@@ -55,6 +59,16 @@
         Report a Case
       </v-btn>
       </div>
+      <br>
+      <div class="homescreen_button">
+      <v-btn
+          color= "#676767"
+          dark
+          width="85%"
+          v-on:click="to_app_information">
+        App Information
+      </v-btn>
+    </div>
     <tab_bar></tab_bar>
     <div>
       <vue-pull-refresh :on-refresh="onRefresh"></vue-pull-refresh>
@@ -86,8 +100,13 @@ export default {
     eventroute() {
       //this.$router.push({path: '/create_event'})
     },
+    to_app_information() {
+      this.$router.push({path: "/app_information"})
+
+    },
     to_settings() {
       this.$router.push({path: '/settings'});
+    
       //Experimental: data can be sent to backend via fetch
       /*fetch('http://localhost:3000/Tracer/{"locID":"SentFromVueJS","currentTime":"2021-02-04 18:42:36","status":false,"risk":0}').then((response) => {
         if (response.ok) {
