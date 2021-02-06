@@ -39,10 +39,11 @@
             <v-card-title class="align-content-center">
               <br><br><br>
               Risikobewertung
+              <br>
             </v-card-title>
 
-            <v-card-subtitle>Status: Super Toggo gesund<br><br><br>
-              last scan: XX.XX.XXXX<br><br><br>
+            <v-card-subtitle>Status: Gesund<br><br><hr style="color:white"><br>
+              Risiko: 3 Risikobegegnungen<br><br><hr style="color:white"><br>
               last check: XX.XX.XXXX
               <br><br>
             </v-card-subtitle>
@@ -56,7 +57,7 @@
              width="85%"
              v-on:click="to_reportcase">
       <v-icon>mdi-alert-plus-outline</v-icon>
-        Report a Case
+        Fall melden
       </v-btn>
       </div>
       <br>
@@ -66,7 +67,7 @@
           dark
           width="85%"
           v-on:click="to_app_information">
-        App Information
+        App Informationen
       </v-btn>
     </div>
     <tab_bar></tab_bar>
@@ -79,7 +80,8 @@
 <script>
 
 import tab_bar from "@/components/tab_bar";
-//import VuePullRefresh from 'vue-pull-refresh';
+// import VuePullRefresh from 'vue-pull-refresh';
+import {checkVariables} from '../router/receiveScan.js'
 
 
 export default {
@@ -88,8 +90,8 @@ export default {
   methods: {
 
     to_reportcase() {
-      this.$router.push({path: "/report_case"})
-
+      checkVariables()
+      // this.$router.push({path: "/report_case"})
     },
     startroute() {
       this.$router.push({path: '/'});
@@ -119,13 +121,13 @@ export default {
       })
       //this.$router.push({path: 'http://localhost:3000/Tracer/{"locID":"SentFromVueJS","currentTime":"2021-02-04 18:42:36","status":false,"risk":0}'}) */
     },
-    /*onRefresh: function () {
-      return new Promise(function (resolve) {
-        setTimeout(function () {
-          resolve();
-        }, 1000);
-      });
-    },*/
+    // onRefresh: function () {
+    //   return new Promise(function (resolve) {
+    //     setTimeout(function () {
+    //       resolve();
+    //     }, 1000);
+    //   });
+    // },
 
     /*risk_calculation(){
       var alert;

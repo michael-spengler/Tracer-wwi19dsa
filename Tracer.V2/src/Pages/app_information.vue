@@ -1,12 +1,11 @@
 <template>
 <div>
-
-  <h1 class="h1">Information Text</h1>
-  <p class=p>Tracer ermöglicht einfaches und anonymes nachverfolgen von Infektionsketten.
-
+    <br>
+    <img class="logo" src="@/assets/info-black-18dp.svg" height="80" alt="error picture not available"/>
+    <p class=p>Tracer ermöglicht einfaches und anonymes nachverfolgen von Infektionsketten.
     Mit Tracer können Sie einfachy bequem und schnell Infektionsketten nachverfolgen. Einfach den QR-Code des Restaurants oder Geschäfts scannen.
-
     Dadurch können händische Zettel oder Listen abgeschafft werden. Es spart Zeit und keine sensiblen Daten werden veröffentlicht.</p>
+
   <h1 class="h1">FAQ:</h1>
   <h2 class="h2">Wie funktioniert Tracer?</h2>
   <p class=p>Jeder Besucher scannt einen QR-Code mit der Tracer-App. Dadurch wird der Ort und der Zeitpunkt des Besuchs einer Datenbank übermittelt. Diese werden zusammen mit einer zufälligen aber eindeutigen Nummer versehen. Diese Nummer wird anschließend auch auf Ihrem Endgerät gespeichert.
@@ -16,6 +15,8 @@
     Weitere Informationen finden Sie <a href="https://github.com/michael-spengler/Tracer-wwi19dsa">hier</a>
   </p>
   <h2 class="h2">
+        <img class="logo" src="@/assets/Tracer_icon_vertical_grey.svg" height="150" alt="error picture not available"/>
+
     Welche Daten werden erhoben und ist es wirklich anonym?
   </h2>
   <p class=p>
@@ -62,7 +63,7 @@ export default {
 .h1{
   font-family: Roboto;
   color: #676767;
-  padding: 15px;
+  padding: 5px;
 }
 .h2{
   font-family: Roboto;

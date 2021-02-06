@@ -1,7 +1,9 @@
 /*------------------Client-Side------------------*/
+import Localbase from 'localbase'
+import $ from 'jquery'
 
 let db = new Localbase("TracerDB"); //creates local Database
-
+console.log("Hi")
 export async function checkVariables(){
 let variables = await db.collection("Variables").doc("1").get().then(value => {return(value)})
 console.log(variables)
@@ -64,9 +66,12 @@ export async function storeScan(locID){
           risk: scan.data().risk
         }, scan.data().locID)
         .then(response => {
+            console.log(response)
             clearBuffer()
           })
+
         .catch(error => {
+        console.log(error)
         console.log('There was an error.')
         })
 }
