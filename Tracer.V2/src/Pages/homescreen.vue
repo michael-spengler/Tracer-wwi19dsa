@@ -1,93 +1,67 @@
 <template>
   <div>
     <div class="top">
-      <!-- <div><img class="logo" src="@/assets/Tracer_icon_vertical_grey.svg"
-           height="120" alt="error picture not available"/>
-        </div> -->
-        <div>
-        <v-btn
-          small
-          top
-          left
-          fixed
-          fab
-          plain
-          color="white"
-          v-on:click="to_settings">
-        <v-icon dark>
-          <!-- mdi-settings -->
-                    mdi-cached
-
-        </v-icon>
-      </v-btn>
-        </div>
-      <div class="header">
-        Tracer
-      </div>
       <div>
-        <v-btn
-          small
-          top
-          right
-          fixed
-          fab
-          plain
-          color="white"
-          v-on:click="to_settings">
-        <v-icon dark>
-          mdi-settings
-                    <!-- mdi-cached -->
-
-        </v-icon>
-      </v-btn>
-        </div>
+        <img
+          class="logo"
+          src="@/assets/Tracer_icon_final.png"
+          width="70"
+          height="70"
+          alt="error picture not available"
+        />
+      </div>
+      <div class="header">Tracer</div>
+      <div>
+        <v-btn small top right fixed fab plain color="white" v-on:click="to_settings">
+          <v-icon dark>
+            <!-- mdi-settings -->
+            mdi-cached
+          </v-icon>
+        </v-btn>
+      </div>
     </div>
-  <!-- <span class="span"></span> -->
-                <!-- color="#c94133" -->
+    <!-- <span class="span"></span> -->
+    <!-- color="#c94133 287A42 99d7f0" -->
 
-    <br><br><br><br>
+    <br /><br /><br /><br />
     <div class="card">
-      <img src="@/assets/undraw_medicine_b1ol_green.svg" style="height:200px"/>
-          <v-card
-              color="#287A42"
-              dark
-              height="100%"
-              width="100%"
-              elevation="5"
-              outlined=False
-              rounded
-          >
-            <v-card-title class="align-content-center">
-              Risikobewertung
-              <br><br>
-            </v-card-title>
+      <img src="@/assets/undraw_medicine_b1ol_blue.svg" style="height: 200px" />
+      <v-card
+        color="#287A42"
+        dark
+        height="100%"
+        width="100%"
+        elevation="5"
+        outlined="False"
+        rounded
+      >
+        <v-card-title class="align-content-center">
+          Risikobewertung
+          <br /><br />
+        </v-card-title>
 
-            <v-card-subtitle>Status: Gesund<br><br><hr style="color:white"><br>
-              Risiko: 3 Risikobegegnungen<br><br><hr style="color:white"><br>
-              last check: XX.XX.XXXX
-              <br><br><br>
-
-            </v-card-subtitle>
-          </v-card>
+        <v-card-subtitle
+          >Status: Gesund<br /><br />
+          <hr style="color: white" />
+          <br />
+          Risiko: 3 Risikobegegnungen<br /><br />
+          <hr style="color: white" />
+          <br />
+          last check: XX.XX.XXXX
+          <br /><br /><br />
+        </v-card-subtitle>
+      </v-card>
     </div>
     <span class="untercard"></span>
     <div class="homescreen_button">
-      <v-btn
-             color= "#676767"
-             dark
-             width="85%"
-             v-on:click="to_reportcase">
-      <v-icon>mdi-alert-plus-outline</v-icon>
+      <v-btn color="#676767" dark width="85%" v-on:click="to_reportcase">
+        <v-icon>mdi-alert-plus-outline</v-icon>
         Infektion melden
       </v-btn>
-      </div>
-      <br>
-      <div class="homescreen_button">
-      <v-btn
-          color= "#676767"
-          dark
-          width="85%"
-          v-on:click="to_app_information">
+    </div>
+    <br />
+    <div class="homescreen_button">
+      <v-btn color="#676767" dark width="85%" v-on:click="to_app_information">
         App Informationen
       </v-btn>
     </div>
@@ -99,37 +73,34 @@
 </template>
 
 <script>
-
 import tab_bar from "@/components/tab_bar";
 // import VuePullRefresh from 'vue-pull-refresh';
-import {checkVariables} from '../router/receiveScan.js'
+import { checkVariables } from "../router/receiveScan.js";
 
-checkVariables()
+checkVariables();
 
 export default {
   name: "homescreen",
-  components: {tab_bar, /*VuePullRefresh,*/},
+  components: { tab_bar /*VuePullRefresh,*/ },
   methods: {
-
     to_reportcase() {
-      this.$router.push({path: "/report_case"})
+      this.$router.push({ path: "/report_case" });
     },
     startroute() {
-      this.$router.push({path: '/'});
+      this.$router.push({ path: "/" });
     },
     scanroute() {
-      this.$router.push({path: '/scanpage'});
+      this.$router.push({ path: "/scanpage" });
     },
     eventroute() {
       //this.$router.push({path: '/create_event'})
     },
     to_app_information() {
-      this.$router.push({path: "/app_information"})
-
+      this.$router.push({ path: "/app_information" });
     },
     to_settings() {
-      this.$router.push({path: '/settings'});
-    
+      this.$router.push({ path: "/settings" });
+
       //Experimental: data can be sent to backend via fetch
       /*fetch('http://localhost:3000/Tracer/{"locID":"SentFromVueJS","currentTime":"2021-02-04 18:42:36","status":false,"risk":0}').then((response) => {
         if (response.ok) {
@@ -161,15 +132,13 @@ export default {
       }
     },*/
 
-
     data() {
       return {
         tab: null,
-      }
+      };
     },
-  }
-}
-
+  },
+};
 </script>
 
 <style scoped>
@@ -183,6 +152,7 @@ export default {
   float: top;
   position: fixed;
   width: 100%;
+  padding: 5px;
 }
 
 .homescreen_button {
@@ -195,24 +165,23 @@ export default {
   margin-right: 30px;
   align-items: center;
 }
-.header{
+.header {
   padding: 23px;
   font-family: Roboto;
   font-size: 20px;
   text-align: center;
   color: #676767;
-
 }
-.span{
-  display:block;
-  height:200px;
-  width:100%;
-  background:white;
+.span {
+  display: block;
+  height: 200px;
+  width: 100%;
+  background: white;
 }
-.untercard{
-  display:block;
-  height:30px;
-  width:100%;
-  background:white;
+.untercard {
+  display: block;
+  height: 30px;
+  width: 100%;
+  background: white;
 }
 </style>
