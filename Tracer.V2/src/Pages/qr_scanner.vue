@@ -9,13 +9,17 @@
       <div>Payload: <pre>{{ payload }}</pre></div>
       <p><router-link to="/scan_done">Back to Home</router-link></p>
     </div>
+    <tab_bar></tab_bar>
 
   </div>
 </template>
 
 <script>
+import tab_bar from "@/components/tab_bar";
+
 export default {
   name: "QrScanner",
+  components: {tab_bar},
   data() {
     return {
       initialized: false,
