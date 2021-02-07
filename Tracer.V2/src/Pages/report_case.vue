@@ -1,26 +1,45 @@
 <template>
-  <div>Fall melden
-    <div>
-      <button_basicstyle :onclick="caseroute">Formular ausfüllen</button_basicstyle>
+  <div>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <div><img src="@/assets/check_circle-24px.svg"  height="140" alt="error picture not available" /></div>
+    <h2> Erfolgreich gemeldet </h2>
+    <br>
+    <p>Ihre möglichen Kontakte werden nun anonym informiert.</p>   
+    <div><button_basicstyle :onclick="go_home">Zurück</button_basicstyle>
+    <slot></slot>
     </div>
   </div>
 </template>
+
 <script>
 import button_basicstyle from "@/components/button_basicstyle";
-
 export default {
-  name: "Fall melden",
+  name: "scan_success",
   components: {button_basicstyle},
-  methods: {
-    caseroute() {
-      this.$router.push({path: '/fill_in_formular'});
-    },
-
-  },
+  methods:{
+    go_home(){
+      this.$router.push({path: '/'})
+    }
+  }
 }
-
 </script>
 
 <style scoped>
-
+.h2{
+  font-family: Roboto;
+  color: #676767;
+  padding: 15px;
+}
+.span{
+  display:block;
+  height:200px;
+  width:100%;
+  background:white;
+}
+.p{
+  font-family: Roboto;
+  color: #676767;
+  margin: 30px;
+  text-align: left;
+}
 </style>
