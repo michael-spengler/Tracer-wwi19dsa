@@ -21,7 +21,7 @@ const routes = [
     component: settings
   },
   {
-    path: '/fall_melden',
+    path: '/report_case',
     component: report_case
   },
   {
