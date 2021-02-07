@@ -87,7 +87,7 @@ Für weitere Informationen rund um das Businessmodell und die Idee dahinter sieh
 
 ## Technik
 
-Im Laufe des Projekts haben wir einiges lernen können. Wichtige Dinge haben wir in [Learnings](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/learnings.md) festgehalten.
+Im Laufe des Projekts haben wir einiges lernen können. Wichtige Dinge haben wir in [Learnings](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/business/learnings.md) festgehalten.
 
 ### Frontend
 
