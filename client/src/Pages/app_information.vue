@@ -1,7 +1,7 @@
 <template>
 <div>
     <br>
-    <img class="logo" src="@/assets/info-black-18dp.svg" height="80" alt="error picture not available"/>
+    <img class="logo" src="@/assets/img/info-black-18dp.svg" height="80" alt="error picture not available"/>
     <p class=p>Tracer ermöglicht einfaches und anonymes nachverfolgen von Infektionsketten.
       <br>
       <br>
@@ -9,7 +9,7 @@
     Dadurch können händische Zettel oder Listen abgeschafft werden. Es spart Zeit und keine sensiblen Daten werden veröffentlicht.</p>
 
   <h2 class="h2">Wie funktioniert Tracer?</h2>
-  <img class="logo" src="@/assets/help-24px.svg" height="70" alt="error picture not available"/>
+  <img class="logo" src="@/assets/img/help-24px.svg" height="70" alt="error picture not available"/>
 
   <p class=p>Jeder Besucher scannt einen QR-Code mit der Tracer-App. Dadurch wird der Ort und der Zeitpunkt des Besuchs einer Datenbank übermittelt. Diese werden zusammen mit einer zufälligen aber eindeutigen Nummer versehen. Diese Nummer wird anschließend auch auf Ihrem Endgerät gespeichert.
 
@@ -18,7 +18,7 @@
     Weitere Informationen finden Sie <a href="https://github.com/michael-spengler/Tracer-wwi19dsa">hier</a>
   </p>
   <h2 class="h2">Welche Daten werden erhoben und ist es wirklich anonym?</h2>
-  <img class="logo" src="@/assets/storage-24px.svg" height="70" alt="error picture not available"/>
+  <img class="logo" src="@/assets/img/storage-24px.svg" height="70" alt="error picture not available"/>
 
   <p class=p>
     Die Tracer App braucht lediglich eine Kamera und Speicherplatz für die auf dem Engerät gespeicherten Nummern.
@@ -31,13 +31,13 @@
     Weitere Informationen finden Sie <a href="https://github.com/michael-spengler/Tracer-wwi19dsa">hier</a>
   </p>
   <h2 class="h2">Wie kann ich eigene QR-Codes erstellen?</h2>
-  <img class="logo" src="@/assets/qr_code-24px.svg" height="70" alt="error picture not available"/>
+  <img class="logo" src="@/assets/img/qr_code-24px.svg" height="70" alt="error picture not available"/>
 
   <p class=p>
     Wenn Sie einen eigenes Geschäft haben oder im Rahmen einer Veranstaltung Infektionsketten nachverfolgen wollen können Sie mithilfe der Tracer-App ebenfalls einen eigenen QR-Code erstellen. Dafür müssen Sie nur eine übliche Verweildauer angeben (z.B. Supermarkt 30 Minuten) und anschließend wird auf dem Server eine zufällige eindeutige Nummer erzeugt und für Sie in Form eines QR-Codes bereitgestellt. Anschließend können Sie mit dem Teilen beginnen. Beachten Sie, dass Sie diesen QR-Code sichern müssen. Tracer speichert diesen nicht.
   </p>
   <h2 class="h2">Wer steckt hinter Tracer?</h2>
-  <img class="logo" src="@/assets/groups-24px.svg" height="70" alt="error picture not available"/>
+  <img class="logo" src="@/assets/img/groups-24px.svg" height="70" alt="error picture not available"/>
 
   <p class=punten>
     Tracer ist ein studentisches Projekt von 6 dualen Wirtschaftsinformatik Studenten der DHBW Mannheim. Das Projekt ist OpenSource und unterliegt der MIT Lizenz. Für weitere Informationen schauen Sie <a href="https://github.com/michael-spengler/Tracer-wwi19dsa">hier</a>

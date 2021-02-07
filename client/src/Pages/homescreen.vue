@@ -4,7 +4,7 @@
       <div>
         <img
           class="logo"
-          src="@/assets/Tracer_icon_final.png"
+          src="@/assets/img/Tracer_icon_final.png"
           width="70"
           height="70"
           alt="error picture not available"
@@ -25,7 +25,7 @@
 
     <br /><br /><br /><br />
     <div class="card">
-      <img src="@/assets/undraw_medicine_b1ol_blue.svg" style="height: 200px" />
+      <img src="@/assets/img/undraw_medicine_b1ol_blue.svg" style="height: 200px" />
       <v-card
         color="#287A42"
         dark
@@ -75,7 +75,7 @@
 <script>
 import tab_bar from "@/components/tab_bar";
 // import VuePullRefresh from 'vue-pull-refresh';
-import { checkVariables } from "../router/receiveScan.js";
+import { checkVariables } from "../assets/receiveScan.js";
 
 checkVariables();
 
