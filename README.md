@@ -1,4 +1,4 @@
-![Logo](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/business/data/Icon/Tracer_icon_vertical.png?raw=true)
+![Logo](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/data/Icon/Tracer_icon_vertical.svg)
 
 <br><br>
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/michael-spengler/tracer-wwi19dsa?include_prereleases)
