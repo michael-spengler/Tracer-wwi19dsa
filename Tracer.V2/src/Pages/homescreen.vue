@@ -78,7 +78,7 @@
              width="85%"
              v-on:click="to_reportcase">
       <v-icon>mdi-alert-plus-outline</v-icon>
-        Fall melden
+        Infektion melden
       </v-btn>
       </div>
       <br>
