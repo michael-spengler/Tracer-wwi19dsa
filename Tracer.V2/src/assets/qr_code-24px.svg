@@ -1,1 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M3,11h8V3H3V11z M5,5h4v4H5V5z"/><path d="M3,21h8v-8H3V21z M5,15h4v4H5V15z"/><path d="M13,3v8h8V3H13z M19,9h-4V5h4V9z"/><rect height="2" width="2" x="19" y="19"/><rect height="2" width="2" x="13" y="13"/><rect height="2" width="2" x="15" y="15"/><rect height="2" width="2" x="13" y="17"/><rect height="2" width="2" x="15" y="19"/><rect height="2" width="2" x="17" y="17"/><rect height="2" width="2" x="17" y="13"/><rect height="2" width="2" x="19" y="15"/></g></g></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g>
+        <rect x="0" y="0" width="24" height="24" style="fill:none;"/>
+    </g>
+    <g>
+        <g>
+            <g>
+                <path d="M3,11L11,11L11,3L3,3L3,11ZM5,5L9,5L9,9L5,9L5,5Z" style="fill:rgb(40,122,66);fill-rule:nonzero;"/>
+                <path d="M3,21L11,21L11,13L3,13L3,21ZM5,15L9,15L9,19L5,19L5,15Z" style="fill:rgb(40,122,66);fill-rule:nonzero;"/>
+                <path d="M13,3L13,11L21,11L21,3L13,3ZM19,9L15,9L15,5L19,5L19,9Z" style="fill:rgb(40,122,66);fill-rule:nonzero;"/>
+                <rect x="19" y="19" width="2" height="2" style="fill:rgb(40,122,66);"/>
+                <rect x="13" y="13" width="2" height="2" style="fill:rgb(40,122,66);"/>
+                <rect x="15" y="15" width="2" height="2" style="fill:rgb(40,122,66);"/>
+                <rect x="13" y="17" width="2" height="2" style="fill:rgb(40,122,66);"/>
+                <rect x="15" y="19" width="2" height="2" style="fill:rgb(40,122,66);"/>
+                <rect x="17" y="17" width="2" height="2" style="fill:rgb(40,122,66);"/>
+                <rect x="17" y="13" width="2" height="2" style="fill:rgb(40,122,66);"/>
+                <rect x="19" y="15" width="2" height="2" style="fill:rgb(40,122,66);"/>
+            </g>
+        </g>
+    </g>
+</svg>
