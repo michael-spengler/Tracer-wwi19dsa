@@ -3,7 +3,7 @@
     <br><br>
     <img class="logo" src="@/assets/qr_code-24px.svg" height="70" alt="error picture not available"/>
     <br>
-    <h2>Tracer Event erstellen</h2>
+    <h2>QR-Code erstellen</h2>
      <div>
        <br>
        <p>
