@@ -1,7 +1,9 @@
 <template>
   <div>
-    <div><img src="@/assets/scan_erfolgreich.png" alt="error"/></div>
-    <div><button_basicstyle :onclick="go_home"></button_basicstyle>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <div><img src="@/assets/check_circle-24px.svg"  height="140" alt="error picture not available" /></div>
+    <h2> Scann Erfolgreich </h2>
+    <div><button_basicstyle :onclick="go_home">Zurück</button_basicstyle>
     <slot></slot>
     </div>
   </div>
@@ -21,5 +23,15 @@ export default {
 </script>
 
 <style scoped>
-
+.h2{
+  font-family: Roboto;
+  color: #676767;
+  padding: 15px;
+}
+.span{
+  display:block;
+  height:200px;
+  width:100%;
+  background:white;
+}
 </style>

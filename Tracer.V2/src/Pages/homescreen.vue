@@ -1,8 +1,25 @@
 <template>
   <div>
     <div class="top">
-      <div><img class="logo" src="@/assets/Tracer_icon_vertical_grey.svg"
+      <!-- <div><img class="logo" src="@/assets/Tracer_icon_vertical_grey.svg"
            height="120" alt="error picture not available"/>
+        </div> -->
+        <div>
+        <v-btn
+          small
+          top
+          left
+          fixed
+          fab
+          plain
+          color="white"
+          v-on:click="to_settings">
+        <v-icon dark>
+          <!-- mdi-settings -->
+                    mdi-cached
+
+        </v-icon>
+      </v-btn>
         </div>
       <div class="header">
         Tracer
@@ -19,14 +36,18 @@
           v-on:click="to_settings">
         <v-icon dark>
           mdi-settings
+                    <!-- mdi-cached -->
+
         </v-icon>
       </v-btn>
         </div>
     </div>
   <!-- <span class="span"></span> -->
-    <br><br><br><br><br>
+                <!-- color="#c94133" -->
+
+    <br><br><br><br>
     <div class="card">
-      <img src=".\Sustainable Lifestyle.svg" style="height:200px"/>
+      <img src="@/assets/undraw_medicine_b1ol_green.svg" style="height:200px"/>
           <v-card
               color="#287A42"
               dark
@@ -37,15 +58,15 @@
               rounded
           >
             <v-card-title class="align-content-center">
-              <br><br><br>
               Risikobewertung
-              <br>
+              <br><br>
             </v-card-title>
 
             <v-card-subtitle>Status: Gesund<br><br><hr style="color:white"><br>
               Risiko: 3 Risikobegegnungen<br><br><hr style="color:white"><br>
               last check: XX.XX.XXXX
-              <br><br>
+              <br><br><br>
+
             </v-card-subtitle>
           </v-card>
     </div>
@@ -190,7 +211,7 @@ export default {
 }
 .untercard{
   display:block;
-  height:50px;
+  height:30px;
   width:100%;
   background:white;
 }
