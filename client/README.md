@@ -3,6 +3,10 @@
 ## Project setup
 
 ```bash
+cd client
+```
+
+```bash
 npm install
 ```
 
