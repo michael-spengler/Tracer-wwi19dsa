@@ -1,7 +1,7 @@
 <template>
   <div>
     <br><br><br><br><br><br><br><br><br><br><br>
-    <div><img src="@/assets/check_circle-24px.svg"  height="140" alt="error picture not available" /></div>
+    <div><img src="@/assets/img/check_circle-24px.svg"  height="140" alt="error picture not available" /></div>
     <h2> Scann Erfolgreich </h2>
     <div><button_basicstyle :onclick="go_home">Zurück</button_basicstyle>
     <slot></slot>
