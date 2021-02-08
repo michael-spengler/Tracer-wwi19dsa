@@ -10,10 +10,9 @@
 
 ## Benutzung
 
+Start Docker-Container with MariaDB (or)
 ```bash
-// to start Vue frontend
-cd ./Tracer.V2
-npm run serve
+docker container run --rm -d -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=true docker.io/mariadb:latest
 ```
 
 ## Technologien
