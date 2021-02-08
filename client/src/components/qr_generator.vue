@@ -16,8 +16,8 @@ export default {
   },
   data() {
     return {
-      value: "test",//(String(cuid()) + ":" + String(this.$route.avgTime)),//hier daten empfangen
-      size: 100,
+      value: "100:10",//(String(cuid()) + ":" + String(this.$route.avgTime)),//hier daten empfangen
+      size: 500,
     }
   },
   components: {

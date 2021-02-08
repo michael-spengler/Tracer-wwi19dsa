@@ -24,18 +24,9 @@
     <!-- color="#c94133 287A42 99d7f0" -->
 
     <br /><br /><br /><br />
-    <div class="card static"
-         v-bind:style="[greenCard, dangerCard]"
-    >
+    <div class="card static" v-bind:style="[greenCard, dangerCard]">
       <img src="@/assets/img/undraw_medicine_b1ol_blue.svg" style="height: 200px" />
-      <v-card
-        color="#287A42"
-        dark
-        height="100%"
-        width="100%"
-        elevation="5"
-        rounded
-      >
+      <v-card color="#287A42" dark height="100%" width="100%" elevation="5" rounded>
         <v-card-title class="align-content-center">
           Risikobewertung
           <br /><br />
@@ -43,8 +34,8 @@
 
         <v-card-subtitle>
           <div>Status: {{ status }}</div>
-          <hr style="color: white">
-          <br>
+          <hr style="color: white" />
+          <br />
           <div>Risiko: {{ risk }} Risikobegegnung(en)</div>
           <hr style="color: white" />
           <br />
@@ -66,6 +57,7 @@
         App Informationen
       </v-btn>
     </div>
+    <span class="span"></span>
     <tab_bar></tab_bar>
   </div>
 </template>
@@ -79,48 +71,50 @@ import { checkVariables } from "../api/checkVariables.js";
 import { reportCase } from "../api/reportCase.js";
 import { clearBuffer } from "../api/sendScanData.js";
 
-
-const db = initDB()
-db.config.debug = false
+const db = initDB();
+db.config.debug = false;
 
 export default {
-
   name: "homescreen",
   components: { tab_bar },
   data() {
     return {
-        tab: null,
-        risk : 0,
-        status: "gesund",
-        date: "refresh to be up to date",
-      };
-    },
+      tab: null,
+      risk: 0,
+      status: "gesund",
+      date: "refresh to be up to date",
+    };
+  },
   methods: {
-    async checkRisk(db){
-    console.log("Checking risk... ")
-    var idList = [];
+    async checkRisk(db) {
+      console.log("Checking risk... ");
+      var idList = [];
 
-    //reporting cases to db
-      db.collection('TracerID').get().then(TracerID => {
-        TracerID.forEach(element => {
-          idList.push(element.id)
-        });  
-          return idList
-        }).then(idList => 
-          fetch(`http://localhost:3000/RiskCheck/${JSON.stringify({"id":idList})}`).then(response => {
-            if (response.ok) {
-              return response.json();
-            } else {
-              throw new Error('Something went wrong, try again later.');
-            }
-          }
-        ).then(riskVal =>{
-        this.risk = riskVal.risk
-      })
-      )
+      //reporting cases to db
+      db.collection("TracerID")
+        .get()
+        .then((TracerID) => {
+          TracerID.forEach((element) => {
+            idList.push(element.id);
+          });
+          return idList;
+        })
+        .then((idList) =>
+          fetch(`http://localhost:3000/RiskCheck/${JSON.stringify({ id: idList })}`)
+            .then((response) => {
+              if (response.ok) {
+                return response.json();
+              } else {
+                throw new Error("Something went wrong, try again later.");
+              }
+            })
+            .then((riskVal) => {
+              this.risk = riskVal.risk;
+            })
+        );
     },
     to_reportcase() {
-      reportCase(db)
+      reportCase(db);
       //this.$router.push({ path: "/report_case" });
     },
     startroute() {
@@ -136,23 +130,27 @@ export default {
       this.$router.push({ path: "/app_information" });
     },
     async refresh() {
-      await clearBuffer(db)
-      await checkVariables(db)
-      this.date = new Date().toISOString().slice(0, 19).replace('T', ' '),
-      //checkStatus
-      await db.collection('Variables').doc("1").get().then(document => {return document.status}).then(
-        statusVal => {
-            if (statusVal == false){
-                this.status = "Gesund"
+      await clearBuffer(db);
+      await checkVariables(db);
+      (this.date = new Date().toISOString().slice(0, 19).replace("T", " ")),
+        //checkStatus
+        await db
+          .collection("Variables")
+          .doc("1")
+          .get()
+          .then((document) => {
+            return document.status;
+          })
+          .then((statusVal) => {
+            if (statusVal == false) {
+              this.status = "Gesund";
             } else if (statusVal == true) {
-            this.status = "Infiziert"
-          }
-        }
-      )
+              this.status = "Infiziert";
+            }
+          });
       //checkRisk
-      await this.checkRisk(db)
+      await this.checkRisk(db);
     },
-    
 
     /*risk_calculation(){
       var alert;
@@ -164,18 +162,17 @@ export default {
         document.getElementById("risk").style.color = '#287A42'
       }
     },*/
-    
-      data: {
-        greenCard: {
-          color: "green"
-        },
-        dangerCard: {
-          color: "red"
-        }
-      }
-    },
-};
 
+    data: {
+      greenCard: {
+        color: "green",
+      },
+      dangerCard: {
+        color: "red",
+      },
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -190,6 +187,8 @@ export default {
   position: fixed;
   width: 100%;
   padding: 5px;
+  background-color: blue;
+  display: block;
 }
 
 .homescreen_button {
@@ -211,7 +210,7 @@ export default {
 }
 .span {
   display: block;
-  height: 200px;
+  height: 100px;
   width: 100%;
   background: white;
 }
