@@ -82,6 +82,7 @@ import { reportCase } from "../api/reportCase.js";
 import {clearBuffer} from "../api/sendScanData.js";
 
 const db = initDB()
+db.config.debug = false
 
 export default {
 
@@ -96,21 +97,6 @@ export default {
       };
     },
   methods: {
-    getStatus() {
-      let statusBool = db.collection('Variables').doc("1").get().then(document => {return document.status})
-      if (statusBool == true){
-        this.status = "Gesund"
-      } else {
-        this.status = "Krank"
-      }
-      return this.status
-    },
-    async getRisk() {
-      let risk = await checkRisk(db)
-      console.log("Risk: ",risk)
-      this.risk = risk
-      return this.risk
-    },
     to_reportcase() {
       reportCase(db)
       //this.$router.push({ path: "/report_case" });
@@ -127,22 +113,28 @@ export default {
     to_app_information() {
       this.$router.push({ path: "/app_information" });
     },
-    refresh() {
+    async refresh() {
+      await clearBuffer(db)
+      await checkVariables(db)
       this.date = new Date().toISOString().slice(0, 19).replace('T', ' '),
-      this.status = this.getStatus()
-      checkVariables(db)
-      clearBuffer(db)
-      this.risk = this.getRisk()
+      //checkStatus
+      await db.collection('Variables').doc("1").get().then(document => {return document.status}).then(
+        statusVal => {
+          console.log(statusVal)
+            if (statusVal == false){
+              console.log(1)
+                this.status = "Gesund"
+            } else if (statusVal == true) {
+              console.log(2)
+            this.status = "Krank"
+          }
+        }
+      )
+      //checkRisk
+      await checkRisk(db).then(riskVal => {
+        this.risk = riskVal
+      })
     },
-
-
-    // onRefresh: function () {
-    //   return new Promise(function (resolve) {
-    //     setTimeout(function () {
-    //       resolve();
-    //     }, 1000);
-    //   });
-    // },
 
     /*risk_calculation(){
       var alert;

@@ -26,7 +26,6 @@ if (variables == null) {
         }   
     }*/
     if (Math.floor((currentTime-variables.timeOfReport)/d)>14){
-        console.log(2)
         await db.collection('Variables').doc('1').update({
           status: false,
           timeOfReport: null,
