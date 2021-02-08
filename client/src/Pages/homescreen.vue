@@ -40,14 +40,14 @@
           <br /><br />
         </v-card-title>
 
-        <v-card-subtitle
-          >Status: Gesund<br /><br />
+        <v-card-subtitle>
+          <div>Status: {{ status }}</div>
+          <hr style="color: white">
+          <br>
+          <div>Risiko: {{ risk }} Risikobegegnung(en)</div>
           <hr style="color: white" />
           <br />
-          Risiko: 3 Risikobegegnungen<br /><br />
-          <hr style="color: white" />
-          <br />
-          last check: XX.XX.XXXX
+          <div>Last Check: {{ date }}</div>
           <br /><br /><br />
         </v-card-subtitle>
       </v-card>
@@ -77,17 +77,42 @@ import tab_bar from "@/components/tab_bar";
 // import VuePullRefresh from 'vue-pull-refresh';
 import { initDB } from "../api/localBase.js";
 import { checkVariables } from "../api/checkVariables.js";
+import {checkRisk} from "../api/checkRisk.js"
 import { reportCase } from "../api/reportCase.js";
 import {clearBuffer} from "../api/sendScanData.js";
 
 const db = initDB()
 
 export default {
+
   name: "homescreen",
-  components: { tab_bar /*VuePullRefresh,*/ },
+  components: { tab_bar },
+  data() {
+    return {
+        tab: null,
+        risk : 0,
+        status: "gesund",
+        date: "refresh to be up to date",
+      };
+    },
   methods: {
-    async to_reportcase() {
-      await reportCase(db)
+    getStatus() {
+      let statusBool = db.collection('Variables').doc("1").get().then(document => {return document.status})
+      if (statusBool == true){
+        this.status = "Gesund"
+      } else {
+        this.status = "Krank"
+      }
+      return this.status
+    },
+    async getRisk() {
+      let risk = await checkRisk(db)
+      console.log("Risk: ",risk)
+      this.risk = risk
+      return this.risk
+    },
+    to_reportcase() {
+      reportCase(db)
       //this.$router.push({ path: "/report_case" });
     },
     startroute() {
@@ -103,8 +128,11 @@ export default {
       this.$router.push({ path: "/app_information" });
     },
     refresh() {
+      this.date = new Date().toISOString().slice(0, 19).replace('T', ' '),
+      this.status = this.getStatus()
       checkVariables(db)
       clearBuffer(db)
+      this.risk = this.getRisk()
     },
 
 
@@ -126,12 +154,6 @@ export default {
         document.getElementById("risk").style.color = '#287A42'
       }
     },*/
-
-    data() {
-      return {
-        tab: null,
-      };
-    },
   },
 };
 </script>
