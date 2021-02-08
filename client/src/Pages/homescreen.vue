@@ -24,7 +24,9 @@
     <!-- color="#c94133 287A42 99d7f0" -->
 
     <br /><br /><br /><br />
-    <div class="card">
+    <div class="card static"
+         v-bind:style="[greenCard, dangerCard]"
+    >
       <img src="@/assets/img/undraw_medicine_b1ol_blue.svg" style="height: 200px" />
       <v-card
         color="#287A42"
@@ -67,7 +69,6 @@
     </div>
     <tab_bar></tab_bar>
     <div>
-      <vue-pull-refresh :on-refresh="onRefresh"></vue-pull-refresh>
     </div>
   </div>
 </template>
@@ -131,6 +132,14 @@ export default {
       return {
         tab: null,
       };
+      data: {
+        greenCard: {
+          color: "green"
+        }
+        dangerCard: {
+          color: "red"
+        }
+      }
     },
   },
 };
