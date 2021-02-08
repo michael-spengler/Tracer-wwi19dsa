@@ -10,12 +10,12 @@ module.exports = {
     },
 
     // options...
-    // devServer: {
-    //     proxy: 'https://localhost:3000/',
-    // },
-
+    devServer: {
+        proxy: 'http://localhost:3000/',
+          },
     pwa: {
       name: 'Tracer',
       themeColor: '#99d7f0'
-    }
+
+
 }
