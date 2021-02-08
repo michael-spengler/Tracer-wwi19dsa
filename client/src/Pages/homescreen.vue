@@ -24,7 +24,9 @@
     <!-- color="#c94133 287A42 99d7f0" -->
 
     <br /><br /><br /><br />
-    <div class="card">
+    <div class="card static"
+         v-bind:style="[greenCard, dangerCard]"
+    >
       <img src="@/assets/img/undraw_medicine_b1ol_blue.svg" style="height: 200px" />
       <v-card
         color="#287A42"
@@ -67,7 +69,6 @@
     </div>
     <tab_bar></tab_bar>
     <div>
-      <vue-pull-refresh :on-refresh="onRefresh"></vue-pull-refresh>
     </div>
   </div>
 </template>
@@ -79,7 +80,8 @@ import { initDB } from "../api/localBase.js";
 import { checkVariables } from "../api/checkVariables.js";
 import {checkRisk} from "../api/checkRisk.js"
 import { reportCase } from "../api/reportCase.js";
-import {clearBuffer} from "../api/sendScanData.js";
+import { clearBuffer } from "../api/sendScanData.js";
+
 
 const db = initDB()
 db.config.debug = false
@@ -97,6 +99,7 @@ export default {
       };
     },
   methods: {
+
     to_reportcase() {
       reportCase(db)
       //this.$router.push({ path: "/report_case" });
@@ -146,6 +149,16 @@ export default {
         document.getElementById("risk").style.color = '#287A42'
       }
     },*/
+    
+      data: {
+        greenCard: {
+          color: "green"
+        }
+        dangerCard: {
+          color: "red"
+        }
+      }
+    },
   },
 };
 </script>

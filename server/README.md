@@ -14,8 +14,8 @@ You need to have a (local) mySQL DB running:
 - __brew services start mysql__
 - __mysql -u root -p__
 
-Dependencies
-------
+## Dependencies
+
 
 1. Opine
 2. Jsonfile
@@ -23,8 +23,7 @@ Dependencies
 4. [Localbase](https://github.com/dannyconnell/localbase)
 5. Jquery
 
-1_Log_New_Scan
-------
+## 1_Log_New_Scan
 
 - [x] set locID & timestamp
 - [x] store locID & timestamp in ~~./databases/LocalBuffer.json~~ [indexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) database
@@ -36,8 +35,7 @@ Dependencies
 
 <img src="./ressources/TracerDB_demo.gif" width="750"/>
 
-Report Case
-------
+## Report Case
 
 1. [x] Button to report (no verification)
 2. [x] Send list of IDs (From local DB) to backend
@@ -53,11 +51,11 @@ Report Case
 7. [wip] Delete old entries (>14) from MySQL Database
     > add function on page reload where a sql statement deletes all entries where timestamp > 14 days
 
-Risk status
+## Risk status
 
 1. [x] After setting status = positive, set for all visits within timerange +- 2 in the same location the risk to 1
 
-Check risk
+## Check risk
 
 1. [x] Pass all IDs from localDB
 2. [x] Select user.risk where user.id = [ID1, ..., IDn]
