@@ -10,7 +10,8 @@
          Bitte geben Sie die durschnitliche Verweildauer Ihrer Kunden in Minuten an. Diese wird benötigt um abschätzen zu können welche Kunden bei einer möglichen Infektion kontaktiert werden müssen.
        </p>
       <div style="margin:50px ">
-        <v-text-field label="Verweildauer in Minuten" :rules="rules" hide-details="auto" ></v-text-field>
+        <!--<v-text-field type="number" label="Verweildauer in Minuten" :rules="rules" hide-details="auto" ref="name"></v-text-field>-->
+        <input type="number" placeholder="Verweildauer in Minuten" v-model="avgTime" />
       </div>
   </div>
     <div>
@@ -27,19 +28,22 @@
 <script>
 import tab_bar from "@/components/tab_bar";
 
+
 export default {
   name: "create_event",
   components: {tab_bar},
   methods:{
     to_generate(){
-      this.$router.push({path:'/qr_generator'})
+      console.log(this.avgTime)
+      this.$router.push({path:'/qr_generator/'+String(this.avgTime)})//hier daten übergeben
+      //this.$router.push({path:'/qr_generator/'+String(rules[1])})
     },
   },
    data: () => ({
       rules: [
         value => !!value || 'Required.',
         value => (value && value.length >= 1) || 'Min 1 characters',
-      ],
+      ]
     }),
 }
 </script>

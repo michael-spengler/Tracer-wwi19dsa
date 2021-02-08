@@ -41,7 +41,7 @@ const routes = [
     component: scan_success,
   },
   {
-    path: '/qr_generator',
+    path: '/qr_generator/:avgTime',
     component: qr_generator,
   },
 ]

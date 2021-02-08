@@ -16,6 +16,5 @@ module.exports = {
     pwa: {
       name: 'Tracer',
       themeColor: '#99d7f0'
-
-
+    }
 }

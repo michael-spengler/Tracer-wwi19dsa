@@ -8,6 +8,7 @@
 </template>
 <script>
 import QrcodeVue from 'qrcode.vue'
+//import cuid from 'cuid'
 
 export default {
   methods:{
@@ -15,9 +16,8 @@ export default {
   },
   data() {
     return {
-      value: 'https://example.com',
+      value: "test",//(String(cuid()) + ":" + String(this.$route.avgTime)),//hier daten empfangen
       size: 100,
-
     }
   },
   components: {
