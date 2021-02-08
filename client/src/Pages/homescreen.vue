@@ -12,7 +12,7 @@
       </div>
       <div class="header">Tracer</div>
       <div>
-        <v-btn small top right fixed fab plain color="white" v-on:click="to_settings">
+        <v-btn small top right fixed fab plain color="white" v-on:click="refresh">
           <v-icon dark>
             <!-- mdi-settings -->
             mdi-cached
@@ -75,16 +75,20 @@
 <script>
 import tab_bar from "@/components/tab_bar";
 // import VuePullRefresh from 'vue-pull-refresh';
-import { checkVariables } from "../assets/receiveScan.js";
+import { initDB } from "../api/localBase.js";
+import { checkVariables } from "../api/checkVariables.js";
+import { reportCase } from "../api/reportCase.js";
+import {clearBuffer} from "../api/sendScanData.js";
 
-checkVariables();
+const db = initDB()
 
 export default {
   name: "homescreen",
   components: { tab_bar /*VuePullRefresh,*/ },
   methods: {
-    to_reportcase() {
-      this.$router.push({ path: "/report_case" });
+    async to_reportcase() {
+      await reportCase(db)
+      //this.$router.push({ path: "/report_case" });
     },
     startroute() {
       this.$router.push({ path: "/" });
@@ -98,21 +102,12 @@ export default {
     to_app_information() {
       this.$router.push({ path: "/app_information" });
     },
-    to_settings() {
-      this.$router.push({ path: "/settings" });
-
-      //Experimental: data can be sent to backend via fetch
-      /*fetch('http://localhost:3000/Tracer/{"locID":"SentFromVueJS","currentTime":"2021-02-04 18:42:36","status":false,"risk":0}').then((response) => {
-        if (response.ok) {
-          console.log("Data was successfully added to server.")
-          db.collection("Buffer").doc(key).delete()
-          return response.json();
-        } else {
-          throw new Error('Something went wrong, try again later.');
-        }
-      })
-      //this.$router.push({path: 'http://localhost:3000/Tracer/{"locID":"SentFromVueJS","currentTime":"2021-02-04 18:42:36","status":false,"risk":0}'}) */
+    refresh() {
+      checkVariables(db)
+      clearBuffer(db)
     },
+
+
     // onRefresh: function () {
     //   return new Promise(function (resolve) {
     //     setTimeout(function () {

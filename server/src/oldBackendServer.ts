@@ -1,3 +1,4 @@
+// deno-lint-ignore-file
 /*------------------Server-Side------------------*/
 /*
     - Catch the sent Input
@@ -12,7 +13,7 @@ import { writeJsonSync } from 'https://deno.land/x/jsonfile/mod.ts';
 import { readJsonSync } from "https://deno.land/x/jsonfile/mod.ts";
 import { cuid } from 'https://deno.land/x/cuid/index.js';
 import { Client } from 'https://deno.land/x/mysql/mod.ts';
-import { setColorEnabled } from "https://deno.land/std@0.77.0/fmt/colors.ts";
+
 
 
 let counter = 0; //Website calls 
@@ -42,9 +43,7 @@ await client.execute(`
 `);
 
 //
-const app = opine();
-
-app.use(serveStatic(`${Deno.cwd()}/server/src/`))
+const app = opine().use(serveStatic(`${Deno.cwd()}/server/src/`));
 
 const pathToFile = `${Deno.cwd()}/server/src/client.html`
 //const pathToFile = `${Deno.cwd()}/Tracer.V2/src/router/index.js`
@@ -91,7 +90,7 @@ app.listen(3000, function () {
 
 //Database connection
 function storeDataDB(tracerID:string, time:string, locID:string, status:boolean, risk:Int16Array){
-    let result = client.execute(`INSERT INTO users(TracerID, timestamp, LocID, status, risk) values(?,?,?,?,?)`, [
+    const result = client.execute(`INSERT INTO users(TracerID, timestamp, LocID, status, risk) values(?,?,?,?,?)`, [
         tracerID,
         time,
         locID,

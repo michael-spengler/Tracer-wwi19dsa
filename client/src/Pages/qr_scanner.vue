@@ -6,7 +6,7 @@
     <h1 v-if="error">{{ error }}</h1>
 
     <div v-if="payload">
-      <div>Payload: <pre>{{ payload }}</pre></div>
+      <div>Location: <pre>{{ payload }}</pre></div>
       <p><router-link to="/scan_done">Back to Home</router-link></p>
     </div>
     <tab_bar></tab_bar>
@@ -16,6 +16,10 @@
 
 <script>
 import tab_bar from "@/components/tab_bar";
+import {storeScan} from "../api/sendScanData.js"
+import { initDB } from "../api/localBase.js";
+
+const db = initDB()
 
 export default {
   name: "QrScanner",
@@ -30,6 +34,7 @@ export default {
   methods: {
     onDecode(payload) {
       this.payload = payload;
+      storeScan(db, this.payload)
     },
     async onInit(promise){
       try {

@@ -6,7 +6,7 @@ to run the server use:
 docker container run --rm -d -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=true docker.io/mariadb:latest
 
 
-deno run --allow-net --allow-read --allow-write --allow-env --unstable ./server/src/backendServer.ts server runs on localhost:3000
+deno run --allow-net --allow-read --allow-write --allow-env --unstable ./server/src/api.ts server runs on localhost:3000
 ```
 
 You need to have a (local) mySQL DB running:
