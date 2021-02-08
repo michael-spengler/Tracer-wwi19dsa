@@ -7,6 +7,9 @@ module.exports = {
 
     configureWebpack: {
         plugins: [new GenerateSW()]
-    }
+    },
     // options...
+    devServer: {
+        proxy: 'https://localhost:3000/',
+    }
 }
