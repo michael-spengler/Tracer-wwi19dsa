@@ -32,7 +32,6 @@
         height="100%"
         width="100%"
         elevation="5"
-        outlined="False"
         rounded
       >
         <v-card-title class="align-content-center">
@@ -66,9 +65,6 @@
       </v-btn>
     </div>
     <tab_bar></tab_bar>
-    <div>
-      <vue-pull-refresh :on-refresh="onRefresh"></vue-pull-refresh>
-    </div>
   </div>
 </template>
 
@@ -77,7 +73,7 @@ import tab_bar from "@/components/tab_bar";
 // import VuePullRefresh from 'vue-pull-refresh';
 import { initDB } from "../api/localBase.js";
 import { checkVariables } from "../api/checkVariables.js";
-import {checkRisk} from "../api/checkRisk.js"
+//import {checkRisk} from "../api/checkRisk.js"
 import { reportCase } from "../api/reportCase.js";
 import {clearBuffer} from "../api/sendScanData.js";
 
@@ -97,6 +93,31 @@ export default {
       };
     },
   methods: {
+
+    async checkRisk(db){
+    console.log("Checking risk... ")
+    var idList = [];
+
+    //reporting cases to db
+      db.collection('TracerID').get().then(TracerID => {
+        TracerID.forEach(element => {
+          idList.push(element.id)
+        });  
+          return idList
+        }).then(idList => 
+          fetch(`http://localhost:3000/RiskCheck/${JSON.stringify({"id":idList})}`).then(response => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              throw new Error('Something went wrong, try again later.');
+            }
+          }
+        ).then(riskVal =>{
+        this.risk = riskVal.risk
+      })
+      )
+    },
+
     to_reportcase() {
       reportCase(db)
       //this.$router.push({ path: "/report_case" });
@@ -120,21 +141,17 @@ export default {
       //checkStatus
       await db.collection('Variables').doc("1").get().then(document => {return document.status}).then(
         statusVal => {
-          console.log(statusVal)
             if (statusVal == false){
-              console.log(1)
                 this.status = "Gesund"
             } else if (statusVal == true) {
-              console.log(2)
             this.status = "Krank"
           }
         }
       )
       //checkRisk
-      await checkRisk(db).then(riskVal => {
-        this.risk = riskVal
-      })
+      await this.checkRisk(db)
     },
+    
 
     /*risk_calculation(){
       var alert;
