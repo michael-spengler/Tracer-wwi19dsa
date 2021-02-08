@@ -14,19 +14,22 @@
       </div>
   </div>
     <div>
-      <button_basicstyle :onclick="to_generate">Qr-Code erzeugen</button_basicstyle>
+      <div class="homescreen_button">
+      <v-btn color="#676767" dark width="85%" v-on:click="to_generate">
+        Qr-Code erzeugen
+      </v-btn>
+    </div>
     </div>
     <tab_bar></tab_bar>
   </div>
 </template>
 
 <script>
-import button_basicstyle from "@/components/button_basicstyle";
 import tab_bar from "@/components/tab_bar";
 
 export default {
   name: "create_event",
-  components: {tab_bar,button_basicstyle},
+  components: {tab_bar},
   methods:{
     to_generate(){
       this.$router.push({path:'/qr_generator'})
@@ -42,6 +45,7 @@ export default {
 </script>
 
 <style scoped>
+
 .h2{
   font-family: Roboto;
   color: #676767;
