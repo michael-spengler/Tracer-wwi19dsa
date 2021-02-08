@@ -8,12 +8,15 @@
 /*------------------Set-Up Server------------------*/
 
 import {opine, serveStatic} from "./deps.ts";
+import { opineCors } from "./deps.ts";
 import {processData} from "./utils/manageDatabase.ts";
 import {setStatus} from "./utils/manageStatus.ts";
 import {checkRisk, updateRisk} from "./utils/manageRisk.ts";
 
 
-const router = opine().use(serveStatic(`${Deno.cwd()}/server/src/`));
+const router = opine();
+router.use(opineCors())
+router.use(serveStatic(`${Deno.cwd()}/server/src/`));
 
 //Forwards to a sample html site for debug purposes
 router.get('/', function (req, res) {
