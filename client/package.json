@@ -22,6 +22,7 @@
     "vue-qrcode-reader": "^2.3.16",
     "vue-router": "^3.5.1",
     "vue-swipeable-bottom-sheet": "0.0.5",
+    "vue-tabbar": "0.0.3",
     "vuejs-datepicker": "^1.6.2",
     "vuetify": "^2.4.3"
   },

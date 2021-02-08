@@ -187,7 +187,7 @@ export default {
   position: fixed;
   width: 100%;
   padding: 5px;
-  background-color: blue;
+  background-color: white;
   display: block;
 }
 

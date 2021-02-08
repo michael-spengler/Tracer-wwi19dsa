@@ -14,7 +14,7 @@ module.exports = {
         proxy: 'http://localhost:3000/',
           },
     pwa: {
-      name: 'Tracer',
-      themeColor: '#99d7f0'
+        name: 'Tracer',
+        themeColor: '#99d7f0'
     }
 }

@@ -1,23 +1,26 @@
 <template>
   <v-bottom-navigation
-      v-model="value"
       class = "tab_bar"
       grow
-
+      fixed
+      app
+      :value="true"
+      :active.sync="activeTab"
   >
-    <v-btn v-on:click="startroute" value="home">
+
+    <v-btn to="/" value="home">
       <span>Home</span>
 
       <v-icon>mdi-home</v-icon>
     </v-btn>
 
-    <v-btn v-on:click="scanroute" value="scan">
+    <v-btn to="/scanpage" value="scan">
       <span>Scan</span>
 
       <v-icon>mdi-camera</v-icon>
     </v-btn>
 
-    <v-btn v-on:click="eventroute" value="event">
+    <v-btn to="/create_event" value="event">
       <span>Event</span>
 
       <v-icon>mdi-plus</v-icon>
@@ -29,18 +32,7 @@
 
 export default {
   name: "Tab_bar",
-  methods:{
-    startroute(){
-      this.$router.push({path: '/'});
-    },
-    scanroute(){
-      this.$router.push({path: '/scanpage'});
-    },
-    eventroute(){
-      this.$router.push({path: '/create_event'})
-    }
-  },
-  data: () => ({ value: 'recent' }),
+  data: () => ({ value: "home" }),
 }
 </script>
 
