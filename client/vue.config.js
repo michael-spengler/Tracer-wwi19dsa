@@ -8,8 +8,14 @@ module.exports = {
     configureWebpack: {
         plugins: [new GenerateSW()]
     },
+
     // options...
-    devServer: {
-        proxy: 'https://localhost:3000/',
+    // devServer: {
+    //     proxy: 'https://localhost:3000/',
+    // },
+
+    pwa: {
+      name: 'Tracer',
+      themeColor: '#99d7f0'
     }
 }
