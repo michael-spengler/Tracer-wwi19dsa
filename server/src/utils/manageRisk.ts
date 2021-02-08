@@ -22,11 +22,24 @@ export async function updateRisk(){
 
     const riskLocations = await client.query(`select LocID,timestamp from users where status = 1`);
 
+    console.log(riskLocations)
+
     for (let index = 0; index < riskLocations.length; index++) {
-        //console.log("this is the data: ",riskLocations[index].timestamp.toISOString().slice(0, 19).replace('T', ' '))
+        
+        let timestamp = riskLocations[index].timestamp.toISOString().slice(0, 19).replace('T', ' ')
+        // let location =  riskLocations[index].LocID.split(":")[0]
+        let avgTime =  Number(riskLocations[index].LocID.split(":")[1])
+        
+        console.log(avgTime)
+        console.log(timestamp)
+
+        console.log(`update users set risk = 1 where LocID = "${riskLocations[index].LocID}" 
+        and timestamp > "${timestamp}" - INTERVAL ${avgTime} MINUTE 
+        and timestamp < "${timestamp}" + INTERVAL ${avgTime} MINUTE`)
+
         const result = await client.execute(`update users set risk = 1 where LocID = "${riskLocations[index].LocID}" 
-        and timestamp > "${riskLocations[index].timestamp.toISOString().slice(0, 19).replace('T', ' ')}" - INTERVAL 2 HOUR 
-        and timestamp < "${riskLocations[index].timestamp.toISOString().slice(0, 19).replace('T', ' ')}" + INTERVAL 2 HOUR`);    
+        and timestamp > "${timestamp}" - INTERVAL ${avgTime + 60} MINUTE 
+        and timestamp < "${timestamp}" + INTERVAL ${avgTime + 60} MINUTE`);    
         //console.log(result);
         }   
     

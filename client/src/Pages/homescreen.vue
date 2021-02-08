@@ -145,7 +145,7 @@ export default {
             if (statusVal == false){
                 this.status = "Gesund"
             } else if (statusVal == true) {
-            this.status = "Krank"
+            this.status = "Infiziert"
           }
         }
       )

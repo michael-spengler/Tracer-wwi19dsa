@@ -37,18 +37,18 @@ router.get('/Tracer/:data', function (req, res) {
 });
 
 //receive list of ids, changes their status to 1 and changes all occurrences to risk = 1
-router.get('/Report/:ids', function (req, res) {
-    updateRisk()
+router.get('/Report/:ids', async function (req, res) {
     const riskIDs = JSON.parse(req.params.ids);
     console.log(riskIDs.id)
-    setStatus(riskIDs.id)
+    await setStatus(riskIDs.id)
+    await updateRisk()
     res.setStatus(201)
     res.json({"status": "success"});
 });
 
 //receive list of ids, check their risk value
     router.get('/RiskCheck/:ids', async function (req, res) {
-    await updateRisk()
+    // await updateRisk()
     const checkIDs = JSON.parse(req.params.ids);
     const riskStatus = await checkRisk(checkIDs.id)
     res.setStatus(201)
