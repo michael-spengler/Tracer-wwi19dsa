@@ -79,17 +79,17 @@ import tab_bar from "@/components/tab_bar";
 import { initDB } from "../api/localBase.js";
 import { checkVariables } from "../api/checkVariables.js";
 import { reportCase } from "../api/reportCase.js";
-import {clearBuffer} from "../api/sendScanData.js";
+import { clearBuffer } from "../api/sendScanData.js";
 
-const db = initDB()
+const db = initDB();
 
 export default {
   name: "homescreen",
   components: { tab_bar /*VuePullRefresh,*/ },
   methods: {
     async to_reportcase() {
-      await reportCase(db)
-      //this.$router.push({ path: "/report_case" });
+      this.$router.push({ path: "/report_case" });
+      await reportCase(db);
     },
     startroute() {
       this.$router.push({ path: "/" });
@@ -104,10 +104,9 @@ export default {
       this.$router.push({ path: "/app_information" });
     },
     refresh() {
-      checkVariables(db)
-      clearBuffer(db)
+      checkVariables(db);
+      clearBuffer(db);
     },
-
 
     // onRefresh: function () {
     //   return new Promise(function (resolve) {
