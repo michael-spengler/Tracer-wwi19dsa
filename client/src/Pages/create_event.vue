@@ -49,6 +49,9 @@ methods: {
     to_generate() {
       console.log(this.avgTime);
       console.log(String(cuid()));
+      if (this.avgTime == null){
+        this.avgTime = 20
+      }
       this.$router.push({ path: "/qr_generator/" + String(cuid()) + ":" + String(this.avgTime) }); //hier daten übergeben
     },
   },
