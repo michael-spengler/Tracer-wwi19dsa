@@ -25,8 +25,8 @@ function newScan(locID, status) {
 }
 
 async function storeScan(db, locID){
-    let status = await db.collection('Variables').doc('1').get().then(variables => {return(variables.status)});
-    let scan = new newScan(locID, status);
+    const status = await db.collection('Variables').doc('1').get().then(variables => {return(variables.status)});
+    const scan = new newScan(locID, status);
     //console.log(scan.data())
     db.collection("Buffer").add(
         {
@@ -46,9 +46,9 @@ async function storeScan(db, locID){
         })
 }
 
-function clearBuffer(db) {
+async function clearBuffer(db) {
             console.log("Send to server...")
-            db.collection('Buffer').get().then(buffer => {
+            await db.collection('Buffer').get().then(buffer => {
                 if (buffer.length == 0) {
                     console.log("Up to date.")
                 } else {

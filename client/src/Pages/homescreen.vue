@@ -85,9 +85,9 @@ export default {
       date: "refresh to be up to date",
     };
   },
-  // async created() {
-  //   await this.refresh()
-  // },
+  async created() {
+     await this.refresh()
+   },
   methods: {
     async checkRisk(db) {
       console.log("Checking risk... ");
@@ -135,25 +135,24 @@ export default {
       this.$router.push({ path: "/app_information" });
     },
     async refresh() {
-      console.log("Refresh clicked");
+      this.date = new Date().toString().slice(4, 24)
+      console.log(this.date)
       await clearBuffer(db);
       await checkVariables(db);
-      (this.date = new Date().toISOString().slice(0, 19).replace("T", " ")),
         //checkStatus
-        await db
-          .collection("Variables")
-          .doc("1")
-          .get()
-          .then((document) => {
-            return document.status;
-          })
-          .then((statusVal) => {
-            if (statusVal == false) {
-              this.status = "Gesund";
-            } else if (statusVal == true) {
-              this.status = "Infiziert";
-            }
-          })
+      await db.collection("Variables")
+        .doc("1")
+        .get()
+        .then((document) => {
+          return document.status;
+        })
+        .then((statusVal) => {
+          if (statusVal == false) {
+            this.status = "Gesund";
+          } else if (statusVal == true) {
+            this.status = "Infiziert";
+          }
+        })
       //checkRisk
       await this.checkRisk(db);
     },

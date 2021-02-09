@@ -49,11 +49,17 @@ router.get('/Report/:ids', async function (req, res) {
 
 //receive list of ids, check their risk value
     router.get('/RiskCheck/:ids', async function (req, res) {
-    // await updateRisk()
-    const checkIDs = JSON.parse(req.params.ids);
+    const checkIDs = await JSON.parse(req.params.ids);
+    if (checkIDs.id.length == 0) {
+    const riskStatus = 0
+    res.setStatus(201)
+    res.json({"status": "success", "risk": riskStatus});
+    } else {
     const riskStatus = await checkRisk(checkIDs.id)
     res.setStatus(201)
     res.json({"status": "success", "risk": riskStatus});
+    }
+    
 });
 
 
