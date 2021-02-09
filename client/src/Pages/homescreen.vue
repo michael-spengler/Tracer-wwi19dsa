@@ -30,7 +30,7 @@
         style="height: 200px"
         alt="Image Doctor Blue"
       />
-      <v-card dark height="100%" width="100%" elevation="5" rounded>
+      <v-card dark height="100%" width="100%" elevation="5" id="riskCard" rounded>
         <v-card-title class="align-content-center">
           Risikobewertung
           <br /><br />
@@ -149,20 +149,22 @@ export default {
           .then((statusVal) => {
             if (statusVal == false) {
               this.status = "Gesund";
+              this.riskCalculation()
             } else if (statusVal == true) {
               this.status = "Infiziert";
+              this.riskCalculation()
             }
-            this.risk_calculation();
-          });
+          })
+
       //checkRisk
       await this.checkRisk(db);
     },
 
-    risk_calculation() {
+    riskCalculation() {
       if (this.status == "Infiziert") {
-        document.getElementById("risk").style.color = "#bc1200";
+        document.getElementById("riskCard").style.backgroundColor = "#c94133";
       } else {
-        document.getElementById("risk").style.color = "#287A42";
+        document.getElementById("riskCard").style.backgroundColor = "#287A42";
       }
     },
   },
