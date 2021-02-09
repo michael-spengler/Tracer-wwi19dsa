@@ -7,12 +7,12 @@
           src="@/assets/img/Tracer_icon_final.png"
           width="70"
           height="70"
-          alt="error picture not available"
+          alt="Logo"
         />
       </div>
       <div class="header">Tracer</div>
       <div>
-        <v-btn small top right fixed fab plain color="white" v-on:click="refresh, risk_calculation">
+        <v-btn small top right fixed fab plain color="white" v-on:click="refresh">
           <v-icon dark>
             <!-- mdi-settings -->
             mdi-cached
@@ -25,8 +25,12 @@
 
     <br /><br /><br /><br />
     <div class="card">
-      <img src="@/assets/img/undraw_medicine_b1ol_blue.svg" style="height: 200px" />
-      <v-card dark height="100%" width="100%" elevation="5" rounded >
+      <img
+        src="@/assets/img/undraw_medicine_b1ol_blue.svg"
+        style="height: 200px"
+        alt="Image Doctor Blue"
+      />
+      <v-card dark height="100%" width="100%" elevation="5" rounded>
         <v-card-title class="align-content-center">
           Risikobewertung
           <br /><br />
@@ -130,6 +134,7 @@ export default {
       this.$router.push({ path: "/app_information" });
     },
     async refresh() {
+      console.log("Refresh clicked");
       await clearBuffer(db);
       await checkVariables(db);
       (this.date = new Date().toISOString().slice(0, 19).replace("T", " ")),
@@ -147,17 +152,17 @@ export default {
             } else if (statusVal == true) {
               this.status = "Infiziert";
             }
+            this.risk_calculation();
           });
       //checkRisk
       await this.checkRisk(db);
     },
 
-    risk_calculation(){
-      if(this.status == "Infiziert"){
-        document.getElementById("risk").style.color = '#bc1200'
-      }
-      else{
-        document.getElementById("risk").style.color = '#287A42'
+    risk_calculation() {
+      if (this.status == "Infiziert") {
+        document.getElementById("risk").style.color = "#bc1200";
+      } else {
+        document.getElementById("risk").style.color = "#287A42";
       }
     },
   },
