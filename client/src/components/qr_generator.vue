@@ -1,7 +1,8 @@
 <template>
   <div>
     <span class="span"></span>
-    <qrcode-vue :value="value" :size="size" level="H" />
+    <qrcode-vue :value="id" :size="size" level="H" />
+    {{ id }}
     <div>
       <span class="span"></span>
       <h2>Ihr QR-Code wurde erzeugt.</h2>
@@ -15,30 +16,27 @@
 <script>
 import button_basicstyle from "@/components/button_basicstyle";
 import QrcodeVue from "qrcode.vue";
-import cuid from 'cuid'
 
-console.log("start")
 
-this.get_attributes()
 export default {
   name: "qr_generator",
   components: {QrcodeVue, button_basicstyle},
   methods: {
     go_home(){
+      console.log("start")
+      console.log(String(this.id))
       this.$router.push({path: '/'})
-    },
-    get_attributes(){
-      console.log("get_attributes")
-      console.log(cuid())
-      console.log(this.$router)
-    }
+              }
     },
   data() {
     return {
-      value: "100:10", //(String(cuid()) + ":" + String(this.$route.avgTime)),//hier daten empfangen
+      id: 0,
       size: 200,
     };
   },
+  created(){
+    this.id = this.$route.params.id;
+  }
 };
 </script>
 
