@@ -90,9 +90,9 @@ export default {
       date: "refresh to be up to date",
     };
   },
-  async created() {
-    await this.refresh()
-  },
+  // async created() {
+  //   await this.refresh()
+  // },
   methods: {
     async checkRisk(db) {
       console.log("Checking risk... ");
@@ -125,7 +125,7 @@ export default {
     async to_reportcase() {
       await reportCase(db);
       this.refresh()
-      //this.$router.push({ path: "/report_case" });
+      this.$router.push({ path: "/report_case" });
     },
     startroute() {
       this.$router.push({ path: "/" });
@@ -169,7 +169,7 @@ export default {
       } else if (this.risk > 0) {
         document.getElementById("riskCard").style.backgroundColor = "#c96932";
       } else {
-        document.getElementById("riskCard").style.backgroundColor = "#32c934";
+        document.getElementById("riskCard").style.backgroundColor = "#1A6624";
       }
     },
   },
