@@ -4,8 +4,7 @@
       grow
       fixed
       app
-      :value="true"
-      :active.sync="activeTab"
+      v-model="value"
   >
 
     <v-btn to="/" value="home">

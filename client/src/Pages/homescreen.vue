@@ -12,7 +12,7 @@
       </div>
       <div class="header">Tracer</div>
       <div>
-        <v-btn small top right fixed fab plain color="white" v-on:click="refresh">
+        <v-btn small top right fixed fab plain color="white" v-on:click="refresh, risk_calculation">
           <v-icon dark>
             <!-- mdi-settings -->
             mdi-cached
@@ -24,9 +24,9 @@
     <!-- color="#c94133 287A42 99d7f0" -->
 
     <br /><br /><br /><br />
-    <div class="card static" v-bind:style="[greenCard, dangerCard]">
+    <div class="card">
       <img src="@/assets/img/undraw_medicine_b1ol_blue.svg" style="height: 200px" />
-      <v-card color="#287A42" dark height="100%" width="100%" elevation="5" rounded>
+      <v-card dark height="100%" width="100%" elevation="5" rounded >
         <v-card-title class="align-content-center">
           Risikobewertung
           <br /><br />
@@ -152,24 +152,13 @@ export default {
       await this.checkRisk(db);
     },
 
-    /*risk_calculation(){
-      var alert;
-      alert = 0
-      if(alert == 1){
+    risk_calculation(){
+      if(this.status == "Infiziert"){
         document.getElementById("risk").style.color = '#bc1200'
       }
       else{
         document.getElementById("risk").style.color = '#287A42'
       }
-    },*/
-
-    data: {
-      greenCard: {
-        color: "green",
-      },
-      dangerCard: {
-        color: "red",
-      },
     },
   },
 };

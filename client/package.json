@@ -16,6 +16,7 @@
     "localbase": "^0.7.4",
     "node.js": "0.0.1-security",
     "qrcode.vue": "^1.7.0",
+    "react-native-loading-spinner-overlay": "^2.0.0",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
     "vue-pull-refresh": "^0.2.7",
