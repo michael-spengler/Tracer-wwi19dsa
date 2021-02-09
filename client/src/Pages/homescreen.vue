@@ -78,6 +78,7 @@ import { clearBuffer } from "../api/sendScanData.js";
 const db = initDB();
 db.config.debug = false;
 
+
 export default {
   name: "homescreen",
   components: { tab_bar },
@@ -85,9 +86,12 @@ export default {
     return {
       tab: null,
       risk: 0,
-      status: "gesund",
+      status: "Gesund",
       date: "refresh to be up to date",
     };
+  },
+  async created() {
+    await this.refresh()
   },
   methods: {
     async checkRisk(db) {
@@ -114,11 +118,13 @@ export default {
             })
             .then((riskVal) => {
               this.risk = riskVal.risk;
+              this.riskCalculation()
             })
         );
     },
-    to_reportcase() {
-      reportCase(db);
+    async to_reportcase() {
+      await reportCase(db);
+      this.refresh()
       //this.$router.push({ path: "/report_case" });
     },
     startroute() {
@@ -149,13 +155,10 @@ export default {
           .then((statusVal) => {
             if (statusVal == false) {
               this.status = "Gesund";
-              this.riskCalculation()
             } else if (statusVal == true) {
               this.status = "Infiziert";
-              this.riskCalculation()
             }
           })
-
       //checkRisk
       await this.checkRisk(db);
     },
@@ -163,12 +166,16 @@ export default {
     riskCalculation() {
       if (this.status == "Infiziert") {
         document.getElementById("riskCard").style.backgroundColor = "#c94133";
+      } else if (this.risk > 0) {
+        document.getElementById("riskCard").style.backgroundColor = "#c96932";
       } else {
-        document.getElementById("riskCard").style.backgroundColor = "#287A42";
+        document.getElementById("riskCard").style.backgroundColor = "#32c934";
       }
     },
   },
 };
+
+
 </script>
 
 <style scoped>
