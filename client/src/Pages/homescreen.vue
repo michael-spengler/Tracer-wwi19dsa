@@ -90,9 +90,9 @@ export default {
       date: "refresh to be up to date",
     };
   },
-  // async created() {
-  //   await this.refresh()
-  // },
+  async created() {
+     await this.refresh()
+   },
   methods: {
     async checkRisk(db) {
       console.log("Checking risk... ");
