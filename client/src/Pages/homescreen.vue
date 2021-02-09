@@ -140,7 +140,8 @@ export default {
       this.$router.push({ path: "/app_information" });
     },
     async refresh() {
-      this.date = new Date().toISOString().slice(0, 19).replace("T", " "),
+      this.date = new Date().toString().slice(4, 24)
+      console.log(this.date)
       await clearBuffer(db);
       await checkVariables(db);
         //checkStatus
