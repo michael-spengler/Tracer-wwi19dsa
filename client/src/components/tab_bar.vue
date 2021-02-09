@@ -32,6 +32,7 @@
 
 export default {
   name: "Tab_bar",
+  data: () => ({ value: 'recent' }),
 }
 </script>
 

@@ -11,7 +11,7 @@
     <h2>QR-Code erstellen</h2>
     <div>
       <br />
-      <p>
+      <p class="p">
         Bitte geben Sie die durschnitliche Verweildauer Ihrer Kunden in Minuten an. Diese
         wird benötigt um abschätzen zu können welche Kunden bei einer möglichen Infektion
         kontaktiert werden müssen.
@@ -80,6 +80,6 @@ methods: {
   font-family: Roboto;
   color: #676767;
   margin: 30px;
-  text-align: left;
+  text-align: center;
 }
 </style>
