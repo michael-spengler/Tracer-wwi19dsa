@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import homescreen from "@/Pages/homescreen";
-import settings from "@/Pages/settings";
 import report_case from "@/Pages/report_case";
 import app_information from "@/Pages/app_information";
 import create_event from "@/Pages/create_event";
@@ -15,10 +14,6 @@ const routes = [
   {
     path: '/',
     component: homescreen,
-  },
-  {
-    path: '/settings',
-    component: settings
   },
   {
     path: '/report_case',

@@ -2,20 +2,24 @@
   <div>
     <br><br><br><br><br><br><br><br><br><br><br>
     <div><img src="@/assets/img/check_circle-24px.svg"  height="140" alt="error picture not available" /></div>
-    <h2> Erfolgreich gemeldet </h2>
+    <h2 class="h2">
+      Erfolgreich gemeldet
+    </h2>
     <br>
-    <p>Ihre möglichen Kontakte werden nun anonym informiert.</p>   
-    <div><button_basicstyle :onclick="go_home">Zurück</button_basicstyle>
+    <p class="p">
+      Ihre möglichen Kontakte werden nun anonym informiert.
+    </p>
+    <div><button :onclick="go_home">Zurück</button>
     <slot></slot>
     </div>
   </div>
 </template>
 
 <script>
-import button_basicstyle from "@/components/button_basicstyle";
+import button from "@/components/button";
 export default {
   name: "scan_success",
-  components: {button_basicstyle},
+  components: {button},
   methods:{
     go_home(){
       this.$router.push({path: '/'})
@@ -30,12 +34,7 @@ export default {
   color: #676767;
   padding: 15px;
 }
-.span{
-  display:block;
-  height:200px;
-  width:100%;
-  background:white;
-}
+
 .p{
   font-family: Roboto;
   color: #676767;
