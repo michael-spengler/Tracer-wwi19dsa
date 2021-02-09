@@ -5,6 +5,7 @@
       fixed
       app
       v-model="value"
+      :value="value"
   >
 
     <v-btn to="/" value="home">
@@ -31,7 +32,6 @@
 
 export default {
   name: "Tab_bar",
-  data: () => ({ value: "home" }),
 }
 </script>
 
