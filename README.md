@@ -10,9 +10,15 @@
 
 ## Benutzung
 
-Start Docker-Container with MariaDB (or)
+Um die App zu benutzen muss Deno und View installiert sein. Anstatt eines Docker-Containers für die DB kann auch eine nativ auf dem PC laufende MySQL verwendet werden.
 ```bash
 docker container run --rm -d -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=true docker.io/mariadb:latest
+
+deno run --allow-net --allow-read --allow-write --allow-env --unstable ./server/src/api.ts
+
+cd client
+
+npm run serve
 ```
 
 ## Technologien
