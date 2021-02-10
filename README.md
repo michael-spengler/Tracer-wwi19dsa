@@ -21,6 +21,8 @@ cd client
 npm run serve
 ```
 
+Sollte `npm run serve` nicht funktionieren muss ggf. vorher `npm i` ausgeführt werden.
+
 ## Technologien
 
 ![Deno](https://img.shields.io/badge/Backend-Deno-blue?style=flat&logo=deno)
