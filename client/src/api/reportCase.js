@@ -11,8 +11,6 @@ async function reportCase(db){
       status: true,
       timeOfReport: new Date(),
     })
-    console.log(1)
-
     //reporting cases to db
     db.collection('TracerID').get().then(TracerID => {
         $.each(TracerID, function(i, val){

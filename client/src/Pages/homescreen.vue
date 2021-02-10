@@ -124,7 +124,6 @@ export default {
     },
     async to_reportcase() {
       await reportCase(db);
-      this.refresh()
       this.$router.push({ path: "/report_case" });
     },
     startroute() {
@@ -140,11 +139,13 @@ export default {
       this.$router.push({ path: "/app_information" });
     },
     async refresh() {
+      //lastCheck
       this.date = new Date().toString().slice(4, 24)
-      console.log(this.date)
+      //clearBuffer
       await clearBuffer(db);
+      //checkVariables
       await checkVariables(db);
-        //checkStatus
+      //checkStatus
       await db.collection("Variables")
         .doc("1")
         .get()
