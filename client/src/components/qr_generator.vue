@@ -5,22 +5,30 @@
     {{ id }}
     <div>
       <span class="span"></span>
-      <h2>Ihr QR-Code wurde erzeugt.</h2>
+      <h2 class="h2">
+        Ihr QR-Code wurde erzeugt.
+      </h2>
       <br />
-      <p>Diesen können Sie jetzt abspeichern und teilen.</p>
+      <p class="p">
+        Diesen können Sie jetzt abspeichern und teilen.
+      </p>
     </div>
-    <div><button_basicstyle :onclick="go_home">Zurück</button_basicstyle></div>
+    <div>
+      <button :onclick="go_home">
+        Zurück
+      </button>
+    </div>
   </div>
 </template>
 
 <script>
-import button_basicstyle from "@/components/button_basicstyle";
+import button from "@/components/button";
 import QrcodeVue from "qrcode.vue";
 
 
 export default {
   name: "qr_generator",
-  components: {QrcodeVue, button_basicstyle},
+  components: {QrcodeVue, button},
   methods: {
     go_home(){
       console.log("start")

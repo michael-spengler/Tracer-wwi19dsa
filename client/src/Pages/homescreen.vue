@@ -14,14 +14,11 @@
       <div>
         <v-btn small top right fixed fab plain color="white" v-on:click="refresh">
           <v-icon dark>
-            <!-- mdi-settings -->
             mdi-cached
           </v-icon>
         </v-btn>
       </div>
     </div>
-    <!-- <span class="span"></span> -->
-    <!-- color="#c94133 287A42 99d7f0" -->
 
     <br /><br /><br /><br />
     <div class="card">
@@ -68,10 +65,8 @@
 
 <script>
 import tab_bar from "@/components/tab_bar";
-// import VuePullRefresh from 'vue-pull-refresh';
 import { initDB } from "../api/localBase.js";
 import { checkVariables } from "../api/checkVariables.js";
-//import {checkRisk} from "../api/checkRisk.js"
 import { reportCase } from "../api/reportCase.js";
 import { clearBuffer } from "../api/sendScanData.js";
 

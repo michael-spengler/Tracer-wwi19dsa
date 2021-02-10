@@ -8,7 +8,7 @@
       alt="error picture not available"
     />
     <br />
-    <h2>QR-Code erstellen</h2>
+    <h2 class="h2">QR-Code erstellen</h2>
     <div>
       <br />
       <p class="p">
@@ -64,18 +64,7 @@ methods: {
   color: #676767;
   padding: 15px;
 }
-.span {
-  display: block;
-  height: 200px;
-  width: 100%;
-  background: white;
-}
-.untercard {
-  display: block;
-  height: 30px;
-  width: 100%;
-  background: white;
-}
+
 .p {
   font-family: Roboto;
   color: #676767;
