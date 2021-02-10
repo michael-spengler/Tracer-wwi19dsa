@@ -76,7 +76,7 @@ db.config.debug = false;
 
 export default {
   name: "homescreen",
-  components: { tab_bar },
+  components: {tab_bar },
   data() {
     return {
       tab: null,

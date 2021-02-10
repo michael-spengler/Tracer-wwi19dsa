@@ -9,17 +9,18 @@
     <p class="p">
       Ihre möglichen Kontakte werden nun anonym informiert.
     </p>
-    <div><button :onclick="go_home">Zurück</button>
-    <slot></slot>
+    <div>
+      <v-btn :onclick="go_home" color="#676767" dark>
+        Zurück
+      </v-btn>
     </div>
   </div>
 </template>
 
 <script>
-import button from "@/components/button";
+
 export default {
   name: "scan_success",
-  components: {button},
   methods:{
     go_home(){
       this.$router.push({path: '/'})

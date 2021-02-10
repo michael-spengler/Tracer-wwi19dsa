@@ -1,12 +1,12 @@
 <template>
-<v-btn v-on:click="onclick">
-  <slot></slot>
-</v-btn>
+  <v-btn v-on:click="onclick">
+      <slot></slot>
+    </v-btn>
 </template>
 
 <script>
 export default {
-  name: "button",
+  name: "button_std",
   props: {
     onclick: {
       type: Function,

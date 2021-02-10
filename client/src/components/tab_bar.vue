@@ -4,8 +4,6 @@
       grow
       fixed
       app
-      v-model="value"
-      :value="value"
   >
     <v-btn to="/" value="home">
       <span>Home</span>
@@ -28,7 +26,7 @@
 
 export default {
   name: "Tab_bar",
-  data: () => ({ value: 'recent' }),
+  data: () => ({ value: 1 }),
 }
 </script>
 

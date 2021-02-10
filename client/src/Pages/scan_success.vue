@@ -8,19 +8,22 @@
         alt="error picture not available"
       />
     </div>
-    <h2 class="h2">Scan Erfolgreich</h2>
+    <h2 class="h2">
+      Scan
+    </h2>
     <div>
-      <button :onclick="go_home">Zurück</button>
+      <v-btn v-on:click="go_home">
+        Zurück
+      </v-btn>
       <slot></slot>
     </div>
   </div>
 </template>
 
 <script>
-import button from "@/components/button";
+
 export default {
   name: "scan_success",
-  components: { button },
   methods: {
     go_home() {
       this.$router.push({ path: "/" });

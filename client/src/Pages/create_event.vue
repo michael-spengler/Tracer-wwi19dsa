@@ -68,7 +68,7 @@ methods: {
 .p {
   font-family: Roboto;
   color: #676767;
-  margin: 30px;
+  margin: 10px;
   text-align: center;
 }
 </style>
