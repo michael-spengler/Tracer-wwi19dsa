@@ -10,13 +10,14 @@
 
 ## Benutzung
 
-Um die App zu benutzen muss Deno und View installiert sein. Anstatt eines Docker-Containers für die DB kann auch eine nativ auf dem PC laufende MySQL verwendet werden.
+Um den Server selber zu benutzen muss Deno und View installiert sein. Anstatt eines Docker-Containers für die DB kann auch eine nativ auf dem PC laufende MySQL verwendet werden.
+
 ```bash
 docker container run --rm -d -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=true docker.io/mariadb:latest
 
 deno run --allow-net --allow-read --allow-write --allow-env --unstable ./server/src/api.ts
 
-cd client
+cd .\client\
 
 npm run serve
 ```
@@ -47,24 +48,14 @@ Sollte `npm run serve` nicht funktionieren muss ggf. vorher `npm i` ausgeführt 
 - [Einführung](#Einführung)
 - [Idee](#Idee)
 - [Business](#Business)
+- [Team](#Team)
 - [Technik](#Technik)
-  - [Frontend](#Frontend)
   - [Backend](#Backend)
-  - [Datenbank](#Datenbank)
+  - [Frontend](#Frontend)
 - [Projekt](#Projekt)
-  - [Organisation](#Organisation)
-  - [Learnings](#Learnings)
+- [Learnings](#Learnings)
 
 ## Einführung
-
-### Gruppenmitglieder
-
-- [Marie Krieger](https://github.com/mk101101)
-- [Ayman Madhour](https://github.com/Madhour)
-- [Lukas Bach](https://github.com/lukasbach00)
-- [Jorgo Paschaloglou](https://github.com/JorgoPascha)
-- [Nico Heller](https://github.com/Pr0lin-cyber)
-- [Lukas Benner](https://github.com/BennerLukas)
 
 Mit Tracer möchten wir eine Alternative und Erweiterung bisheriger Systeme zur Infektionsketten Verfolgung, darstellen.
 
@@ -94,17 +85,18 @@ Für weitere Informationen rund um das Businessmodell und die Idee dahinter sieh
 - [Business Model Canvas](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/Tracer-BusinessModelCanvas.pdf)
 - [Value Proposition Canvas](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/Tracer-ValuePropositionCanvas.pdf)
 
-<br>
-<br>
-<br>
+## Team
+
+- [Marie Krieger](https://github.com/mk101101)
+- [Ayman Madhour](https://github.com/Madhour)
+- [Lukas Bach](https://github.com/lukasbach00)
+- [Jorgo Paschaloglou](https://github.com/JorgoPascha)
+- [Nico Heller](https://github.com/Pr0lin-cyber)
+- [Lukas Benner](https://github.com/BennerLukas)
 
 ## Technik
 
 Im Laufe des Projekts haben wir einiges lernen können. Wichtige Dinge haben wir in [Learnings](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/learnings.md) festgehalten.
-
-### Frontend
-
-Für das Frontend wird [Vue.js](https://vuejs.org/) verwendet.
 
 ### Backend
 
@@ -127,10 +119,30 @@ Im Folgenden werden die einzelnen Prozesse des Backends aufgeführt und erläute
 
 ![Flowchart](https://raw.githubusercontent.com/BennerLukas/Tracer/main/server/ressources/flowcharts/4_Create_New_Loc-ID.png)
 
-### Datenbank
+#### Datenbank
+
+#### API & JavaScript
+
+### Frontend
+
+Für das Frontend wird [Vue.js](https://vuejs.org/) verwendet.
+
+#### Vue
+
+<!-- Warum Vue und nicht angular; Vorgehensweise, Komponenten, Screens, etc -->
+
+#### Vuetify
+
+<!-- Warum? was ist das? Vorteile/Nachteil; warum nicht mehr ionic? -->
+
+#### PWA & Design
+
+<!-- Designguide, Mockup, Wireframe, reponsive/ PWA ; UX Gedanken -->
 
 ## Projekt
 
-### Organisation
+[TODO Lukas]
 
-### Learnings
+## Learnings
+
+Für ausführlichere Informationen zu unseren Learnings siehe [hier](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/learnings.md).
