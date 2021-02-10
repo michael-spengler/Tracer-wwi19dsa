@@ -1,25 +1,7 @@
 <template>
   <div>
-    <div class="top">
-      <div>
-        <img
-          class="logo"
-          src="@/assets/img/Tracer_icon_final.png"
-          width="70"
-          height="70"
-          alt="Logo"
-        />
-      </div>
-      <div class="header">Tracer</div>
-      <div>
-        <v-btn small top right fixed fab plain color="white" v-on:click="refresh">
-          <v-icon dark>
-            mdi-cached
-          </v-icon>
-        </v-btn>
-      </div>
-    </div>
-
+   <div><pers_header></pers_header></div>
+<!--    <span class="span"></span>-->
     <br /><br /><br /><br />
     <div class="card">
       <img
@@ -69,6 +51,7 @@ import { initDB } from "../api/localBase.js";
 import { checkVariables } from "../api/checkVariables.js";
 import { reportCase } from "../api/reportCase.js";
 import { clearBuffer } from "../api/sendScanData.js";
+import pers_header from "@/components/pers_header";
 
 const db = initDB();
 db.config.debug = false;
@@ -76,7 +59,7 @@ db.config.debug = false;
 
 export default {
   name: "homescreen",
-  components: {tab_bar },
+  components: {pers_header, tab_bar },
   data() {
     return {
       tab: null,
@@ -179,15 +162,15 @@ export default {
   float: left;
 }
 
-.top {
-  text-align: left;
-  float: top;
-  position: fixed;
-  width: 100%;
-  padding: 5px;
-  background-color: white;
-  display: block;
-}
+/*.top {*/
+/*  text-align: left;*/
+/*  float: top;*/
+/*  position: fixed;*/
+/*  width: 100%;*/
+/*  padding: 5px;*/
+/*  background-color: white;*/
+/*  display: block;*/
+/*}*/
 
 .homescreen_button {
   float: bottom;
@@ -199,19 +182,21 @@ export default {
   margin-right: 30px;
   align-items: center;
 }
-.header {
-  padding: 23px;
-  font-family: Roboto;
-  font-size: 20px;
-  text-align: center;
-  color: #676767;
-}
+/*.header {*/
+/*  padding: 23px;*/
+/*  font-family: Roboto;*/
+/*  font-size: 20px;*/
+/*  text-align: center;*/
+/*  color: #676767;*/
+/*}*/
+
 .span {
   display: block;
   height: 100px;
   width: 100%;
   background: white;
 }
+
 .untercard {
   display: block;
   height: 30px;
