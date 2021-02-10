@@ -9,17 +9,17 @@
     <p class="p">
       Ihre möglichen Kontakte werden nun anonym informiert.
     </p>
-    <div><button :onclick="go_home">Zurück</button>
+    <div><tracerButton :onclick="go_home">Zurück</tracerButton>
     <slot></slot>
     </div>
   </div>
 </template>
 
 <script>
-import button from "@/components/button";
+import tracerButton from "@/components/button";
 export default {
   name: "scan_success",
-  components: {button},
+  components: {tracerButton},
   methods:{
     go_home(){
       this.$router.push({path: '/'})

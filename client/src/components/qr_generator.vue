@@ -14,21 +14,21 @@
       </p>
     </div>
     <div>
-      <button :onclick="go_home">
+      <tracerButton :onclick="go_home">
         Zurück
-      </button>
+      </tracerButton>
     </div>
   </div>
 </template>
 
 <script>
-import button from "@/components/button";
+import tracerButton from "@/components/button";
 import QrcodeVue from "qrcode.vue";
 
 
 export default {
   name: "qr_generator",
-  components: {QrcodeVue, button},
+  components: {QrcodeVue, tracerButton},
   methods: {
     go_home(){
       console.log("start")
