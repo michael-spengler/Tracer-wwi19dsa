@@ -9,7 +9,7 @@
       />
     </div>
     <h2 class="h2">
-      Scan
+      Scan Erfolgreich
     </h2>
     <div>
       <v-btn v-on:click="go_home">
