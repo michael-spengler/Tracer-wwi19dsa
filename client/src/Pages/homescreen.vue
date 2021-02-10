@@ -28,7 +28,7 @@
         alt="Image Doctor Blue"
       />
       <v-card dark height="100%" width="100%" elevation="5" id="riskCard" rounded>
-        <v-card-title class="align-content-center">
+        <v-card-title class="center">
           Risikobewertung
           <br /><br />
         </v-card-title>
@@ -217,5 +217,11 @@ export default {
   height: 30px;
   width: 100%;
   background: white;
+}
+
+.center{
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 </style>
