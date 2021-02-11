@@ -1,8 +1,8 @@
 <template>
   <div>
-    <br /><br />
+    <span class="span_50"></span>
     <img
-      class="logo"
+      class="icon"
       src="@/assets/img/qr_code-24px.svg"
       height="70"
       alt="error picture not available"
@@ -16,17 +16,14 @@
         wird benötigt um abschätzen zu können welche Kunden bei einer möglichen Infektion
         kontaktiert werden müssen.
       </p>
-      <br>
+      <br />
       <div style="margin: 50px">
         <input type="number" placeholder="Verweildauer in Minuten" v-model="avgTime" />
       </div>
     </div>
     <div>
       <div class="homescreen_button">
-        <v-btn color="#676767" dark width="85%" v-on:click="to_generate">
-          Qr-Code erzeugen
-        </v-btn>
-
+        <button_std :onclick="to_generate">Qr-Code erzeugen</button_std>
       </div>
     </div>
     <tab_bar></tab_bar>
@@ -34,30 +31,31 @@
 </template>
 
 <script>
+import button_std from "@/components/button_std";
 import tab_bar from "@/components/tab_bar";
-import cuid from 'cuid'
+import cuid from "cuid";
 
 export default {
   name: "create_event",
-  components: { tab_bar },
+  components: { tab_bar, button_std },
   data() {
     return {
       avgTime: null,
-    }
+    };
   },
-methods: {
+  methods: {
     to_generate() {
       console.log(this.avgTime);
       console.log(String(cuid()));
-      if (this.avgTime == null){
-        this.avgTime = 20
+      if (this.avgTime == null) {
+        this.avgTime = 20;
       }
-      this.$router.push({ path: "/qr_generator/" + String(cuid()) + ":" + String(this.avgTime) }); //hier daten übergeben
+      this.$router.push({
+        path: "/qr_generator/" + String(cuid()) + ":" + String(this.avgTime),
+      }); //hier daten übergeben
     },
   },
 };
 </script>
 
-<style scoped src="@/assets/Stylesheet.css">
-
-</style>
+<style scoped src="@/assets/Stylesheet.css"></style>

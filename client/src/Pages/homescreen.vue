@@ -3,30 +3,28 @@
     <div class="top">
       <div>
         <img
-            class="logo"
-            src="@/assets/img/Tracer_icon_final.png"
-            width="70"
-            height="70"
-            alt="Logo"
+          class="logo"
+          src="@/assets/img/Tracer_icon_final.png"
+          width="70"
+          height="70"
+          alt="Logo"
         />
       </div>
       <div class="header">Tracer</div>
       <div>
-        <v-btn  small top right fixed fab plain color="white" v-on:click="refresh">
-          <v-icon dark>
-            mdi-cached
-          </v-icon>
+        <v-btn small top right fixed fab plain color="white" v-on:click="refresh">
+          <v-icon dark> mdi-cached </v-icon>
         </v-btn>
       </div>
     </div>
-    <span class="span"></span>
-    <br /><br /><br /><br />
+    <span class="span_100"></span>
     <div class="card">
       <img
         src="@/assets/img/undraw_medicine_b1ol_blue.svg"
         style="height: 200px"
         alt="Image Doctor Blue"
       />
+      <br /><br />
       <v-card dark height="100%" width="100%" elevation="5" id="riskCard" rounded>
         <v-card-title class="center">
           Risikobewertung
@@ -35,28 +33,27 @@
 
         <v-card-subtitle>
           <div>Status: {{ status }}</div>
+          <br />
           <hr style="color: white" />
           <br />
           <div>Risiko: {{ risk }} Risikobegegnung(en)</div>
+          <br />
           <hr style="color: white" />
           <br />
           <div>Last Check: {{ date }}</div>
-          <br /><br /><br />
+          <br /><br />
         </v-card-subtitle>
       </v-card>
     </div>
     <span class="untercard"></span>
     <div class="homescreen_button">
-      <v-btn color="#676767" dark width="85%" v-on:click="to_reportcase">
-        <v-icon>mdi-alert-plus-outline</v-icon>
-        Infektion melden
-      </v-btn>
+      <button_std :onclick="to_reportcase"
+        ><v-icon>mdi-alert-plus-outline</v-icon> Infektion melden</button_std
+      >
     </div>
     <br />
     <div class="homescreen_button">
-      <v-btn color="#676767" dark width="85%" v-on:click="to_app_information">
-        App Informationen
-      </v-btn>
+      <button_std :onclick="to_app_information">App Informationen</button_std>
     </div>
     <span class="span_50"></span>
     <tab_bar></tab_bar>
@@ -64,20 +61,19 @@
 </template>
 
 <script>
+import button_std from "@/components/button_std";
 import tab_bar from "@/components/tab_bar";
 import { initDB } from "../api/localBase.js";
 import { checkVariables } from "../api/checkVariables.js";
 import { reportCase } from "../api/reportCase.js";
 import { clearBuffer } from "../api/sendScanData.js";
 
-
 const db = initDB();
 db.config.debug = false;
 
-
 export default {
   name: "homescreen",
-  components: { tab_bar },
+  components: { tab_bar, button_std },
   data() {
     return {
       tab: null,
@@ -87,8 +83,8 @@ export default {
     };
   },
   async created() {
-     await this.refresh()
-   },
+    await this.refresh();
+  },
   methods: {
     async checkRisk(db) {
       console.log("Checking risk... ");
@@ -114,7 +110,7 @@ export default {
             })
             .then((riskVal) => {
               this.risk = riskVal.risk;
-              this.riskCalculation()
+              this.riskCalculation();
             })
         );
     },
@@ -136,13 +132,14 @@ export default {
     },
     async refresh() {
       //lastCheck
-      this.date = new Date().toString().slice(4, 24)
+      this.date = new Date().toString().slice(4, 24);
       //clearBuffer
       await clearBuffer(db);
       //checkVariables
       await checkVariables(db);
       //checkStatus
-      await db.collection("Variables")
+      await db
+        .collection("Variables")
         .doc("1")
         .get()
         .then((document) => {
@@ -154,7 +151,7 @@ export default {
           } else if (statusVal == true) {
             this.status = "Infiziert";
           }
-        })
+        });
       //checkRisk
       await this.checkRisk(db);
     },
@@ -170,9 +167,6 @@ export default {
     },
   },
 };
-
 </script>
 
-<style scoped src="@/assets/Stylesheet.css">
-
-</style>
+<style scoped src="@/assets/Stylesheet.css"></style>

@@ -1,7 +1,9 @@
 <template>
   <div>
-    <br><br><br><br><br><br><br><br><br><br><br>
-    <div><img src="@/assets/img/check_circle-24px.svg"  height="140" alt="error picture not available" /></div>
+    <span class="span_100"></span>
+    <div>
+      <img src="@/assets/img/check_circle-24px.svg"  height="140" alt="error picture not available" />
+    </div>
     <h2 class="h2">
       Erfolgreich gemeldet
     </h2>
@@ -10,7 +12,7 @@
       Ihre möglichen Kontakte werden nun anonym informiert.
     </p>
     <div>
-      <button_std :onclick="go_home" color="#676767" dark>Zurück</button_std>
+      <button_std :onclick="go_home">Zurück</button_std>
     </div>
   </div>
 </template>

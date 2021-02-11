@@ -2,6 +2,9 @@
     position: fixed;
     float: left;
 }
+.icon {
+    text-align: center;
+}
 .top {
     text-align: left;
     float: top;
