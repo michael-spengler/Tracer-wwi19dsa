@@ -20,7 +20,8 @@ if (variables == null) {
         })
         console.log("Status = false")
       } else {
-          console.log((currentTime-variables.timeOfReport)/d)
+          //alert("Time passed since the last report: ",(currentTime-variables.timeOfReport)/d)
+          console.log("Time passed since the last report: ",(currentTime-variables.timeOfReport)/d)
       }
 
 return db

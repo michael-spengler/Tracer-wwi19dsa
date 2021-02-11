@@ -86,34 +86,6 @@ export default {
     await this.refresh();
   },
   methods: {
-    async checkRisk(db) {
-      console.log("Checking risk... ");
-      var idList = [];
-
-      //reporting cases to db
-      db.collection("TracerID")
-        .get()
-        .then((TracerID) => {
-          TracerID.forEach((element) => {
-            idList.push(element.id);
-          });
-          return idList;
-        })
-        .then((idList) =>
-          fetch(`http://localhost:3000/RiskCheck/${JSON.stringify({ id: idList })}`)
-            .then((response) => {
-              if (response.ok) {
-                return response.json();
-              } else {
-                throw new Error("Something went wrong, try again later.");
-              }
-            })
-            .then((riskVal) => {
-              this.risk = riskVal.risk;
-              this.riskCalculation();
-            })
-        );
-    },
     async to_reportcase() {
       await reportCase(db);
       this.$router.push({ path: "/report_case" });
@@ -123,9 +95,6 @@ export default {
     },
     scanroute() {
       this.$router.push({ path: "/scanpage" });
-    },
-    eventroute() {
-      //this.$router.push({path: '/create_event'})
     },
     to_app_information() {
       this.$router.push({ path: "/app_information" });
@@ -155,7 +124,33 @@ export default {
       //checkRisk
       await this.checkRisk(db);
     },
+    async checkRisk(db) {
+      var idList = [];
 
+      //reporting cases to db
+      db.collection("TracerID")
+        .get()
+        .then((TracerID) => {
+          TracerID.forEach((element) => {
+            idList.push(element.id);
+          });
+          return idList;
+        })
+        .then((idList) =>
+          fetch(`http://localhost:3000/RiskCheck/${JSON.stringify({ id: idList })}`)
+            .then((response) => {
+              if (response.ok) {
+                return response.json();
+              } else {
+                throw new Error("Something went wrong, try again later.");
+              }
+            })
+            .then((riskVal) => {
+              this.risk = riskVal.risk;
+              this.riskCalculation();
+            })
+        );
+    },
     riskCalculation() {
       if (this.status == "Infiziert") {
         document.getElementById("riskCard").style.backgroundColor = "#c94133";
