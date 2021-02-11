@@ -4,12 +4,12 @@
     <qrcode-vue :value="id" :size="size" level="H" />
     {{ id }}
     <div>
-      <span class="span"></span>
+      <span class="span_100"></span>
       <h2 class="h2">
         Ihr QR-Code wurde erzeugt.
       </h2>
       <br />
-      <p class="p">
+      <p class="p_left">
         Diesen können Sie jetzt abspeichern und teilen.
       </p>
     </div>
@@ -48,22 +48,6 @@ export default {
 };
 </script>
 
-<style scoped>
-.span {
-  display: block;
-  height: 100px;
-  width: 100%;
-  background: white;
-}
-.h2 {
-  font-family: Roboto;
-  color: #676767;
-  padding: 15px;
-}
-.p {
-  font-family: Roboto;
-  color: #676767;
-  margin: 30px;
-  text-align: left;
-}
+<style scoped src="@/assets/Stylesheet.css">
+
 </style>

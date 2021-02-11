@@ -6,7 +6,7 @@
       Erfolgreich gemeldet
     </h2>
     <br>
-    <p class="p">
+    <p class="p_center_30">
       Ihre möglichen Kontakte werden nun anonym informiert.
     </p>
     <div>
@@ -29,17 +29,6 @@ export default {
 }
 </script>
 
-<style scoped>
-.h2{
-  font-family: Roboto;
-  color: #676767;
-  padding: 15px;
-}
+<style scoped src="@/assets/Stylesheet.css">
 
-.p{
-  font-family: Roboto;
-  color: #676767;
-  margin: 30px;
-  text-align: center;
-}
 </style>

@@ -30,9 +30,6 @@ export default {
 }
 </script>
 
-<style scoped>
-.tab_bar{
-  float: bottom;
-  position: fixed;
-}
+<style scoped src="@/assets/Stylesheet.css">
+
 </style>

@@ -58,7 +58,7 @@
         App Informationen
       </v-btn>
     </div>
-    <span class="span"></span>
+    <span class="span_50"></span>
     <tab_bar></tab_bar>
   </div>
 </template>
@@ -171,60 +171,8 @@ export default {
   },
 };
 
-
 </script>
 
-<style scoped>
-.logo {
-  position: fixed;
-  float: left;
-}
+<style scoped src="@/assets/Stylesheet.css">
 
-.top {
-  text-align: left;
-  float: top;
-  position: fixed;
-  width: 100%;
-  padding: 5px;
-  background-color: white;
-  display: block;
-}
-
-.homescreen_button {
-  float: bottom;
-}
-
-.card {
-  display: block;
-  margin-left: 30px;
-  margin-right: 30px;
-  align-items: center;
-}
-.header {
-  padding: 23px;
-  font-family: Roboto;
-  font-size: 20px;
-  text-align: center;
-  color: #676767;
-}
-
-.span {
-  display: block;
-  height: 50px;
-  width: 100%;
-  background: white;
-}
-
-.untercard {
-  display: block;
-  height: 30px;
-  width: 100%;
-  background: white;
-}
-
-.center{
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
 </style>

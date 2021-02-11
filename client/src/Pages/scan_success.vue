@@ -32,10 +32,6 @@ export default {
 };
 </script>
 
-<style scoped>
-.h2 {
-  font-family: Roboto;
-  color: #676767;
-  padding: 15px;
-}
+<style scoped src="@/assets/Stylesheet.css">
+
 </style>
