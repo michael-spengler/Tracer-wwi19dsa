@@ -10,7 +10,7 @@ deno run --allow-net --allow-read --allow-write --allow-env --unstable ./server/
 //server runs on localhost:3000
 ```
 
-You need to have a (local) mySQL DB running:
+Instead of using the docker container, you can also use a local mysql database:
 
 - __brew services start mysql__
 - __mysql -u root -p__
