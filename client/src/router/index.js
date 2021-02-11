@@ -6,7 +6,7 @@ import app_information from "@/Pages/app_information";
 import create_event from "@/Pages/create_event";
 import qr_scanner from "@/Pages/qr_scanner";
 import scan_success from "@/Pages/scan_success";
-import qr_generator from "@/components/qr_generator";
+import qr_generator from "@/Pages/qr_generator";
 
 Vue.use(VueRouter)
 

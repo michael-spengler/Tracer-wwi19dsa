@@ -10,17 +10,17 @@
       Ihre möglichen Kontakte werden nun anonym informiert.
     </p>
     <div>
-      <v-btn :onclick="go_home" color="#676767" dark>
-        Zurück
-      </v-btn>
+      <button_std :onclick="go_home" color="#676767" dark>Zurück</button_std>
     </div>
   </div>
 </template>
 
 <script>
 
+import button_std from "@/components/button_std";
 export default {
   name: "scan_success",
+  components: {button_std},
   methods:{
     go_home(){
       this.$router.push({path: '/'})
@@ -40,6 +40,6 @@ export default {
   font-family: Roboto;
   color: #676767;
   margin: 30px;
-  text-align: left;
+  text-align: center;
 }
 </style>
