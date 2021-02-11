@@ -55,7 +55,7 @@
     <div class="homescreen_button">
       <button_std :onclick="to_app_information">App Informationen</button_std>
     </div>
-    <span class="span_50"></span>
+    <span class="span_100"></span>
     <tab_bar></tab_bar>
   </div>
 </template>
