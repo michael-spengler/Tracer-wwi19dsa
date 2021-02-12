@@ -28,11 +28,10 @@ router.get('/', function (req, res) {
 
 //Frontend sends data via localhost:3000/Tracer/:data → backend stores the date in MySql db → responds with TracerID and time
 router.get('/Tracer/:data', async function (req, res) {
-    //updateRisk(client)
     const scanData = JSON.parse(req.params.data);
-    const storedScanData = await processData(scanData);
-    await updateRisk();
+    const storedScanData = processData(scanData);
     console.log(storedScanData);
+    await updateRisk();
     res.setStatus(201)
     res.json({"key": storedScanData.key, "time": storedScanData.data.time});
 });
@@ -50,21 +49,19 @@ router.get('/Report/:ids', async function (req, res) {
 //receive list of ids, check their risk value
     router.get('/RiskCheck/:ids', async function (req, res) {
     const checkIDs = await JSON.parse(req.params.ids);
-    if (checkIDs.id.length == 0) {
-    const riskStatus = 0
-    res.setStatus(201)
-    res.json({"status": "success", "risk": riskStatus});
-    } else {
-    const riskStatus = await checkRisk(checkIDs.id)
-    res.setStatus(201)
-    res.json({"status": "success", "risk": riskStatus});
-    }
     
+    if (checkIDs.id.length == 0) {
+        const riskStatus = 0
+        res.setStatus(201)
+        res.json({"status": "success", "risk": riskStatus});
+    } else {
+        const riskStatus = await checkRisk(checkIDs.id)
+        res.setStatus(201)
+        res.json({"status": "success", "risk": riskStatus});
+    }
 });
-
 
 //deploy
 router.listen(3000, function () {
-    updateRisk()
     console.log('Tracer Server is listening on Port 3000!')
 });

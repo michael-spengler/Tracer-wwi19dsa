@@ -19,23 +19,20 @@ export async function checkRisk(data:Array<string>){
 
 export async function updateRisk(){
     const client = await initDB()
-
     const riskLocations = await client.query(`select LocID,timestamp from users where status = 1`);
-
     for (let index = 0; index < riskLocations.length; index++) {
         
         let timestamp = riskLocations[index].timestamp.toISOString().slice(0, 19).replace('T', ' ')
         // let location =  riskLocations[index].LocID.split(":")[0]
         let avgTime =  Number(riskLocations[index].LocID.split(":")[1])
 
-        const result = await client.execute(`update users set risk = 1 where LocID = "${riskLocations[index].LocID}" 
+        const result = await client.execute(
+        `update users set risk = 1 where LocID = "${riskLocations[index].LocID}" 
         and timestamp > "${timestamp}" - INTERVAL ${avgTime + 60} MINUTE 
-        and timestamp < "${timestamp}" + INTERVAL ${avgTime + 60} MINUTE`);    
-        //console.log(result);
+        and timestamp < "${timestamp}" + INTERVAL ${avgTime + 60} MINUTE`);
         }
-    console.log("deleting old entries")
+
     const deleteEntries = await client.execute("DELETE FROM users WHERE timestamp < (CURRENT_TIMESTAMP() - INTERVAL 28 DAY)")
-    console.log(deleteEntries)
 
     await client.close();
 }

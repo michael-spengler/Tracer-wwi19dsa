@@ -25,8 +25,7 @@ export function processData(data:any){
         tracerID : tracerID,
         time : data.currentTime
     },   key : tracerID};
-    //console.log(data.status)
-    //add to database - deactivate the following line if no mySQL DB is up
+
     storeInDB(tracerID, data.currentTime, data.locID, data.status, data.risk)
     return scanData 
 }

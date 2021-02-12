@@ -7,7 +7,6 @@ export async function setStatus(data:Array<string>){
     for (let index = 0; index < data.length; index++) {
         //console.log("this is the data: ",data)
         const result = await client.execute(`update users set status = 1 where TracerID = "${data[index]}"`);    
-        console.log(result);
     }
 
     await client.close();
