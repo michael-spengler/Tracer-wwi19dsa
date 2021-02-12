@@ -32,7 +32,10 @@ export async function updateRisk(){
         and timestamp > "${timestamp}" - INTERVAL ${avgTime + 60} MINUTE 
         and timestamp < "${timestamp}" + INTERVAL ${avgTime + 60} MINUTE`);    
         //console.log(result);
-        }   
-    
+        }
+    console.log("deleting old entries")
+    const deleteEntries = await client.execute("DELETE FROM users WHERE timestamp < (CURRENT_TIMESTAMP() - INTERVAL 28 DAY)")
+    console.log(deleteEntries)
+
     await client.close();
 }
