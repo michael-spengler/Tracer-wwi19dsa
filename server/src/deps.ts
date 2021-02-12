@@ -7,4 +7,3 @@ export { opineCors } from "https://deno.land/x/cors@v1.2.1/opineCors.ts";
 //outdated dependencies
 export { writeJsonSync } from 'https://deno.land/x/jsonfile/mod.ts';
 export { readJsonSync } from "https://deno.land/x/jsonfile/mod.ts";
-import { setColorEnabled } from "https://deno.land/std@0.77.0/fmt/colors.ts";
