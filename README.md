@@ -10,7 +10,7 @@
 
 ## Benutzung
 
-Um den Server selber zu benutzen muss Deno und View installiert sein. Anstatt eines Docker-Containers für die DB kann auch eine nativ auf dem PC laufende MySQL verwendet werden.
+Um den Server selbst zu benutzen, muss Deno und View installiert sein. Anstatt eines Docker-Containers für die DB kann auch eine nativ auf dem PC laufende MySQL verwendet werden.
 
 ```bash
 docker container run --rm -d -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=true docker.io/mariadb:latest
@@ -59,9 +59,9 @@ Sollte `npm run serve` nicht funktionieren muss ggf. vorher `npm i` ausgeführt 
 
 Mit Tracer möchten wir eine Alternative und Erweiterung bisheriger Systeme zur Infektionsketten Verfolgung, darstellen.
 
-Die aktuelle Pandemie ist jedem bekannt. Die Öffentlichkeit erfährt dadurch einige (notwendige) Einschränkungen. Besonders für die Wirtschaft, im genaueren den Einzelhandel, schadet dies enorm. Wir schaffen mit Tracer dafür Abhilfe. Indem wir Infektionsketten automatisiert und einfach nachverfolgbar machen ohne dabei die Privatsphäre und Datenschutzbeschränkungen verletzen. Tracer kann vollständig anonym verwendet werden.
+Die aktuelle Pandemie ist jedem bekannt. Die Öffentlichkeit erfährt dadurch einige (notwendige) Einschränkungen. Besonders für die Wirtschaft, im genaueren den Einzelhandel, schadet dies enorm. Wir schaffen mit Tracer dafür Abhilfe. Indem wir Infektionsketten automatisiert und einfach nachverfolgbar machen, ohne dabei die Privatsphäre und Datenschutzbeschränkungen zu verletzen. Tracer kann vollständig anonymisiert verwendet werden.
 
-Wenn ein Kunde/in ein Restaurant betritt (vorausgesetzt es ist erlaubt), müssen seine/ihre Kontaktdaten aufgenommen werden. Tracer setzt genau hier an. Mithilfe der App soll nun ein QR-Code gescannt werden. Dadurch wird auf einer Datenbank ein Eintrag angelegt. In diesem wird der Ort und die Zeit sowie eine anonyme einzigartige ID abgespeichert. Die App speichert sich diese ID ebenfalls ab. Im Falle einer Infektion wird nun über die Datenbank alle betroffenen IDs veröffentlicht. Die App prüft nun, ob eine ihrer IDs betroffen ist und warnt gegebenenfalls die Kunden.
+Wenn ein Kunde/in ein Restaurant betritt (vorausgesetzt es ist erlaubt), müssen seine/ihre Kontaktdaten aufgenommen werden. Tracer setzt genau hier an. Mithilfe der App soll nun ein QR-Code gescannt werden, wodurch auf einer Datenbank ein Eintrag angelegt wird. In diesem ist der Ort und die Zeit sowie eine anonyme einzigartige ID abgespeichert. In der App wird diese evenfalls abgespeichert. Im Falle einer Infektion werden nun über die Datenbank alle betroffenen IDs veröffentlicht. Die App prüft nun, ob eine ihrer IDs betroffen ist und warnt gegebenenfalls die Betroffenen.
 
 ![New Entry](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/data/Tracer-PitchDeck/Folie6.PNG?raw=true)
 
@@ -70,10 +70,10 @@ Unser Projekt ist Open Source und wird von unabhängigen Experten geprüft werde
 
 ## Idee
 
-Ziel der Tracer-App soll es sein dem Einzelhandel und anderen lokalen Geschäften ein geregelter und sicherer Betrieb zu ermöglichen. Unter den derzeit bestehenden Pandemiebedingungen ist dies nicht möglich. Das Nachvollziehen von Infektionsketten ist aufwendig und kompliziert und zudem mangelt es bei vielen Bürgern an der Akzeptanz, da persönliche Daten erhoben werden müssen. Wir möchten mit unserer Technologie Abhilfe schaffen. Mit Tracer können Gewerbetreibende ohne Mehraufwand ihrem Tagesgeschäft, dem Verkaufen nachgehen. Behörden und Gesundheitsämter können zudem über einfache Schnittstellen unseren Nutzern über mögliche Infektionen schnell Bescheid geben. Für den Nutzer birgt unsere App auch einige Vorteile. Neben der einfachen und intuitiven Bedienung benötigen wir keine persönlichen oder Personen-identifizierbare Daten.
+Ziel der Tracer-App soll es sein dem Einzelhandel und anderen lokalen Geschäften einen geregelten und sicheren Betrieb zu ermöglichen. Unter den derzeit bestehenden Pandemiebedingungen ist dies nicht möglich. Das Nachvollziehen von Infektionsketten ist aufwendig und kompliziert, zudem mangelt es bei vielen Bürgern an der Akzeptanz, da persönliche Daten erhoben werden müssen. Wir möchten mit unserer Technologie Abhilfe schaffen. Mit Tracer können Gewerbetreibende ohne Mehraufwand, ihrem Tagesgeschäft, dem Verkaufen nachgehen. Behörden und Gesundheitsämter können zudem über einfache Schnittstellen unseren Nutzern über mögliche Infektionen schnell Bescheid geben. Für den Nutzer birgt unsere App auch einige Vorteile. Neben der einfachen und intuitiven Bedienung benötigen wir keine persönlichen oder Personen-identifizierbare Daten.
 ![Saved Data](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/data/Tracer-PitchDeck/Folie7.PNG?raw=true)
-Dies möchten wir durch unabhängige Prüfer überprüfen lassen um so den höchsten Sicherheits- und Datenschutzstandards entsprechen zu können.
-Unserer Vision ist es einen Beitrag zur Bekämpfung der Pandemie zu leisten, sodass die Menschen, die Wirtschaft und die gesamte Gesellschaft schnell wieder gesund wird und die Pandemie gemeistert werden kann.
+Dies möchten wir durch unabhängige Prüfer überprüfen lassen, um so den höchsten Sicherheits- und Datenschutzstandards entsprechen zu können.
+Unsere Vision ist es einen Beitrag zur Bekämpfung der Pandemie zu leisten, sodass die Menschen, die Wirtschaft und die gesamte Gesellschaft schnell wieder gesund und die Pandemie gemeistert werden kann.
 Auch über die jetzige, durch den Sars-CoV2 Virus ausgelöste, Pandemie hinaus kann unsere App Einsatz finden. Die Technologie ist unabhängig von der Art der Pandemie und wir sehen es daher als wichtiges Tool für zukünftige Notfallpläne an.
 
 ## Business
@@ -140,12 +140,12 @@ Für das Frontend wird [Vue.js](https://vuejs.org/) verwendet.
 
 ## Projekt
 
-Unser Projekt haben wir folgendermaßen umgesetzt. [Ayman Madhour](https://github.com/Madhour) und [Jorgo Paschaloglou](https://github.com/JorgoPascha) haben sich um das Backend (Deno, JS, TS) und die API/ Schnittstelle zum Frontend, sowie die Logik des Programms gekümmert. [Lukas Bach](https://github.com/lukasbach00) und [Nico Heller](https://github.com/Pr0lin-cyber) hatten den Bereich des Frontends (Vue, Vuetify) unter sich. [Lukas Benner](https://github.com/BennerLukas) kümmerte sich um alle Businessaspekte (Businessplan, Video) und war zudem als Springer in den anderen Bereichen tätig.
+Unser Projekt haben wir folgendermaßen umgesetzt. [Ayman Madhour](https://github.com/Madhour) und [Jorgo Paschaloglou](https://github.com/JorgoPascha) haben sich um das Backend (Deno, JS, TS) und die API/ Schnittstelle zum Frontend, sowie die Logik des Programms gekümmert. [Lukas Bach](https://github.com/lukasbach00) und [Nico Heller](https://github.com/Pr0lin-cyber) hatten den Bereich des Frontends (Vue, Vuetify) als Aufgabenfeld. [Lukas Benner](https://github.com/BennerLukas) kümmerte sich um alle Businessaspekte (Businessplan, Video) und war zudem als Springer in den anderen Bereichen tätig.
 
-In der Regel haben wir uns einmal die Woche zu unserem "Weekly" getroffen. Dort haben wir die erledigten Aufgaben besprochen, Ideen ausgetauscht und neue Aufgaben für die kommende Zeit verteilt. Wir haben im Rahmen unseres Projektes eng mit den Features von GitHub gearbeitet. Besonders mit Issues und den Projekt-Boards (KANBAN-Boards). Darüber wurden Ideen, Bugs und fehlende Features erfasst. Diese wurden einer Person und einem Bereich zugeteilt. Diese Person konnte dann die Aufgaben aufnehmen, abarbeiten und als erledigt abhaken. Dies beschleunigte Prozesse enorm, da jeder den Überblick über den aktuellen Stand behalten konnte und enges zusammenarbeiten einfach möglich war.
-Zudem haben wir mit verschiedenen "Branches" für verschiedene Bereiche gearbeitet um neue Dinge auszuprobieren zu können. Siehe [learnings](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/learnings.md).
+In der Regel haben wir uns einmal die Woche zu unserem "Weekly" getroffen. Dort haben wir die erledigten Aufgaben besprochen, Ideen ausgetauscht und neue Aufgaben für die kommende Zeit verteilt. Wir haben im Rahmen unseres Projektes eng mit den Features von GitHub gearbeitet. Besonders mit Issues und den Projekt-Boards (KANBAN-Boards). Darüber wurden Ideen, Bugs und fehlende Features erfasst. Diese wurden einer Person und einem Bereich zugeteilt, welche dann die Aufgaben aufnehmen, abarbeiten und als erledigt abhaken konnte. Dies beschleunigte viele Prozesse enorm, da jeder den Überblick über den aktuellen Stand behalten konnte und enges zusammenarbeiten einfacher zu  ermöglichen war.
+Zudem haben wir mit verschiedenen "Branches" für verschiedene Bereiche gearbeitet um neue Dinge ausprobieren zu können. Siehe [learnings](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/learnings.md).
 
-In den letzten Wochen unseres Projekts hat sich unsere Arbeitszeit daran noch deutlich erhöht. Nun haben wir uns meist täglich getroffen um Bugs zu besprechen, Designfragen zu klären oder einfach effizienter im Pairprogramming voran zu kommen.
+In den letzten Wochen unseres Projekts hat sich unsere Arbeitszeit noch deutlich erhöht. Nun haben wir uns meist täglich getroffen um Bugs zu besprechen, Designfragen zu klären oder einfach effizienter im Pairprogramming voran zu kommen.
 
 ## Learnings
 
