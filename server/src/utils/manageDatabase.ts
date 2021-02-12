@@ -17,7 +17,7 @@ export async function storeInDB(tracerID:string, time:string, locID:string, stat
 }
 
 //store data in mysql db
-export function processData(data:any){
+export async function processData(data:any){
     const tracerID:string = cuid();
     const scanData = {
         data : {
@@ -26,6 +26,6 @@ export function processData(data:any){
         time : data.currentTime
     },   key : tracerID};
 
-    storeInDB(tracerID, data.currentTime, data.locID, data.status, data.risk)
+    await storeInDB(tracerID, data.currentTime, data.locID, data.status, data.risk)
     return scanData 
 }

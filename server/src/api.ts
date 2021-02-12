@@ -29,7 +29,7 @@ router.get('/', function (req, res) {
 //Frontend sends data via localhost:3000/Tracer/:data → backend stores the date in MySql db → responds with TracerID and time
 router.get('/Tracer/:data', async function (req, res) {
     const scanData = JSON.parse(req.params.data);
-    const storedScanData = processData(scanData);
+    const storedScanData = await processData(scanData)
     console.log(storedScanData);
     await updateRisk();
     res.setStatus(201)

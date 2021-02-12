@@ -126,7 +126,6 @@ export default {
     },
     async checkRisk(db) {
       var idList = [];
-
       //reporting cases to db
       db.collection("TracerID")
         .get()
