@@ -1,9 +1,11 @@
 import Localbase from 'localbase';
 
 
-
+/* 
+initiates Localbase, a persistent client-side storage
+*/
 function initDB(){
-    let db = new Localbase("TracerDB");
+    const db = new Localbase("TracerDB");
     return db
 }
 

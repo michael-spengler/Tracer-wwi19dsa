@@ -1,30 +1,37 @@
+/* 
+Tracer stores variables like status and timestamp of the report in Localbase
+checkVariables checks if those variables already exist:
+  ->if Not, then a new set of variables is generated
+  ->if yes, nothing is changed
+  ->if status is true, calculates time passed since testing positive (reporting)
+*/
 async function checkVariables(db){
-let variables = await db.collection("Variables").doc("1").get().then(value => {return(value)})
+  let variables = await db.collection("Variables").doc("1").get().then(value => {return(value)})
 
-const currentTime = new Date();
-var d = 24 * 60 * 60 * 1000;
+  const currentTime = new Date();
+  var d = 24 * 60 * 60 * 1000;
 
-if (variables == null) {  
-    await db.collection("Variables").add(
-                    {
-                    status: false,
-                    timeOfReport: null
-                    },1);}
-    variables = await db.collection("Variables").doc("1").get().then(value => {return(value)}) 
+  //generates new pair of variables in localbase if not already existing
+  if (variables == null) {  
+      await db.collection("Variables").add(
+                      {
+                      status: false,
+                      timeOfReport: null
+                      },1);}
+  variables = await db.collection("Variables").doc("1").get().then(value => {return(value)}) 
 
+  //If more than 14 days have passed since testing positive (reporting), then status is set back to false
+  if (Math.floor((currentTime-variables.timeOfReport)/d)>14){
+      await db.collection('Variables').doc('1').update({
+        status: false,
+        timeOfReport: null,
+      })
+      console.log("Status = false")
+    } else {
+        console.log("Time passed since the last report: ",(currentTime-variables.timeOfReport)/d)
+    }
 
-    if (Math.floor((currentTime-variables.timeOfReport)/d)>14){
-        await db.collection('Variables').doc('1').update({
-          status: false,
-          timeOfReport: null,
-        })
-        console.log("Status = false")
-      } else {
-          //alert("Time passed since the last report: ",(currentTime-variables.timeOfReport)/d)
-          console.log("Time passed since the last report: ",(currentTime-variables.timeOfReport)/d)
-      }
-
-return db
+  return db
 }
 
 export {checkVariables}
