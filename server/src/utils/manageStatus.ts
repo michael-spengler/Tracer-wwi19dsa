@@ -1,16 +1,13 @@
-// deno-lint-ignore-file
 import {initDB} from "./database.ts";
 
-
+/* 
+SetStatus receives an array of IDs 
+ -> runs a SQL query to set their status to 1
+Status represents the health status of the user
+*/
 export async function setStatus(data:Array<string>){
     const client = await initDB()
-    for (let index = 0; index < data.length; index++) {
-        //console.log("this is the data: ",data)
-        const result = await client.execute(`update users set status = 1 where TracerID = "${data[index]}"`);    
-    }
+    const result = await client.execute(`update users set status = 1 where TracerID in ?`, [data]);    
 
     await client.close();
-
-/* Comment: This does the job but might lead to performance problems as SQL Statement is called for every single occurrence 
-look into ...where TracerID in ? for batch*/
 }

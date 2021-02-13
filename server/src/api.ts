@@ -7,8 +7,9 @@
 /*------------------Set-Up Server------------------*/
 
 import {opine, serveStatic} from "./deps.ts";
-import { opineCors } from "./deps.ts";
-import {processData} from "./utils/manageDatabase.ts";
+import {opineCors} from "./deps.ts";
+import {scanData, storedData} from "./utils/interfaces.ts";
+import {storeData} from "./utils/manageDatabase.ts";
 import {setStatus} from "./utils/manageStatus.ts";
 import {checkRisk, updateRisk} from "./utils/manageRisk.ts";
 
@@ -32,11 +33,11 @@ router.get('/', async function (req, res) {
 
 /*
 Client sends locID,tracerID and timestamp via fetch request in JSON format
-Backend stores date in MySql DB and responds with TracerID and time
+Backend stores data in MySql DB and responds with TracerID and time
 */
 router.get('/Tracer/:data', async function (req, res) {
-    const scanData = JSON.parse(req.params.data);
-    const storedScanData = await processData(scanData)
+    const scanData:scanData = JSON.parse(req.params.data);
+    const storedScanData = await storeData(scanData)
 
     console.log(storedScanData);
     await updateRisk();
@@ -69,15 +70,15 @@ router.get('/RiskCheck/:ids', async function (req, res) {
     const checkIDs = await JSON.parse(req.params.ids);
     
     if (checkIDs.id.length == 0) {
-        const riskStatus = 0
+        const riskScore = 0
 
         res.setStatus(201)
-        res.json({"status": "success", "risk": riskStatus});
+        res.json({"status": "success", "risk": riskScore});
     } else {
-        const riskStatus = await checkRisk(checkIDs.id)
+        const riskScore = await checkRisk(checkIDs.id)
 
         res.setStatus(201)
-        res.json({"status": "success", "risk": riskStatus});
+        res.json({"status": "success", "risk": riskScore});
     }
 });
 

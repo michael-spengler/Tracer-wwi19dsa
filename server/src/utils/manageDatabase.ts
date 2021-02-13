@@ -1,31 +1,30 @@
-// deno-lint-ignore-file
 import {cuid} from "../deps.ts";
 import {initDB} from "./database.ts";
+import {scanData, storedData} from "./interfaces.ts";
 
-
-
-//Database connection
-export async function storeInDB(tracerID:string, time:string, locID:string, status:boolean, risk:Int16Array){
+/* 
+receives data from client in the scanData format
+ -> generates a collision-free unique user ID (cuid)
+ -> passes ID together with the remaining scanData to server via SQL INSERT
+ -> returns the stored Data as object
+*/
+export async function storeData(data:scanData){
     const client = await initDB()
-    const result = client.execute(`INSERT INTO users(TracerID, timestamp, LocID, status, risk) values(?,?,?,?,?)`, [
-        tracerID,
-        time,
-        locID,
-        status,
-        risk]);
-      await client.close();
-}
-
-//store data in mysql db
-export async function processData(data:any){
     const tracerID:string = cuid();
-    const scanData = {
-        data : {
-        locID : data.locID,
-        tracerID : tracerID,
-        time : data.currentTime
-    },   key : tracerID};
+    const storedScanData:storedData = {
+                data : {
+                        locID : data.locID,
+                        tracerID : tracerID,
+                        time : data.currentTime
+                        },
+                key : tracerID};
 
-    await storeInDB(tracerID, data.currentTime, data.locID, data.status, data.risk)
-    return scanData 
+    client.execute(`INSERT INTO users(TracerID, timestamp, LocID, status, risk) values(?,?,?,?,?)`, [
+        tracerID,
+        data.currentTime,
+        data.locID,
+        data.status,
+        data.risk]);
+
+    return storedScanData 
 }
