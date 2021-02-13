@@ -52,13 +52,19 @@ Backend changes their status to 1 and updates risk status in DB
 */
 router.get('/Report/:ids', async function (req, res) {
     const riskIDs = JSON.parse(req.params.ids);
+    
+    if (riskIDs.id.length == 0) {
 
-    console.log(riskIDs.id)
-    await setStatus(riskIDs.id)
-    await updateRisk()
+        res.setStatus(201)
+        res.json({"status": "success"});
+    } else {
+        console.log(riskIDs.id)
+        await setStatus(riskIDs.id)
+        await updateRisk()
 
-    res.setStatus(201)
-    res.json({"status": "success"});
+        res.setStatus(201)
+        res.json({"status": "success"});
+    }
 });
 
 /* 
