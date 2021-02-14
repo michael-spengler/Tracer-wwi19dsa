@@ -128,15 +128,40 @@ Für das Frontend wird [Vue.js](https://vuejs.org/) verwendet.
 
 #### Vue
 
-<!-- Warum Vue und nicht angular; Vorgehensweise, Komponenten, Screens, etc -->
+Vue bietet eine einfache Struktur und macht die Entwicklung einer App sehr angenehm und unserer Meinung nach einfacher, als Angular. 
+Zuerst schafften wir das Grundgerüst in Vue, indem wir alle geplanten Seiten aufsetzten und verschiedene Komponenten implementierten. 
+
+Zeitweise kamen viele neue Funktionen hinzu und die Applikation wuchs weiter.
+Pages:
+
+- App Information (app_information)
+- Event erstellen (create_event)
+- Homescreen 
+- QR Generator (qr_generator)
+- QR Scanner (qr_scanner)
+- Fall melden (report_case)
+- Scan erfolgreich (scan_successful)
+
+Komponenten:
+
+- Standardbutton (btn_std)
+- Navigationbar (tab_bar)
 
 #### Vuetify
 
-<!-- Warum? was ist das? Vorteile/Nachteil; warum nicht mehr ionic? -->
+Vuetify und Ionic standen im Vorhinein zur Auswahl. Da Ionic Anfangs Probleme bei der Zusammenarbeit im Projekt machte, entschieden wir uns für Vuetify. Vuetify besitzt eine Vielzahl an sehr gut geeigneten UI Komponenten für unser Projekt und ist zudem sehr anfängerfreundlich aufgebaut.
+Klarer Vorteil von Vuetify ist daher der einfache Aufbau und die große Auswahl an Komponenten. Als Nachteil muss man jedoch auch erwähnen, dass Vuetify begrenzt ist. 
+Falls der gewünschte Komponent nicht vom Framework umschlossen wird, muss man umschwenken auf ein anderes, oder den Komponenten eigenhändig definieren.
+Im Nachhinein wäre Ionic eventuell die bessere Lösung gewesen, da es umfangreicher ist und mehr Funktionen bietet, jedoch war Veutify anfängerfreundlicher. Bei einem nächsten Projekt würde die Entscheidung auf Ionic fallen.
 
 #### PWA & Design
 
-<!-- Designguide, Mockup, Wireframe, reponsive/ PWA ; UX Gedanken -->
+Tracer sollte von Anfang an intuitiv und für jeden einfach zu verstehen sein. Daher wurde auf einen sehr minimlistischen Aufbau gesetzt. Es gibt auf dem Startbildschirm genau drei Buttons. Ein Button zum aktualisieren und jeweils ein Button für App Informationen und um einen Krankheitsfall zu melden.
+Die durchgehend angezeigte Navigationbar beinhaltet die drei Hauptfunktionen von Tracer: Risikostand anzeigen lassen, Tracer Code Scannen und Tracer Event erstellen.
+
+Für Tracer wurde das Konzept einer PWA gewählt, um die Applikation für nahezu alle Nutzer zugänglich zu machen.
+
+<!-- Designguide, Mockup, Wireframe, -->
 
 ## Projekt
 
