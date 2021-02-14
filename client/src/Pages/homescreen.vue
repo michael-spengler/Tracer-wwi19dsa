@@ -100,8 +100,6 @@ export default {
       this.$router.push({ path: "/app_information" });
     },
     async refresh() {
-      //lastCheck
-      this.date = new Date().toString().slice(4, 24);
       //clearBuffer
       await clearBuffer(db);
       //checkVariables
@@ -120,6 +118,7 @@ export default {
           } else if (statusVal == true) {
             this.status = "Infiziert";
           }
+          this.date = new Date().toString().slice(4, 24);
         });
       //checkRisk
       await this.checkRisk(db);
