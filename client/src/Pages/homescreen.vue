@@ -118,7 +118,6 @@ export default {
           } else if (statusVal == true) {
             this.status = "Infiziert";
           }
-          this.date = new Date().toString().slice(4, 24);
         });
       //checkRisk
       await this.checkRisk(db);
@@ -138,6 +137,7 @@ export default {
           fetch(`http://localhost:3000/RiskCheck/${JSON.stringify({ id: idList })}`)
             .then((response) => {
               if (response.ok) {
+                this.date = new Date().toString().slice(4, 24);
                 return response.json();
               } else {
                 throw new Error("Something went wrong, try again later.");
