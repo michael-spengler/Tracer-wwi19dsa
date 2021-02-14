@@ -110,7 +110,7 @@ Die Funktionalitäten des Backends sind grundlegend für die Funktionsweise der 
 - Wurde man positiv auf Sars-Cov2 getestet, so meldet man es anonym in der App
 - Risikobegegnungen werden periodisch geprüft
 
-Im Folgenden werden die einzelnen Prozesse des Backends genauer aufgeführt und ihre Funktionsweise erläutert.
+Im Folgenden werden die einzelnen Prozesse genauer aufgeführt und ihre Funktionsweise erläutert.
 
 
 #### a.) Neuer Ort bzw. QR-Code generieren
@@ -127,29 +127,47 @@ Besucht man ein Event oder ein Geschäft so scannt man beim betreten den QR-Code
 ![Flowchart](https://raw.githubusercontent.com/BennerLukas/Tracer/main/server/ressources/flowcharts/1_Log_New_Scan.png)
 
 #### c.) Krankheitsfall melden
-Wurde man positiv getestet, so meldet man es in der App unter dem Button "Infektion Melden". Der Client sendet daraufhin alle gespeicherten User IDs, zusammen mit Zeitstempel, an den Server. Im Server wird zunächst der Status (Covid-positiv/negativ?) aller übermittelten User IDs auf 1 gesetzt. Anschließend werden via SQL Abfrage alle betroffenen Orte ermittelt:
+Wurde man positiv getestet, so meldet man es in der App unter dem Button "Infektion Melden". Der Client sendet daraufhin alle gespeicherten User IDs, zusammen mit Zeitstempel, an den Server. Im Server wird zunächst der Status (Covid-positiv/negativ?) aller übermittelten User IDs auf 1 (positiv) gesetzt. Anschließend werden via SQL Abfrage alle betroffenen Orte ermittelt:
 ````SQL
 select LocID,timestamp from users where status = 1
 ````
 Die Anzahl der Risikobegegnungen wird nun für alle User IDs die zur selben Zeit am selben Ort waren um 1 erhöht. 
 ```SQL
 update users set risk = 1 where LocID = ${risiko LocID} 
-        and timestamp > ${risiko timestamp} - INTERVAL ${avgTime} MINUTE 
-        and timestamp < ${risiko timestamp} + INTERVAL ${avgTime} MINUTE
+        and timestamp > ${risikoTimestamp} - INTERVAL ${avgTime} MINUTE 
+        and timestamp < ${risikoTimestamp} + INTERVAL ${avgTime} MINUTE
 ```
 
 Für die erste minimal funktionsfähige Iteration von Tracer ist noch kein Validierungsprozess für die Corona Tests vorgesehen, für die nächsten Iterationen ist dies jedoch äußerst sinnvoll. 
 
 ![Flowchart](https://raw.githubusercontent.com/BennerLukas/Tracer/main/server/ressources/flowcharts/2_Report_Case.png)
 
-#### c.) Überprüfen ob Kontakt zu Infizierten bestanden hat
+#### d.) Überprüfen ob Kontakt zu Infizierten bestanden hat
+Damit die Benutzer über Risikomeldungen informiert werden, muss in regelmäßigen Abständen eine Serverabfrage stattfinden. Hierzu werden beim starten oder neu laden (Button oben rechts) der App,  alle gespeicherten User IDs an den Server geschickt. Dort findet eine SQL Abfrage statt um die eigenen Risikobegegnungen zu ermitteln:
+```SQL
+select risk from users where TracerID in ${[liste aller IDs]}
+```
+Im vorherigen Prozess wurde die Variable "risk" für alle Risikobegegnungen (selbe Zeit, selber Ort) auf 1 gesetzt. Der Risikostatus ergibt sich somit aus der Summe aller Werte für die Variable risk. Besteht so ein höheres Risiko, so verändert sich die Farbe der Hauptanzeige auf der Startseite zu orange.
 
 ![Flowchart](https://raw.githubusercontent.com/BennerLukas/Tracer/main/server/ressources/flowcharts/3_Check_Risk.png)
 
 #### Datenbank
+Für die genannten Funktionen waren vor allem zwei Datenbanken von besonderer Bedeutung: [MySQL](https://www.mysql.com/de/) und [Localbase](https://github.com/dannyconnell/localbase).
+MySQL bildet die globale Datenbank, auf der alle anonymen User IDs und Location IDs gespeichert werden. Über SQL kann man so einfach Abfragen erstellen und schnell neue Einträge anlegen. Die Datenbank besteht dabei aus einer Tabelle "users": 
+
+![Schema](./server/ressources/schema.png)
+
+Das Gegenstück zur globalen Datenbank bildet Localbase. Hierbei handelt es sich um eine lokale Firebase-ähnliche IndexedDB mit offline funktionalität. Da eine Kontaktermittlung nicht bei fehlendem Internet ausfallen darf, wird diese Datenbank als Zwischenspeicher für getätigte Scans genutzt. Auch die eigenen User IDs und gewisse Variablen (z.B. Gesundheitsstatus) werden hier gespeichert. Wie für Firebase üblich besteht die Datenbank hier aus Collections und Documents. Collections sind vergleichbar mit gängigen Datenbanktabellen bilden eine Sammlung aus Documents (Datenbankeinträge). Diese Einträge werden als Key-Object-Paare angegeben:
+- Buffer: {{locID, currentTime, status, risk}, Key: locID}
+- TracerID: {{id, time}, Key: id}
+- Variables: {{status, timeOfReport}}
 
 #### API & JavaScript
+Für die beschriebenen Funktionen ist die Kommunikation von Frontend und Backend essentiell. Dazu gibt es einige Schnittstellen im Front-/Backend zum Senden und Empfangen von Daten. Über Fetch-Anfragen an das Backend werden so z.B. die Scans geschickt oder das Risiko abgefragt. 
 
+Jede Schnittstelle hat eine genau definierte Eingabe und Ausgabe, die in den Code-Kommentaren nochmal genauer aufgeführt wird. So antwortet der Server nach dem Anlegen eines Scans mit der User ID und nach einer Risikoabfrage mit dem Risikostatus. Im Frontend wird anschließend, je nach Antwort, die User ID gespeichert oder die Anzeige erneuert.
+
+Da das Deno-Backend auf einem anderen Port als das Vue-Frontend läuft, wird zur Kommunikation [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) (Cross-Origin Resource Sharing) benötigt. Aus Sicherheitsgründen schränken Browser die Kommunikation über verschiedene Adressen pauschal ab. Über das [Cors-Modul](https://deno.land/x/cors@v1.2.1) für Deno lässt sich hier der Austausch jedoch kontrollieren.
 ### Frontend
 
 Für das Frontend wird [Vue.js](https://vuejs.org/) verwendet.
@@ -157,8 +175,8 @@ Für das Frontend wird [Vue.js](https://vuejs.org/) verwendet.
 #### Vue
 
 Vue bietet eine einfache Struktur und macht die Entwicklung einer App sehr angenehm und unserer Meinung nach einfacher, als Angular. 
-Zuerst schafften wir das Grundgerüst in Vue, indem wir alle geplanten Seiten aufsetzten und verschiedene Komponenten implementierten. 
-
+Zuerst schufen wir das Grundgerüst in Vue, indem wir alle geplanten Seiten aufsetzten und verschiedene Komponenten implementierten. 
+<!-- Welche Seiten und Komponenten genau? Bitte ergänzen -->
 Zeitweise kamen viele neue Funktionen hinzu und die Applikation wuchs weiter.
 Pages:
 
