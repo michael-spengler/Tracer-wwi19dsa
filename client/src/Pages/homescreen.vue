@@ -121,6 +121,7 @@ export default {
         });
       //checkRisk
       await this.checkRisk(db);
+      this.riskCalculation()
     },
     async checkRisk(db) {
       var idList = [];
