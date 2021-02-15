@@ -63,11 +63,7 @@
 <script>
 import button_std from "@/components/button_std";
 import tab_bar from "@/components/tab_bar";
-import { initDB } from "../api/localBase.js";
-import { checkVariables } from "../api/checkVariables.js";
-import { reportCase } from "../api/reportCase.js";
-import { clearBuffer } from "../api/sendScanData.js";
-import { backendURL } from "../api/variables.js"
+import {initDB, checkVariables, reportCase, clearBuffer, checkRisk} from "../api/deps.js";
 
 const db = initDB();
 db.config.debug = false;
@@ -101,18 +97,20 @@ export default {
       this.$router.push({ path: "/app_information" });
     },
     async refresh() {
-      //clearBuffer
+      //clear Buffer
       await clearBuffer(db);
+      
       //check Variables
       await checkVariables(db)
-      
-      //checkRisk
+
+      //check Risk
       try {
-        await this.checkRisk(db)
+        await checkRisk(db)
       } catch(error) {
         alert("Connection error, try again later.")
       }
       
+      //set Variables
       await db
         .collection("Variables")
         .doc("1")
@@ -127,33 +125,6 @@ export default {
           this.date = localVariables.lastCheck
           this.riskCalculation()
         })
-
-      //set Variables
-      
-    },
-
-    //sends fetch request to receive amount of risky encounters
-    async checkRisk(db) {
-      var idList = [];
-      
-      let tracerID = await db.collection("TracerID").get()
-        
-      tracerID.forEach((element) => {
-        idList.push(element.id);
-      });
-      var response = await fetch(`${backendURL}/RiskCheck/${JSON.stringify({ id: idList })}`)
-      
-      if (response.ok) {
-        const responseValues = await response.json()
-
-        await db.collection('Variables').doc('1').update({
-          lastCheck: new Date().toString().slice(4, 24),
-          risk: await responseValues.risk,
-        })
-      } else {
-        throw new Error("Connection error, try again later.");
-
-      }
     },
 
     riskCalculation() {
