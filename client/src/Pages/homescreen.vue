@@ -103,54 +103,59 @@ export default {
     async refresh() {
       //clearBuffer
       await clearBuffer(db);
-      //checkVariables
-      await checkVariables(db);
-      //checkStatus
+      //check Variables
+      await checkVariables(db)
+      
+      //checkRisk
+      try {
+        await this.checkRisk(db)
+      } catch(error) {
+        alert("Connection error, try again later.")
+      }
+      
       await db
         .collection("Variables")
         .doc("1")
         .get()
-        .then((document) => {
-          return document.status;
-        })
-        .then((statusVal) => {
-          if (statusVal == false) {
+        .then((localVariables) =>  {
+          if (localVariables.status == false) {
             this.status = "Gesund";
-          } else if (statusVal == true) {
+          } else if (localVariables.status == true) {
             this.status = "Infiziert";
           }
-        });
-      //checkRisk
-      await this.checkRisk(db);
-      this.riskCalculation()
+          this.risk = localVariables.risk
+          this.date = localVariables.lastCheck
+          this.riskCalculation()
+        })
+
+      //set Variables
+      
     },
+
+    //sends fetch request to receive amount of risky encounters
     async checkRisk(db) {
       var idList = [];
-      //reporting cases to db
-      db.collection("TracerID")
-        .get()
-        .then((TracerID) => {
-          TracerID.forEach((element) => {
-            idList.push(element.id);
-          });
-          return idList;
+      
+      let tracerID = await db.collection("TracerID").get()
+        
+      tracerID.forEach((element) => {
+        idList.push(element.id);
+      });
+      var response = await fetch(`${backendURL}/RiskCheck/${JSON.stringify({ id: idList })}`)
+      
+      if (response.ok) {
+        const responseValues = await response.json()
+
+        await db.collection('Variables').doc('1').update({
+          lastCheck: new Date().toString().slice(4, 24),
+          risk: await responseValues.risk,
         })
-        .then((idList) =>
-          fetch(`${backendURL}/RiskCheck/${JSON.stringify({ id: idList })}`)
-            .then((response) => {
-              if (response.ok) {
-                this.date = new Date().toString().slice(4, 24);
-                return response.json();
-              } else {
-                throw new Error("Something went wrong, try again later.");
-              }
-            })
-            .then((riskVal) => {
-              this.risk = riskVal.risk;
-              this.riskCalculation();// in case of no internet, Card will still update
-            })
-        );
+      } else {
+        throw new Error("Connection error, try again later.");
+
+      }
     },
+
     riskCalculation() {
       if (this.status == "Infiziert") {
         document.getElementById("riskCard").style.backgroundColor = "#c94133";
