@@ -67,7 +67,7 @@ import { initDB } from "../api/localBase.js";
 import { checkVariables } from "../api/checkVariables.js";
 import { reportCase } from "../api/reportCase.js";
 import { clearBuffer } from "../api/sendScanData.js";
-import { backendURL } from "./variables.js"
+import { backendURL } from "../api/variables.js"
 
 const db = initDB();
 db.config.debug = false;
