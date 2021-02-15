@@ -6,9 +6,13 @@ Für Learnings im Bereich Businessmodell & Konzeption siehe im Bereich Business.
 
 - Typescript / JavaScript
   - Entwickeln mit TypeScript (TS) und JavaScript (JS)
+
+
 - Datenbank auf Blockchain
-  - leider zu kompliziert, teuer und kein großer Mehrwert.
-  - Krypto und Anwendung für Developer -> leider nicht passend für Tracer.
+  - Zu kostspielig für ein nicht finanziertes OS-Projekt
+  - Krypto und Anwendung für Developer -> leider unpassend für Tracer.
+
+
 - Frontend:
 Anfangs war der Plan das Frontend von Tracer mit Vue aufzubauen. Nachdem wir uns etwas über Vue informiert hatten und das erste Projekt aufgesetzt hatten, probierten wir zuerst ein paar kleinere Anpassungen am normalen Vue Template. 
 Das Icon war schnell gewechselt, jedoch verstanden wir nicht die grundsätzliche Struktur von Vue, wie man die Position von Komponenten ändert, oder grundsätzlich erstmal erstellt.
@@ -38,9 +42,15 @@ Vue stellt in der neusten Version eine UI zur Verfügung, die man durch die CLI 
 - Progressive Web App (PWA)
   - Sinn und Funktionsweise
   - Umsetztung mit Vue
+
+
 - Deno als Backend (oder Node.js)
-  - Deno, da neue (unbekannte) Technologien ausprobiert werden sollten.
-  - Nutzen verschiedener PlugIn
+  - TypeScript und Javascript überschneiden sich stark, typesafety erspart aber auf langer sicht Kopfschmerzen 
+  - JavaScript packages funktionieren ebenfalls in Deno
+  - da Deno ziemlich neu ist, sind viele Probleme noch undokumentiert
+    - Errors müssen händisch gefixt werden, keine copy&paste quickfixes aus StackOverflow 
+
+
 - Projektorganisation
   - Git (auch tiefergehende Möglichkeiten)
     - Github (KANBAN-Board, Issues, Aufgabenverteilung, License)
@@ -49,14 +59,27 @@ Vue stellt in der neusten Version eine UI zur Verfügung, die man durch die CLI 
     - gitignore
   - flüssiges Zusammenarbeiten (wichtiges Learning für ggf. spätere (OpenSource) Projekte)
   - Projektstruktur (Ordnerstruktur)
+
+
 - Datenbanken und Datenspeicher
-  - MySQL
-  - JSON
-  - weitere value-pair Datenspeicher
-  - Speichern von Daten im Browser
+  - Für das gesamte Projekt waren zunächst nur einige JSON Files vorgesehen
+    - Es stellte sich heraus, dass man als Client nicht auf .JSON Files zugreifen kann
+    - Zudem wäre ein solcher Speicher nur bei bestehender Internetverbindung funktionsfähig
+  - Im Backend wurde für eine kurze Zeit ein .JSON File zum Speichern benutzt, das Abfragen erwies sich jedoch als unnötig kompliziert
+  - Cookies sind nicht persistent und somit nicht zuverlässig
+  - Nach langer Recherche erwies sich Localbase als best performer:
+    - Es erfüllt alle Anforderungen: Persistent, leicht zu bedienen und abzufragen, offline funktionalität
+
+- Pseudonymisierung
+ - Zunächst war geplant, allen usern einen zufälligen Hash als ID zu geben
+  - Zwei Probleme: Kollisionen sind möglich & so gibt es keine binäre Suche
+ - Mit der Bibliothek CUID konnten beide Probleme gelöst werden
+
 - Docker
   - Dockerize und Dockerfile
   - Dockercontainer -> Evaluierung der Umsetzung
+
+
 - Business
   - Schreiben von Businessplans
   - Erstellen Pitch-Decks
