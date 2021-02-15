@@ -67,6 +67,7 @@ import { initDB } from "../api/localBase.js";
 import { checkVariables } from "../api/checkVariables.js";
 import { reportCase } from "../api/reportCase.js";
 import { clearBuffer } from "../api/sendScanData.js";
+import { backendURL } from "./variables.js"
 
 const db = initDB();
 db.config.debug = false;
@@ -135,7 +136,7 @@ export default {
           return idList;
         })
         .then((idList) =>
-          fetch(`http://localhost:3000/RiskCheck/${JSON.stringify({ id: idList })}`)
+          fetch(`${backendURL}/RiskCheck/${JSON.stringify({ id: idList })}`)
             .then((response) => {
               if (response.ok) {
                 this.date = new Date().toString().slice(4, 24);
@@ -146,7 +147,7 @@ export default {
             })
             .then((riskVal) => {
               this.risk = riskVal.risk;
-              this.riskCalculation();
+              this.riskCalculation();// in case of no internet, Card will still update
             })
         );
     },

@@ -1,3 +1,5 @@
+import {backendURL} from "./variables.js"
+
 /* 
 gets all IDs stored in Localbase and reports them to server
 changes status to ture (infected)
@@ -22,7 +24,7 @@ async function reportCase(db){
     })
     
   .then(idList =>
-    fetch(`http://localhost:3000/Report/${JSON.stringify({"id":idList})}`).then((response) => {
+    fetch(`${backendURL}/Report/${JSON.stringify({"id":idList})}`).then((response) => {
       if (response.ok) {
         return response.json();
       } else {
