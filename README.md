@@ -1,6 +1,7 @@
 ![Logo](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/data/Icon/Tracer_icon_vertical.png?raw=true)
 
 <br><br>
+
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/michael-spengler/tracer-wwi19dsa?include_prereleases)
 [![GitHub issues](https://img.shields.io/github/issues/michael-spengler/Tracer-wwi19dsa)](https://github.com/michael-spengler/Tracer-wwi19dsa/issues)
 [![GitHub license](https://img.shields.io/github/license/michael-spengler/Tracer-wwi19dsa)](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/LICENSE)
@@ -24,7 +25,7 @@ npm run serve
 
 Sollte `npm run serve` nicht funktionieren muss ggf. vorher `npm i` ausgeführt werden.
 
-## Technologien
+## Verwendete Technologien
 
 ![Deno](https://img.shields.io/badge/Backend-Deno-blue?style=flat&logo=deno)
 ![Vue](https://img.shields.io/badge/Frontend-Vue.js-blue?style=flat&logo=Vue.js)
@@ -98,13 +99,14 @@ Für weitere Informationen rund um das Businessmodell und die Idee dahinter sieh
 
 Die erste große Herausforderung stellte die Auswahl geeigneter Technologien zur Entwicklung von Tracer dar.
 Zur Einschränkung unserer Auswahl orientierten wir uns zunächst an den Empfehlungen unseres Dozenten: Deno oder NestJS für das Backend und Vue, Angular oder React für das Frontend.
-Im Nachfolgenden wird die finale Entscheidung erläutert und einzelne Aspekte der Entwicklung genauer ausgebaut. 
+Im Nachfolgenden wird die finale Entscheidung erläutert und einzelne Aspekte der Entwicklung genauer ausgebaut.
 
 ### Backend
 
 Node.js ist zweifelsohne seit vielen Jahren ein Industriestandard mit Millionenen von Bibliotheken und einer etablierten Community. NestJS, ein Node.js Framework, wäre an dieser stelle somit die sicherere Technologie. Nichtsdestotrotz haben wir uns für das junge Node pendant - [Deno](https://deno.land/) - entschieden. Hauptintention dahinter ist, mit unserer App zum wachstum dieser neuen Technologie mit viel potential beizutragen.
 
 Die Funktionalitäten des Backends sind grundlegend für die Funktionsweise der App und lassen sich in 4 Prozesse unterteilen:
+
 - Zum Verfolgen von Besuchen müssen QR-Codes generiert werden
 - Besucht man einen neuen Ort, so erstellt man durch scannen des QR-Codes einen neuen (anonymen) Eintrag in der Datenbank
 - Wurde man positiv auf Sars-Cov2 getestet, so meldet man es anonym in der App
@@ -112,26 +114,31 @@ Die Funktionalitäten des Backends sind grundlegend für die Funktionsweise der 
 
 Im Folgenden werden die einzelnen Prozesse genauer aufgeführt und ihre Funktionsweise erläutert.
 
-
 #### a.) Neuer Ort bzw. QR-Code generieren
+
 Für jeden Ort wird eine anonyme, einzigartige ID erstellt. Diese wird um eine Variable "avgTime" erweitert, die die durchschnittliche Verweildauer an diesem Ort beschreibt. Zum überprüfen der Risikobegegnung ist diese Variable von besonderer Bedeutung: Aus dem Besuchszeitpunkt wird beim melden eines Falles ein Zeitfenster (+- avgTime) festgelegt. Alle Besucher, die in diesem Zeitfenster am selben Ort waren, können so gewarnt werden. 
 
 ![Flowchart](https://raw.githubusercontent.com/BennerLukas/Tracer/main/server/ressources/flowcharts/4_Create_New_Loc-ID.png)
 
-Jeder kann für sein Event, Geschäft, Lokal o.ä. ein Code generieren, dazu muss man in der App nur auf das Plus klicken und die durchschnittliche Verweildauer eingeben. Diese Funktion ist auch offline verfügbar und ermöglicht somit auch an Orten mit schlechter Verbindung eine zuverlässige Kontaktverfolgung. 
+Jeder kann für sein Event, Geschäft, Lokal o.ä. ein Code generieren, dazu muss man in der App nur auf das Plus klicken und die durchschnittliche Verweildauer eingeben. Diese Funktion ist auch offline verfügbar und ermöglicht somit auch an Orten mit schlechter Verbindung eine zuverlässige Kontaktverfolgung.
 
 
 #### b.) Hinzufügen eines neuen Eintrags
+
 Besucht man ein Event oder ein Geschäft so scannt man beim betreten den QR-Code, der vom Ladenbesitzer oder Veranstalter vorher generiert, ausgedruckt und angebracht wurde. Die Location ID wird zusammen mit einem Zeitstempel zunächst lokal auf dem Client gespeichert und anschließend an den Server geschickt, So können auch offline Besuche verfolgt werden. Wenn eine Internetverbindung besteht, werden die Daten an den Server geschickt, wo sie dann gemeinsam mit einer einzigartigen aber anonymen User ID an die Datenbank geschickt werden. Die generierte User ID wird bei erfolgreicher Speicherung zurück zum Client gesendet wo sie dann in einem persistenten Speicher gelagert wird.
 
 ![Flowchart](https://raw.githubusercontent.com/BennerLukas/Tracer/main/server/ressources/flowcharts/1_Log_New_Scan.png)
 
 #### c.) Krankheitsfall melden
+
 Wurde man positiv getestet, so meldet man es in der App unter dem Button "Infektion Melden". Der Client sendet daraufhin alle gespeicherten User IDs, zusammen mit Zeitstempel, an den Server. Im Server wird zunächst der Status (Covid-positiv/negativ?) aller übermittelten User IDs auf 1 (positiv) gesetzt. Anschließend werden via SQL Abfrage alle betroffenen Orte ermittelt:
+
 ````SQL
 select LocID,timestamp from users where status = 1
 ````
-Die Anzahl der Risikobegegnungen wird nun für alle User IDs die zur selben Zeit am selben Ort waren um 1 erhöht. 
+
+Die Anzahl der Risikobegegnungen wird nun für alle User IDs die zur selben Zeit am selben Ort waren um 1 erhöht.
+
 ```SQL
 update users set risk = 1 where LocID = ${risiko LocID} 
         and timestamp > ${risikoTimestamp} - INTERVAL ${avgTime} MINUTE 
@@ -144,16 +151,18 @@ Für die erste minimal funktionsfähige Iteration von Tracer ist noch kein Valid
 
 #### d.) Überprüfen ob Kontakt zu Infizierten bestanden hat
 Damit die Benutzer über Risikomeldungen informiert werden, muss in regelmäßigen Abständen eine Serverabfrage stattfinden. Hierzu werden beim starten oder neu laden (Button oben rechts) der App,  alle gespeicherten User IDs an den Server geschickt. Dort findet eine SQL Abfrage statt um die eigenen Risikobegegnungen zu ermitteln:
+
 ```SQL
 select risk from users where TracerID in ${[liste aller IDs]}
 ```
+
 Im vorherigen Prozess wurde die Variable "risk" für alle Risikobegegnungen (selbe Zeit, selber Ort) auf 1 gesetzt. Der Risikostatus ergibt sich somit aus der Summe aller Werte für die Variable risk. Besteht so ein höheres Risiko, so verändert sich die Farbe der Hauptanzeige auf der Startseite zu orange.
 
 ![Flowchart](https://raw.githubusercontent.com/BennerLukas/Tracer/main/server/ressources/flowcharts/3_Check_Risk.png)
 
 #### Datenbank
 Für die genannten Funktionen waren vor allem zwei Datenbanken von besonderer Bedeutung: [MySQL](https://www.mysql.com/de/) und [Localbase](https://github.com/dannyconnell/localbase).
-MySQL bildet die globale Datenbank, auf der alle anonymen User IDs und Location IDs gespeichert werden. Über SQL kann man so einfach Abfragen erstellen und schnell neue Einträge anlegen. Die Datenbank besteht dabei aus einer Tabelle "users": 
+MySQL bildet die globale Datenbank, auf der alle anonymen User IDs und Location IDs gespeichert werden. Über SQL kann man so einfach Abfragen erstellen und schnell neue Einträge anlegen. Die Datenbank besteht dabei aus einer Tabelle "users":
 
 ![Schema](./server/ressources/schema.png)
 
@@ -163,11 +172,13 @@ Das Gegenstück zur globalen Datenbank bildet Localbase. Hierbei handelt es sich
 - Variables: {{status, timeOfReport}}
 
 #### API & JavaScript
+
 Für die beschriebenen Funktionen ist die Kommunikation von Frontend und Backend essentiell. Dazu gibt es einige Schnittstellen im Front-/Backend zum Senden und Empfangen von Daten. Über Fetch-Anfragen an das Backend werden so z.B. die Scans geschickt oder das Risiko abgefragt. 
 
 Jede Schnittstelle hat eine genau definierte Eingabe und Ausgabe, die in den Code-Kommentaren nochmal genauer aufgeführt wird. So antwortet der Server nach dem Anlegen eines Scans mit der User ID und nach einer Risikoabfrage mit dem Risikostatus. Im Frontend wird anschließend, je nach Antwort, die User ID gespeichert oder die Anzeige erneuert.
 
 Da das Deno-Backend auf einem anderen Port als das Vue-Frontend läuft, wird zur Kommunikation [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) (Cross-Origin Resource Sharing) benötigt. Aus Sicherheitsgründen schränken Browser die Kommunikation über verschiedene Adressen pauschal ab. Über das [Cors-Modul](https://deno.land/x/cors@v1.2.1) für Deno lässt sich hier der Austausch jedoch kontrollieren.
+
 ### Frontend
 
 Für das Frontend wird [Vue.js](https://vuejs.org/) verwendet.
@@ -197,7 +208,7 @@ Zeitweise kamen viele neue Funktionen hinzu und die Applikation wuchs weiter.
 
 #### Vuetify
 Vuetify und Ionic sind Vue UI-Toolkit für die Erstellung hochwertiger, plattformübergreifender nativer und Web-App-Erlebnisse.
- 
+
 Vuetify und Ionic standen im Vorhinein zur Auswahl. Da Ionic Anfangs Probleme bei der Zusammenarbeit im Projekt machte, entschieden wir uns für Vuetify. Vuetify besitzt eine Vielzahl an sehr gut geeigneten UI Komponenten für unser Projekt und ist zudem sehr anfängerfreundlich aufgebaut.
 Klarer Vorteil von Vuetify ist daher der einfache Aufbau und die große Auswahl an Komponenten. Als Nachteil muss man jedoch auch erwähnen, dass Vuetify begrenzt ist. 
 Falls der gewünschte Komponent nicht vom Framework umschlossen wird, muss man umschwenken auf ein anderes, oder den Komponenten eigenhändig definieren.
@@ -210,8 +221,6 @@ Die durchgehend angezeigte Navigationbar beinhaltet die drei Hauptfunktionen von
 
 Für Tracer wurde das Konzept einer PWA gewählt, um die Applikation für nahezu alle Nutzer zugänglich zu machen.
 Eine Progressive Web App (PWA) ist eine Website, die zahlreiche Merkmale besitzt, die bislang nativen Apps vorbehalten waren.
-
-<!-- ![Saved Data](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/data/Wireframes/Wireframe_LP.png?raw=true) -->
 
 <div>
 <img src="https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/data/Wireframes/Wireframe_LP.png?raw=true" alt="WireFrame" width="150"/>
