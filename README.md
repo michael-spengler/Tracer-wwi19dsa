@@ -211,8 +211,11 @@ Die durchgehend angezeigte Navigationbar beinhaltet die drei Hauptfunktionen von
 Für Tracer wurde das Konzept einer PWA gewählt, um die Applikation für nahezu alle Nutzer zugänglich zu machen.
 Eine Progressive Web App (PWA) ist eine Website, die zahlreiche Merkmale besitzt, die bislang nativen Apps vorbehalten waren.
 
-[Wireframe](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/data/Wireframes/Tracer_LP_Wireframe.pdf)
-[Mockup](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/data/Screenshots/iphone_gruen.png)
+<div>
+<img src="https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/data/Wireframes/Tracer_LP_Wireframe.pdf?raw=true" alt="iPhone" width="200"/>
+<img src="https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/data/Screenshots/iphone_gruen.png?raw=true" alt="iPhone" width="200"/>
+</div>
+
 
 ## Projekt
 
