@@ -174,10 +174,10 @@ Für das Frontend wird [Vue.js](https://vuejs.org/) verwendet.
 
 #### Vue
 
-Vue bietet eine einfache Struktur und macht die Entwicklung einer App sehr angenehm und unserer Meinung nach einfacher, als Angular. 
-Zuerst schufen wir das Grundgerüst in Vue, indem wir alle geplanten Seiten aufsetzten und verschiedene Komponenten implementierten. 
-<!-- Welche Seiten und Komponenten genau? Bitte ergänzen -->
-Zeitweise kamen viele neue Funktionen hinzu und die Applikation wuchs weiter.
+Vue bietet eine einfache Struktur und macht die Entwicklung einer App sehr angenehm. 
+Daher fiel die Entscheidung nicht auf andere Technologien, wie Angular oder React. Vue bewies sich als easy-to-use und einfacher Start.
+Zuerst schufen wir das Grundgerüst in Vue, indem wir alle geplanten Seiten aufsetzten und verschiedene Komponenten (siehe Pages/Komponenten) implementierten. 
+
 Pages:
 
 - App Information (app_information)
@@ -193,8 +193,11 @@ Komponenten:
 - Standardbutton (btn_std)
 - Navigationbar (tab_bar)
 
-#### Vuetify
+Zeitweise kamen viele neue Funktionen hinzu und die Applikation wuchs weiter.
 
+#### Vuetify
+Vuetify und Ionic sind Vue UI-Toolkit für die Erstellung hochwertiger, plattformübergreifender nativer und Web-App-Erlebnisse.
+ 
 Vuetify und Ionic standen im Vorhinein zur Auswahl. Da Ionic Anfangs Probleme bei der Zusammenarbeit im Projekt machte, entschieden wir uns für Vuetify. Vuetify besitzt eine Vielzahl an sehr gut geeigneten UI Komponenten für unser Projekt und ist zudem sehr anfängerfreundlich aufgebaut.
 Klarer Vorteil von Vuetify ist daher der einfache Aufbau und die große Auswahl an Komponenten. Als Nachteil muss man jedoch auch erwähnen, dass Vuetify begrenzt ist. 
 Falls der gewünschte Komponent nicht vom Framework umschlossen wird, muss man umschwenken auf ein anderes, oder den Komponenten eigenhändig definieren.
@@ -206,8 +209,10 @@ Tracer sollte von Anfang an intuitiv und für jeden einfach zu verstehen sein. D
 Die durchgehend angezeigte Navigationbar beinhaltet die drei Hauptfunktionen von Tracer: Risikostand anzeigen lassen, Tracer Code Scannen und Tracer Event erstellen.
 
 Für Tracer wurde das Konzept einer PWA gewählt, um die Applikation für nahezu alle Nutzer zugänglich zu machen.
+Eine Progressive Web App (PWA) ist eine Website, die zahlreiche Merkmale besitzt, die bislang nativen Apps vorbehalten waren.
 
-<!-- Designguide, Mockup, Wireframe, -->
+[Wireframe](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/data/Wireframes/Tracer_LP_Wireframe.pdf)
+[Mockup](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/data/Screenshots/iphone_gruen.png)
 
 ## Projekt
 
