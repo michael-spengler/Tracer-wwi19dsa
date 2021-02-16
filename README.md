@@ -186,15 +186,15 @@ Für das Frontend wird [Vue.js](https://vuejs.org/) verwendet.
 
 #### Vue
 
-Vue bietet eine einfache Struktur und macht die Entwicklung einer App sehr angenehm. 
+Vue bietet eine einfache Struktur und macht die Entwicklung einer App sehr angenehm.
 Daher fiel die Entscheidung nicht auf andere Technologien, wie Angular oder React. Vue bewies sich als easy-to-use und einfacher Start.
-Zuerst schufen wir das Grundgerüst in Vue, indem wir alle geplanten Seiten aufsetzten und verschiedene Komponenten (siehe Pages/Komponenten) implementierten. 
+Zuerst schufen wir das Grundgerüst in Vue, indem wir alle geplanten Seiten aufsetzten und verschiedene Komponenten (siehe Pages/Komponenten) implementierten.
 
 Pages:
 
 - App Information (app_information)
 - Event erstellen (create_event)
-- Homescreen 
+- Homescreen
 - QR Generator (qr_generator)
 - QR Scanner (qr_scanner)
 - Fall melden (report_case)
@@ -212,7 +212,7 @@ Zeitweise kamen viele neue Funktionen hinzu und die Applikation wuchs weiter.
 Vuetify und Ionic sind Vue UI-Toolkit für die Erstellung hochwertiger, plattformübergreifender nativer und Web-App-Erlebnisse.
 
 Vuetify und Ionic standen im Vorhinein zur Auswahl. Da Ionic Anfangs Probleme bei der Zusammenarbeit im Projekt machte, entschieden wir uns für Vuetify. Vuetify besitzt eine Vielzahl an sehr gut geeigneten UI Komponenten für unser Projekt und ist zudem sehr anfängerfreundlich aufgebaut.
-Klarer Vorteil von Vuetify ist daher der einfache Aufbau und die große Auswahl an Komponenten. Als Nachteil muss man jedoch auch erwähnen, dass Vuetify begrenzt ist. 
+Klarer Vorteil von Vuetify ist daher der einfache Aufbau und die große Auswahl an Komponenten. Als Nachteil muss man jedoch auch erwähnen, dass Vuetify begrenzt ist.
 Falls der gewünschte Komponent nicht vom Framework umschlossen wird, muss man umschwenken auf ein anderes, oder den Komponenten eigenhändig definieren.
 Im Nachhinein wäre Ionic eventuell die bessere Lösung gewesen, da es umfangreicher ist und mehr Funktionen bietet, jedoch war Veutify anfängerfreundlicher. Bei einem nächsten Projekt würde die Entscheidung auf Ionic fallen.
 
