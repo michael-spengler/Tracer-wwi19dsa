@@ -122,7 +122,6 @@ Für jeden Ort wird eine anonyme, einzigartige ID erstellt. Diese wird um eine V
 
 Jeder kann für sein Event, Geschäft, Lokal o.ä. ein Code generieren, dazu muss man in der App nur auf das Plus klicken und die durchschnittliche Verweildauer eingeben. Diese Funktion ist auch offline verfügbar und ermöglicht somit auch an Orten mit schlechter Verbindung eine zuverlässige Kontaktverfolgung.
 
-
 #### b.) Hinzufügen eines neuen Eintrags
 
 Besucht man ein Event oder ein Geschäft so scannt man beim betreten den QR-Code, der vom Ladenbesitzer oder Veranstalter vorher generiert, ausgedruckt und angebracht wurde. Die Location ID wird zusammen mit einem Zeitstempel zunächst lokal auf dem Client gespeichert und anschließend an den Server geschickt, So können auch offline Besuche verfolgt werden. Wenn eine Internetverbindung besteht, werden die Daten an den Server geschickt, wo sie dann gemeinsam mit einer einzigartigen aber anonymen User ID an die Datenbank geschickt werden. Die generierte User ID wird bei erfolgreicher Speicherung zurück zum Client gesendet wo sie dann in einem persistenten Speicher gelagert wird.
@@ -161,12 +160,14 @@ Im vorherigen Prozess wurde die Variable "risk" für alle Risikobegegnungen (sel
 ![Flowchart](https://raw.githubusercontent.com/BennerLukas/Tracer/main/server/ressources/flowcharts/3_Check_Risk.png)
 
 #### Datenbank
+
 Für die genannten Funktionen waren vor allem zwei Datenbanken von besonderer Bedeutung: [MySQL](https://www.mysql.com/de/) und [Localbase](https://github.com/dannyconnell/localbase).
 MySQL bildet die globale Datenbank, auf der alle anonymen User IDs und Location IDs gespeichert werden. Über SQL kann man so einfach Abfragen erstellen und schnell neue Einträge anlegen. Die Datenbank besteht dabei aus einer Tabelle "users":
 
 ![Schema](./server/ressources/schema.png)
 
 Das Gegenstück zur globalen Datenbank bildet Localbase. Hierbei handelt es sich um eine lokale Firebase-ähnliche IndexedDB mit offline funktionalität. Da eine Kontaktermittlung nicht bei fehlendem Internet ausfallen darf, wird diese Datenbank als Zwischenspeicher für getätigte Scans genutzt. Auch die eigenen User IDs und gewisse Variablen (z.B. Gesundheitsstatus) werden hier gespeichert. Wie für Firebase üblich besteht die Datenbank hier aus Collections und Documents. Collections sind vergleichbar mit gängigen Datenbanktabellen bilden eine Sammlung aus Documents (Datenbankeinträge). Diese Einträge werden als Key-Object-Paare angegeben:
+
 - Buffer: {{locID, currentTime, status, risk}, Key: locID}
 - TracerID: {{id, time}, Key: id}
 - Variables: {{status, timeOfReport}}
@@ -207,6 +208,7 @@ Komponenten:
 Zeitweise kamen viele neue Funktionen hinzu und die Applikation wuchs weiter.
 
 #### Vuetify
+
 Vuetify und Ionic sind Vue UI-Toolkit für die Erstellung hochwertiger, plattformübergreifender nativer und Web-App-Erlebnisse.
 
 Vuetify und Ionic standen im Vorhinein zur Auswahl. Da Ionic Anfangs Probleme bei der Zusammenarbeit im Projekt machte, entschieden wir uns für Vuetify. Vuetify besitzt eine Vielzahl an sehr gut geeigneten UI Komponenten für unser Projekt und ist zudem sehr anfängerfreundlich aufgebaut.
@@ -222,7 +224,7 @@ Die durchgehend angezeigte Navigationbar beinhaltet die drei Hauptfunktionen von
 Für Tracer wurde das Konzept einer PWA gewählt, um die Applikation für nahezu alle Nutzer zugänglich zu machen.
 Eine Progressive Web App (PWA) ist eine Website, die zahlreiche Merkmale besitzt, die bislang nativen Apps vorbehalten waren.
 
-<div>
+<div align="center">
 <img src="https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/data/Wireframes/Wireframe_LP.png?raw=true" alt="WireFrame" width="150"/>
 <img src="https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/data/Screenshots/iphone_gruen.png?raw=true" alt="iPhone" width="200"/>
 </div>
