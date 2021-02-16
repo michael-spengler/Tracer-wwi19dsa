@@ -214,7 +214,7 @@ Eine Progressive Web App (PWA) ist eine Website, die zahlreiche Merkmale besitzt
 <!-- ![Saved Data](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/data/Wireframes/Wireframe_LP.png?raw=true) -->
 
 <div>
-<img src="hhttps://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/data/Wireframes/Wireframe_LP.png?raw=true" alt="WireFrame" width="200"/>
+<img src="https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/data/Wireframes/Wireframe_LP.png?raw=true" alt="WireFrame" width="150"/>
 <img src="https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/data/Screenshots/iphone_gruen.png?raw=true" alt="iPhone" width="200"/>
 </div>
 
