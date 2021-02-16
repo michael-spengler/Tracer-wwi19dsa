@@ -182,7 +182,10 @@ Da das Deno-Backend auf einem anderen Port als das Vue-Frontend läuft, wird zur
 
 ### Frontend
 
-Für das Frontend wird [Vue.js](https://vuejs.org/) verwendet.
+Für das Frontend wird [Vue.js](https://vuejs.org/) verwendet. 
+Das Hauptziel war es, das im Vorhinein erstellte Mockup umzusetzen. 
+Die Entwicklung gestaltete sich sehr dynamisch, da das Mockup nicht exakt übernommen, sondern während der Entwicklung durch verschiedene Funktionen leicht abgeändert wurde. 
+Beispiel dafür ist die Bottom Navigation Bar, da sie die Mobilität in der Applikation selbst, deutlich vereinfacht.
 
 #### Vue
 
@@ -228,6 +231,13 @@ Eine Progressive Web App (PWA) ist eine Website, die zahlreiche Merkmale besitzt
 <img src="https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/data/Wireframes/Wireframe_LP.png?raw=true" alt="WireFrame" width="150"/>
 <img src="https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/data/Screenshots/iphone_gruen.png?raw=true" alt="iPhone" width="200"/>
 </div>
+
+Der Designprozess von Tracer gestaltete sich sehr dynamisch, da manche Teile des ursprünglichen Mockups anders umgesetzt wurden. Das Mockup umfasste alle Seiten, die in der fertigen Version auch implementiert wurden. 
+Jedoch wurden gerade bei der Erstellung des Tracer Events manche Funktionen ausgelassen, um die Applikation simpel und intuitiv zu halten. Eine derartige Applikation lebt von ihren Nutzern und somit setzten wir auch das Hauptaugenmerk auf die Benutzbarkeit.
+Konkret fielen zwei Funktionen weg. Zum einen die Funktion Freunde einzuladen, und zum anderen die Funktion die Location des Events auszuwählen. Während der Entwicklung wurde jedoch klar, dass eine Freundesliste eventuell für wenige interessant sein könnte, aber nicht von wirklich jedem Nutzer der Applikation benötigt wird.
+Das Festlegen der Location wird ebenfalls nicht benötigt, da der Standort des Nutzers für die Funktion der Applikation nicht relevant ist.
+Letztendlich setzt Tracer zum einen auf ein sehr sauberes und helles Design, und zum anderen auf die dauerhafte Sichtbarkeit der drei Hauptfunktionen: "Home/Risikobewertung", "Scan" und "Create Event".
+
 
 ## Projekt
 
