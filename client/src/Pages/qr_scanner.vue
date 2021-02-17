@@ -14,7 +14,7 @@ import tab_bar from "@/components/tab_bar";
 import { storeScan } from "../api/sendScanData.js";
 import { initDB } from "../api/localBase.js";
 
-const db = initDB();
+const db = initDB(); //import for our Database
 
 export default {
   name: "QrScanner",
@@ -33,6 +33,8 @@ export default {
       this.$router.push({ path: "/scan_done" });
     },
     async onInit(promise) {
+
+      // Try-Catch for initialized or failure
       try {
         await promise;
         this.initialized = true;

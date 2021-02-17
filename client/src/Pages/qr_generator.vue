@@ -26,13 +26,13 @@ export default {
     go_home() {
       console.log("start");
       console.log(String(this.id));
-      this.$router.push({ path: "/" });
+      this.$router.push({ path: "/" }); //route to homescreen
     },
   },
   data() {
     return {
-      id: 0,
-      size: 200,
+      id: 0,     //Value of the QR-Code
+      size: 200, //Size of the QR-Code
     };
   },
   created() {

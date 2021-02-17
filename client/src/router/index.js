@@ -8,8 +8,9 @@ import qr_scanner from "@/Pages/qr_scanner";
 import scan_success from "@/Pages/scan_success";
 import qr_generator from "@/Pages/qr_generator";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter) //Important to use the Vue-Router
 
+//the basic routing for the pwa
 const routes = [
   {
     path: '/',
@@ -41,10 +42,11 @@ const routes = [
   },
 ]
 
+//initalizing the const Router as new Router
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
-
+//export of the routing to the main.js
 export default router

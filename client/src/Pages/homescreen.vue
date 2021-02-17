@@ -85,16 +85,16 @@ export default {
   methods: {
     async to_reportcase() {
       await reportCase(db);
-      this.$router.push({ path: "/report_case" });
+      this.$router.push({ path: "/report_case" }); //Route to report_case page
     },
     startroute() {
-      this.$router.push({ path: "/" });
+      this.$router.push({ path: "/" }); //Route to Homescreen
     },
     scanroute() {
-      this.$router.push({ path: "/scanpage" });
+      this.$router.push({ path: "/scanpage" }); //Route to Scanpage
     },
     to_app_information() {
-      this.$router.push({ path: "/app_information" });
+      this.$router.push({ path: "/app_information" }); //Route to Appinformation
     },
     async refresh() {
       //clear Buffer
@@ -126,7 +126,7 @@ export default {
           this.riskCalculation()
         })
     },
-
+//Colorchange in the Riskcard
     riskCalculation() {
       if (this.status == "Infiziert") {
         document.getElementById("riskCard").style.backgroundColor = "#c94133";
