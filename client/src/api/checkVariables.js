@@ -16,7 +16,9 @@ async function checkVariables(db){
       await db.collection("Variables").add(
                       {
                       status: false,
-                      timeOfReport: null
+                      timeOfReport: null,
+                      risk: 0,
+                      lastCheck: "refresh to be up to date",
                       },1);}
   variables = await db.collection("Variables").doc("1").get().then(value => {return(value)}) 
 

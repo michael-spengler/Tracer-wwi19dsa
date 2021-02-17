@@ -1,11 +1,3 @@
-/*
-    - Catch the sent Input
-    - generate UUID (This is the primary Key of the JSON)
-    - save the UUID, Loc_ID & timestamp to GlobalDatabase.json
-    - respond the key of the JSON (UUID) back to the client
-*/
-/*------------------Set-Up Server------------------*/
-
 import {opine, serveStatic} from "./deps.ts";
 import {opineCors} from "./deps.ts";
 import {scanData, storedData} from "./utils/interfaces.ts";

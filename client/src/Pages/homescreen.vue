@@ -63,10 +63,7 @@
 <script>
 import button_std from "@/components/button_std";
 import tab_bar from "@/components/tab_bar";
-import { initDB } from "../api/localBase.js";
-import { checkVariables } from "../api/checkVariables.js";
-import { reportCase } from "../api/reportCase.js";
-import { clearBuffer } from "../api/sendScanData.js";
+import {initDB, checkVariables, reportCase, clearBuffer, checkRisk} from "../api/deps.js";
 
 const db = initDB();
 db.config.debug = false;
@@ -100,56 +97,36 @@ export default {
       this.$router.push({ path: "/app_information" });
     },
     async refresh() {
-      //lastCheck
-      this.date = new Date().toString().slice(4, 24);
-      //clearBuffer
+      //clear Buffer
       await clearBuffer(db);
-      //checkVariables
-      await checkVariables(db);
-      //checkStatus
+      
+      //check Variables
+      await checkVariables(db)
+
+      //check Risk
+      try {
+        await checkRisk(db)
+      } catch(error) {
+        alert("Connection error, try again later.")
+      }
+      
+      //set Variables
       await db
         .collection("Variables")
         .doc("1")
         .get()
-        .then((document) => {
-          return document.status;
-        })
-        .then((statusVal) => {
-          if (statusVal == false) {
+        .then((localVariables) =>  {
+          if (localVariables.status == false) {
             this.status = "Gesund";
-          } else if (statusVal == true) {
+          } else if (localVariables.status == true) {
             this.status = "Infiziert";
           }
-        });
-      //checkRisk
-      await this.checkRisk(db);
-    },
-    async checkRisk(db) {
-      var idList = [];
-      //reporting cases to db
-      db.collection("TracerID")
-        .get()
-        .then((TracerID) => {
-          TracerID.forEach((element) => {
-            idList.push(element.id);
-          });
-          return idList;
+          this.risk = localVariables.risk
+          this.date = localVariables.lastCheck
+          this.riskCalculation()
         })
-        .then((idList) =>
-          fetch(`http://localhost:3000/RiskCheck/${JSON.stringify({ id: idList })}`)
-            .then((response) => {
-              if (response.ok) {
-                return response.json();
-              } else {
-                throw new Error("Something went wrong, try again later.");
-              }
-            })
-            .then((riskVal) => {
-              this.risk = riskVal.risk;
-              this.riskCalculation();
-            })
-        );
     },
+
     riskCalculation() {
       if (this.status == "Infiziert") {
         document.getElementById("riskCard").style.backgroundColor = "#c94133";

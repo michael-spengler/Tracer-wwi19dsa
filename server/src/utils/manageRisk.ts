@@ -34,13 +34,16 @@ export async function updateRisk(){
 
     for (let index = 0; index < riskLocations.length; index++) { 
         const timestamp = riskLocations[index].timestamp.toISOString().slice(0, 19).replace('T', ' ')
+
         const avgTime =  Number(riskLocations[index].LocID.split(":")[1])
 
         const result = await client.execute(
         `update users set risk = 1 where LocID = "${riskLocations[index].LocID}" 
-        and timestamp > "${timestamp}" - INTERVAL ${avgTime + 60} MINUTE 
+        and timestamp > "${timestamp}" + INTERVAL ${60 - avgTime} MINUTE 
         and timestamp < "${timestamp}" + INTERVAL ${avgTime + 60} MINUTE`); // +1 Hour for CET time zone
         }
+        
+
 
     await client.close();
 }

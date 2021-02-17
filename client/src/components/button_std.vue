@@ -1,3 +1,4 @@
+//vuetify Button, Farbe: grau, dunkler Component, 85% des Bildschirms breit
 <template>
   <v-btn v-on:click="onclick" color="#676767" dark width="85%">
       <slot></slot>

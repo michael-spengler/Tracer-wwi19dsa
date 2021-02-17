@@ -1,3 +1,4 @@
+import {backendURL} from "./variables.js"
 
 /* 
 newScan creates new instance scanData with given locID (from QR-Code) and status (from Variables)
@@ -70,7 +71,7 @@ server returns the generated TracerID and the timestamp
  -> these values are stored in Localbase for further checks, reports etc.
 */
 function sendData(db, scanData, key) {    
-    fetch(`http://localhost:3000/Tracer/${JSON.stringify(scanData)}`).then((response) => {
+    fetch(`${backendURL}/Tracer/${JSON.stringify(scanData)}`).then((response) => {
         if (response.ok) {
         console.log("Data was successfully added to server.")
         db.collection("Buffer").doc(key).delete()
