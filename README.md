@@ -80,7 +80,7 @@ Auch über die jetzige, durch den Sars-CoV2 Virus ausgelöste, Pandemie hinaus k
 
 ## Business
 
-Unser Pitch-Video findet man hier:
+Unser Pitch-Video findet man [hier](https://youtu.be/p6M4WjTsm6Y):
 
 [![Pitch Video](https://raw.githubusercontent.com/michael-spengler/Tracer-wwi19dsa/main/doc/data/Screenshots/thumbnail.jpg)](https://youtu.be/p6M4WjTsm6Y)
 
