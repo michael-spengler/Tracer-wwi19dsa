@@ -80,6 +80,8 @@ Auch über die jetzige, durch den Sars-CoV2 Virus ausgelöste, Pandemie hinaus k
 
 ## Business
 
+Unser Pitch-Video ist [hier](https://youtu.be/p6M4WjTsm6Y) zu finden.
+
 Für weitere Informationen rund um das Businessmodell und die Idee dahinter siehe folgende Materialien:
 
 - [Pitchdeck](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/Tracer-PitchDeck.pdf)
