@@ -107,12 +107,12 @@ Im Nachfolgenden wird die finale Entscheidung erläutert und einzelne Aspekte de
 
 ### Backend
 
-Node.js ist zweifelsohne seit vielen Jahren ein Industriestandard mit Millionenen von Bibliotheken und einer etablierten Community. NestJS, ein Node.js Framework, wäre an dieser stelle somit die sicherere Technologie. Nichtsdestotrotz haben wir uns für das junge Node pendant - [Deno](https://deno.land/) - entschieden. Hauptintention dahinter ist, mit unserer App zum wachstum dieser neuen Technologie mit viel potential beizutragen.
+Node.js ist zweifelsohne seit vielen Jahren ein Industriestandard mit Millionen von Bibliotheken und einer etablierten Community. NestJS, ein Node.js Framework, wäre an dieser Stelle somit die sicherere Technologie. Nichtsdestotrotz haben wir uns für das junge Node pendant - [Deno](https://deno.land/) - entschieden. Hauptintention dahinter ist, mit unserer App zum Wachstum dieser neuen Technologie mit viel Potential beizutragen.
 
 Die Funktionalitäten des Backends sind grundlegend für die Funktionsweise der App und lassen sich in 4 Prozesse unterteilen:
 
 - Zum Verfolgen von Besuchen müssen QR-Codes generiert werden
-- Besucht man einen neuen Ort, so erstellt man durch scannen des QR-Codes einen neuen (anonymen) Eintrag in der Datenbank
+- Besucht man einen neuen Ort, so erstellt man durch Scannen des QR-Codes einen neuen (anonymen) Eintrag in der Datenbank
 - Wurde man positiv auf Sars-Cov2 getestet, so meldet man es anonym in der App
 - Risikobegegnungen werden periodisch geprüft
 
@@ -120,7 +120,7 @@ Im Folgenden werden die einzelnen Prozesse genauer aufgeführt und ihre Funktion
 
 #### a.) Neuer Ort bzw. QR-Code generieren
 
-Für jeden Ort wird eine anonyme, einzigartige ID erstellt. Diese wird um eine Variable "avgTime" erweitert, die die durchschnittliche Verweildauer an diesem Ort beschreibt. Zum überprüfen der Risikobegegnung ist diese Variable von besonderer Bedeutung: Aus dem Besuchszeitpunkt wird beim melden eines Falles ein Zeitfenster (+- avgTime) festgelegt. Alle Besucher, die in diesem Zeitfenster am selben Ort waren, können so gewarnt werden. 
+Für jeden Ort wird eine anonyme, einzigartige ID erstellt. Diese wird um eine Variable "avgTime" erweitert, die die durchschnittliche Verweildauer an diesem Ort beschreibt. Zum Überprüfen der Risikobegegnung ist diese Variable von besonderer Bedeutung: Aus dem Besuchszeitpunkt wird beim Melden eines Falles ein Zeitfenster (+- avgTime) festgelegt. Alle Besucher, die in diesem Zeitfenster am selben Ort waren, können so gewarnt werden. 
 
 ![Flowchart](https://raw.githubusercontent.com/BennerLukas/Tracer/main/server/ressources/flowcharts/4_Create_New_Loc-ID.png)
 
@@ -128,19 +128,19 @@ Jeder kann für sein Event, Geschäft, Lokal o.ä. ein Code generieren, dazu mus
 
 #### b.) Hinzufügen eines neuen Eintrags
 
-Besucht man ein Event oder ein Geschäft so scannt man beim betreten den QR-Code, der vom Ladenbesitzer oder Veranstalter vorher generiert, ausgedruckt und angebracht wurde. Die Location ID wird zusammen mit einem Zeitstempel zunächst lokal auf dem Client gespeichert und anschließend an den Server geschickt, So können auch offline Besuche verfolgt werden. Wenn eine Internetverbindung besteht, werden die Daten an den Server geschickt, wo sie dann gemeinsam mit einer einzigartigen aber anonymen User ID an die Datenbank geschickt werden. Die generierte User ID wird bei erfolgreicher Speicherung zurück zum Client gesendet wo sie dann in einem persistenten Speicher gelagert wird.
+Besucht man ein Event oder ein Geschäft so scannt man beim Betreten den QR-Code, der vom Ladenbesitzer oder Veranstalter vorher generiert, ausgedruckt und angebracht wurde. Die Location ID wird zusammen mit einem Zeitstempel zunächst lokal auf dem Client gespeichert und anschließend an den Server geschickt, So können auch offline Besuche verfolgt werden. Wenn eine Internetverbindung besteht, werden die Daten an den Server geschickt, wo sie dann gemeinsam mit einer einzigartigen, aber anonymen User ID an die Datenbank geschickt werden. Die generierte User ID wird bei erfolgreicher Speicherung zurück zum Client gesendet, wo sie dann in einem persistenten Speicher gelagert wird.
 
 ![Flowchart](https://raw.githubusercontent.com/BennerLukas/Tracer/main/server/ressources/flowcharts/1_Log_New_Scan.png)
 
 #### c.) Krankheitsfall melden
 
-Wurde man positiv getestet, so meldet man es in der App unter dem Button "Infektion Melden". Der Client sendet daraufhin alle gespeicherten User IDs, zusammen mit Zeitstempel, an den Server. Im Server wird zunächst der Status (Covid-positiv/negativ?) aller übermittelten User IDs auf 1 (positiv) gesetzt. Anschließend werden via SQL Abfrage alle betroffenen Orte ermittelt:
+Wurde man positiv getestet, so meldet man es in der App unter dem Button "Infektion Melden". Der Client sendet daraufhin alle gespeicherten User IDs, zusammen mit Zeitstempel, an den Server. Im Server wird zunächst der Status (Covid-positiv/negativ?) aller übermittelten User IDs auf 1 (positiv) gesetzt. Anschließend werden via SQL-Abfrage alle betroffenen Orte ermittelt:
 
 ````SQL
 select LocID,timestamp from users where status = 1
 ````
 
-Die Anzahl der Risikobegegnungen wird nun für alle User IDs die zur selben Zeit am selben Ort waren um 1 erhöht.
+Die Anzahl der Risikobegegnungen wird nun für alle User IDs, die zur selben Zeit am selben Ort waren um 1 erhöht.
 
 ```SQL
 update users set risk = 1 where LocID = ${risiko LocID} 
@@ -152,14 +152,14 @@ Für die erste minimal funktionsfähige Iteration von Tracer ist noch kein Valid
 
 ![Flowchart](https://raw.githubusercontent.com/BennerLukas/Tracer/main/server/ressources/flowcharts/2_Report_Case.png)
 
-#### d.) Überprüfen ob Kontakt zu Infizierten bestanden hat
+#### d.) Überprüfen, ob Kontakt zu Infizierten bestanden hat
 Damit die Benutzer über Risikomeldungen informiert werden, muss in regelmäßigen Abständen eine Serverabfrage stattfinden. Hierzu werden beim starten oder neu laden (Button oben rechts) der App,  alle gespeicherten User IDs an den Server geschickt. Dort findet eine SQL Abfrage statt um die eigenen Risikobegegnungen zu ermitteln:
 
 ```SQL
 select risk from users where TracerID in ${[liste aller IDs]}
 ```
 
-Im vorherigen Prozess wurde die Variable "risk" für alle Risikobegegnungen (selbe Zeit, selber Ort) auf 1 gesetzt. Der Risikostatus ergibt sich somit aus der Summe aller Werte für die Variable risk. Besteht so ein höheres Risiko, so verändert sich die Farbe der Hauptanzeige auf der Startseite zu orange.
+Im vorherigen Prozess wurde die Variable "risk" für alle Risikobegegnungen (selbe Zeit, selber Ort) auf 1 gesetzt. Der Risikostatus ergibt sich somit aus der Summe aller Werte für die Variable "risk". Besteht so ein höheres Risiko, so verändert sich die Farbe der Hauptanzeige auf der Startseite zu orange.
 
 ![Flowchart](https://raw.githubusercontent.com/BennerLukas/Tracer/main/server/ressources/flowcharts/3_Check_Risk.png)
 
@@ -170,7 +170,7 @@ MySQL bildet die globale Datenbank, auf der alle anonymen User IDs und Location 
 
 ![Schema](./server/ressources/schema.png)
 
-Das Gegenstück zur globalen Datenbank bildet Localbase. Hierbei handelt es sich um eine lokale Firebase-ähnliche IndexedDB mit offline funktionalität. Da eine Kontaktermittlung nicht bei fehlendem Internet ausfallen darf, wird diese Datenbank als Zwischenspeicher für getätigte Scans genutzt. Auch die eigenen User IDs und gewisse Variablen (z.B. Gesundheitsstatus) werden hier gespeichert. Wie für Firebase üblich besteht die Datenbank hier aus Collections und Documents. Collections sind vergleichbar mit gängigen Datenbanktabellen bilden eine Sammlung aus Documents (Datenbankeinträge). Diese Einträge werden als Key-Object-Paare angegeben:
+Das Gegenstück zur globalen Datenbank bildet Localbase. Hierbei handelt es sich um eine lokale Firebase-ähnliche IndexedDB mit offline Funktionalität. Da eine Kontaktermittlung nicht bei fehlendem Internet ausfallen darf, wird diese Datenbank als Zwischenspeicher für getätigte Scans genutzt. Auch die eigenen User IDs und gewisse Variablen (z.B. Gesundheitsstatus) werden hier gespeichert. Wie für Firebase üblich besteht die Datenbank hier aus Collections und Documents. Collections sind vergleichbar mit gängigen Datenbanktabellen bilden eine Sammlung aus Documents (Datenbankeinträge). Diese Einträge werden als Key-Object-Paare angegeben:
 
 - Buffer: {{locID, currentTime, status, risk}, Key: locID}
 - TracerID: {{id, time}, Key: id}
@@ -210,7 +210,7 @@ Pages:
 Komponenten:
 
 - Standardbutton (btn_std)
-- Navigationbar (tab_bar)
+- Navigationsbar (tab_bar)
 
 Zeitweise kamen viele neue Funktionen hinzu und die Applikation wuchs weiter.
 
@@ -225,8 +225,8 @@ Im Nachhinein wäre Ionic eventuell die bessere Lösung gewesen, da es umfangrei
 
 #### PWA & Design
 
-Tracer sollte von Anfang an intuitiv und für jeden einfach zu verstehen sein. Daher wurde auf einen sehr minimlistischen Aufbau gesetzt. Es gibt auf dem Startbildschirm genau drei Buttons. Ein Button zum aktualisieren und jeweils ein Button für App Informationen und um einen Krankheitsfall zu melden.
-Die durchgehend angezeigte Navigationbar beinhaltet die drei Hauptfunktionen von Tracer: Risikostand anzeigen lassen, Tracer Code Scannen und Tracer Event erstellen.
+Tracer sollte von Anfang an intuitiv und für jeden einfach zu verstehen sein. Daher wurde auf einen sehr minimalistischen Aufbau gesetzt. Es gibt auf dem Startbildschirm genau drei Buttons. Ein Button zum Aktualisieren und jeweils ein Button für App Informationen und um einen Krankheitsfall zu melden.
+Die durchgehend angezeigte Navigationsbar beinhaltet die drei Hauptfunktionen von Tracer: Risikostand anzeigen lassen, Tracer Code Scannen und Tracer Event erstellen.
 
 Für Tracer wurde das Konzept einer PWA gewählt, um die Applikation für nahezu alle Nutzer zugänglich zu machen.
 Eine Progressive Web App (PWA) ist eine Website, die zahlreiche Merkmale besitzt, die bislang nativen Apps vorbehalten waren.
@@ -248,9 +248,9 @@ Letztendlich setzt Tracer zum einen auf ein sehr sauberes und helles Design, und
 Unser Projekt haben wir folgendermaßen umgesetzt: [Ayman Madhour](https://github.com/Madhour) hat sich um das Backend (Deno, JS, TS) und die API/ Schnittstellen zum Backend, sowie die Logik des Programms gekümmert. [Lukas Bach](https://github.com/lukasbach00), [Nico Heller](https://github.com/Pr0lin-cyber) und [Jorgo Paschaloglou](https://github.com/JorgoPascha) hatten den Bereich des Frontends (Vue, Vuetify) als Aufgabenfeld. [Lukas Benner](https://github.com/BennerLukas) kümmerte sich um alle Businessaspekte (Businessplan, Video) und war zudem als Springer in den anderen Bereichen tätig.
 
 In der Regel haben wir uns einmal die Woche zu unserem "Weekly" getroffen. Dort haben wir die erledigten Aufgaben besprochen, Ideen ausgetauscht und neue Aufgaben für die kommende Zeit verteilt. Wir haben im Rahmen unseres Projektes eng mit den Features von GitHub gearbeitet. Besonders mit Issues und den Projekt-Boards (KANBAN-Boards). Darüber wurden Ideen, Bugs und fehlende Features erfasst. Diese wurden einer Person und einem Bereich zugeteilt, welche dann die Aufgaben aufnehmen, abarbeiten und als erledigt abhaken konnte. Dies beschleunigte Entwicklungs- und Kommunikationsprozesse enorm, da jeder den Überblick über den aktuellen Stand behalten konnte und enges zusammenarbeiten einfacher zu ermöglichen war.
-Zudem haben wir mit verschiedenen "Branches" für verschiedene Bereiche gearbeitet um neue Dinge ausprobieren zu können. Siehe [learnings](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/learnings.md).
+Zudem haben wir mit verschiedenen "Branches" für verschiedene Bereiche gearbeitet, um neue Dinge ausprobieren zu können. Siehe [learnings](https://github.com/michael-spengler/Tracer-wwi19dsa/blob/main/doc/learnings.md).
 
-In den letzten Wochen unseres Projekts hat sich unsere Arbeitszeit noch deutlich erhöht. Nun haben wir uns meist täglich getroffen um Bugs zu besprechen, Designfragen zu klären oder einfach effizienter im Pairprogramming voran zu kommen.
+In den letzten Wochen unseres Projekts hat sich unsere Arbeitszeit noch deutlich erhöht. Nun haben wir uns meist täglich getroffen, um Bugs zu besprechen, Designfragen zu klären oder einfach effizienter im Pairprogramming voran zu kommen.
 
 ## Learnings
 
