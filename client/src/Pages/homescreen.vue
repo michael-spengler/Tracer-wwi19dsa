@@ -11,15 +11,9 @@
         />
       </div>
       <div class="header">Tracer</div>
-      <div class="vld-parent">
-        <v-btn small top right fixed fab plain color="white" v-on:click="doAjax, refresh ">
+      <div>
+        <v-btn small top right fixed fab plain color="white" v-on:click="refresh">
           <v-icon dark> mdi-cached </v-icon>
-          <loading :active.sync="isLoading"
-                   :can-cancel="true"
-                   :on-cancel="onCancel"
-                   :is-full-page="fullPage"
-                   :lock-scroll="true"
-          ></loading>
         </v-btn>
       </div>
     </div>
@@ -67,8 +61,6 @@
 </template>
 
 <script>
-import Loading from 'vue-loading-overlay';
-import 'vue-loading-overlay/dist/vue-loading.css';
 import button_std from "@/components/button_std";
 import tab_bar from "@/components/tab_bar";
 import {initDB, checkVariables, reportCase, clearBuffer, checkRisk} from "../api/deps.js";
@@ -78,31 +70,19 @@ db.config.debug = false;
 
 export default {
   name: "homescreen",
-  components: { tab_bar, button_std, Loading },
+  components: { tab_bar, button_std },
   data() {
     return {
       tab: null,
       risk: 0,
       status: "Gesund",
       date: "refresh to be up to date",
-      isLoading: false,
-      fullPage: true
     };
   },
   async created() {
     await this.refresh();
   },
   methods: {
-    doAjax() {
-      this.isLoading = true;
-      // simulate AJAX
-      setTimeout(() => {
-        this.isLoading = false
-      },5000)
-    },
-    onCancel() {
-      console.log('User cancelled the loader.')
-    },
     async to_reportcase() {
       await reportCase(db);
       this.$router.push({ path: "/report_case" }); //Route to report_case page

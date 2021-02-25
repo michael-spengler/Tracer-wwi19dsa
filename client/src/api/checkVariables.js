@@ -6,6 +6,7 @@ checkVariables checks if those variables already exist:
   ->if status is true, calculates time passed since testing positive (reporting)
 */
 async function checkVariables(db){
+  //existieren Variablen?
   let variables = await db.collection("Variables").doc("1").get().then(value => {return(value)})
 
   const currentTime = new Date();
